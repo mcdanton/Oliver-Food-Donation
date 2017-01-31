@@ -7,14 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		377931141E411BAA00AF8826 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 377931131E411BAA00AF8826 /* GoogleService-Info.plist */; };
+		377931161E411C1E00AF8826 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931151E411C1E00AF8826 /* DataModel.swift */; };
+		377931181E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */; };
+		3779311A1E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */; };
+		3779311F1E41271D00AF8826 /* Feed-the-Hungry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */; };
+		377931201E41271D00AF8826 /* god-giving-health.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311C1E41271D00AF8826 /* god-giving-health.jpg */; };
+		377931211E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */; };
+		377931221E41271D00AF8826 /* Spirit-of-Giving.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */; };
 		37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA181F1E3FEB7500042656 /* AppDelegate.swift */; };
 		37AA18221E3FEB7500042656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA18211E3FEB7500042656 /* ViewController.swift */; };
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
 		37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18261E3FEB7500042656 /* Assets.xcassets */; };
 		37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */; };
+		37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */; };
+		47A4BA9A84ACBFBCDCB44694 /* libPods-Project 4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		377931131E411BAA00AF8826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		377931151E411C1E00AF8826 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3f9fd2eeea7e6464627135c7554403d3.jpg; sourceTree = "<group>"; };
+		377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d7c6904b68285dce2c0d033f8ca38f27.jpg; sourceTree = "<group>"; };
+		3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Feed-the-Hungry.jpg"; sourceTree = "<group>"; };
+		3779311C1E41271D00AF8826 /* god-giving-health.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "god-giving-health.jpg"; sourceTree = "<group>"; };
+		3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; sourceTree = "<group>"; };
+		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AA18211E3FEB7500042656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +40,10 @@
 		37AA18261E3FEB7500042656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AA18291E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AA182B1E3FEB7500042656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project 4.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.debug.xcconfig"; sourceTree = "<group>"; };
+		E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47A4BA9A84ACBFBCDCB44694 /* libPods-Project 4.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +63,8 @@
 			children = (
 				37AA181E1E3FEB7500042656 /* Project 4 */,
 				37AA181D1E3FEB7500042656 /* Products */,
+				FE1C6D4409CEA90E4E4CC079 /* Pods */,
+				5D33FA3A1E365CBB2AC2F131 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +83,36 @@
 				37AA18211E3FEB7500042656 /* ViewController.swift */,
 				37AA18231E3FEB7500042656 /* Main.storyboard */,
 				37AA18261E3FEB7500042656 /* Assets.xcassets */,
+				377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */,
+				377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */,
+				3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */,
+				3779311C1E41271D00AF8826 /* god-giving-health.jpg */,
+				3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */,
+				3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */,
 				37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */,
 				37AA182B1E3FEB7500042656 /* Info.plist */,
+				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
+				377931131E411BAA00AF8826 /* GoogleService-Info.plist */,
+				377931151E411C1E00AF8826 /* DataModel.swift */,
 			);
 			path = "Project 4";
+			sourceTree = "<group>";
+		};
+		5D33FA3A1E365CBB2AC2F131 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE1C6D4409CEA90E4E4CC079 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */,
+				E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37AA182E1E3FEB7500042656 /* Build configuration list for PBXNativeTarget "Project 4" */;
 			buildPhases = (
+				99CF7519CA134E74404D7752 /* [CP] Check Pods Manifest.lock */,
 				37AA18181E3FEB7500042656 /* Sources */,
 				37AA18191E3FEB7500042656 /* Frameworks */,
 				37AA181A1E3FEB7500042656 /* Resources */,
+				DD08FF4F60AED203D7F1059C /* [CP] Embed Pods Frameworks */,
+				DA2CD1457622C4AD813C84BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,18 +179,75 @@
 			buildActionMask = 2147483647;
 			files = (
 				37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */,
+				377931211E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg in Resources */,
+				3779311F1E41271D00AF8826 /* Feed-the-Hungry.jpg in Resources */,
+				377931201E41271D00AF8826 /* god-giving-health.jpg in Resources */,
+				377931181E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg in Resources */,
+				3779311A1E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg in Resources */,
 				37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */,
 				37AA18251E3FEB7500042656 /* Main.storyboard in Resources */,
+				377931141E411BAA00AF8826 /* GoogleService-Info.plist in Resources */,
+				377931221E41271D00AF8826 /* Spirit-of-Giving.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99CF7519CA134E74404D7752 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DA2CD1457622C4AD813C84BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project 4/Pods-Project 4-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD08FF4F60AED203D7F1059C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project 4/Pods-Project 4-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37AA18181E3FEB7500042656 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */,
+				377931161E411C1E00AF8826 /* DataModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
 				37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */,
 			);
@@ -259,6 +370,7 @@
 		};
 		37AA182F1E3FEB7500042656 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DZ528PGQF5;
@@ -272,6 +384,7 @@
 		};
 		37AA18301E3FEB7500042656 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DZ528PGQF5;
@@ -302,6 +415,7 @@
 				37AA18301E3FEB7500042656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
