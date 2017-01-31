@@ -15,6 +15,7 @@
 		377931201E41271D00AF8826 /* god-giving-health.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311C1E41271D00AF8826 /* god-giving-health.jpg */; };
 		377931211E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */; };
 		377931221E41271D00AF8826 /* Spirit-of-Giving.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */; };
+		377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931231E413B2800AF8826 /* VendorSignupViewController.swift */; };
 		37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA181F1E3FEB7500042656 /* AppDelegate.swift */; };
 		37AA18221E3FEB7500042656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA18211E3FEB7500042656 /* ViewController.swift */; };
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		3779311C1E41271D00AF8826 /* god-giving-health.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "god-giving-health.jpg"; sourceTree = "<group>"; };
 		3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; sourceTree = "<group>"; };
 		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
+		377931231E413B2800AF8826 /* VendorSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorSignupViewController.swift; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AA18211E3FEB7500042656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		377931251E413B2C00AF8826 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				377931231E413B2800AF8826 /* VendorSignupViewController.swift */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		37AA18131E3FEB7500042656 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		37AA181E1E3FEB7500042656 /* Project 4 */ = {
 			isa = PBXGroup;
 			children = (
+				377931251E413B2C00AF8826 /* Vendor */,
 				37AA181F1E3FEB7500042656 /* AppDelegate.swift */,
 				37AA18211E3FEB7500042656 /* ViewController.swift */,
 				37AA18231E3FEB7500042656 /* Main.storyboard */,
@@ -250,6 +261,7 @@
 				377931161E411C1E00AF8826 /* DataModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
 				37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */,
+				377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
