@@ -205,6 +205,9 @@
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="uGJ-B9-EQt"/>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="saL-sD-3mO" id="zdg-cD-Cyv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZi-4h-mFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -94,6 +94,27 @@ class FirebaseModel {
    
    
    
+   // MARK: Observe Functions
+   
+   func observePosts(success: @escaping ([Post]) -> ()) {
+      var arrayOfPosts = [Post]()
+      
+      let databaseRef = FIRDatabase.database().reference()
+      databaseRef.observeSingleEvent(of: .value, with: { snapshot in
+         
+         let allPostsSnapshot = snapshot.childSnapshot(forPath: "foodPosted")
+         for singlePost in allPostsSnapshot.children {
+            
+            if let postSnapshot = singlePost as? FIRDataSnapshot {
+               var postInstance = Post(snapshot: postSnapshot)
+               arrayOfPosts.append(postInstance)
+            }
+         }
+         DispatchQueue.main.async {
+            success(arrayOfPosts)
+         }
+      })
+   }
    
    
    

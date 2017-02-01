@@ -10,11 +10,6 @@ import UIKit
 
 class VendorHomeTableViewCell: UITableViewCell {
    
-   // MARK: Properties
-   
-   
-   
-   
    
    // MARK: Outlets
    

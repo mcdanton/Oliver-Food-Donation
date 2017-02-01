@@ -11,14 +11,42 @@ import Firebase
 
 class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+   // MARK: Properties
+
+   var allPosts = [DataModel.sharedInstance.post] {
+      didSet {
+         tableViewOutlet.reloadData()
+      }
+   }
    
+   
+   //MARK: Outlets
+   
+   @IBOutlet weak var tableViewOutlet: UITableView!
    
 
+   
+   
+   
+   
+   //MARK: View Did Load
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+   
+   
+   override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(animated)
+      
+      FirebaseModel.sharedInstance.observePosts(success: { [weak self] posts in
+         
+         guard let unwrappedSelf = self else { return }
+         unwrappedSelf.allPosts = posts
+      })
+   }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,12 +57,14 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    // MARK: Table View Protocol Functions
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 1
+      return allPosts.count
    }
    
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "VendorHomeTableViewCell", for: indexPath) as! VendorHomeTableViewCell
+      
+      cell.postDescription.text = allPosts[indexPath.row]?.description      
       
       return cell
    }

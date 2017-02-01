@@ -15,19 +15,19 @@ class DataModel {
    
    var foodVendor: FoodVendor?
    var consumer: Consumer?
+   var post: Post?
 }
 
 
 class FoodVendor {
    
    var name: String
-   var uID: String
+   var uID: String?
    var location: String
    var firebaseRef: FIRDatabaseReference?
    
-   init(name: String, uID: String, location: String) {
+   init(name: String, location: String) {
       self.name = name
-      self.uID = uID
       self.location = location
    }
    
@@ -48,12 +48,11 @@ class FoodVendor {
    
    class Consumer {
       
-      var uID: String
+      var uID: String?
       var location: String
       var firebaseRef: FIRDatabaseReference?
       
-      init(uID: String, location: String) {
-         self.uID = uID
+      init(location: String) {
          self.location = location
       }
       
@@ -67,5 +66,45 @@ class FoodVendor {
          firebaseRef = snapshot.ref
       }
    }
-  
+
+
+class Post {
+   
+   var title: String
+   var description: String
+   var quantity: String
+   var location: String
+   var uID: String?
+   var firebaseRef: FIRDatabaseReference?
+   
+   init(title: String, description: String, quantity: String, location: String) {
+      
+      self.title = title
+      self.description = description
+      self.quantity = quantity
+      self.location = location
+   }
+   
+   
+   init(snapshot: FIRDataSnapshot) {
+      let postTitle = snapshot.childSnapshot(forPath: "title")
+      title = postTitle.value as! String
+      
+      let postDescription = snapshot.childSnapshot(forPath: "description")
+      description = postDescription.value as! String
+      
+      let postQuantity = snapshot.childSnapshot(forPath: "quantity")
+      quantity = postQuantity.value as! String
+      
+      let postLocation = snapshot.childSnapshot(forPath: "location")
+      location = postLocation.value as! String
+      
+      uID = snapshot.key
+      firebaseRef = snapshot.ref
+   }
+}
+
+
+
+
 
