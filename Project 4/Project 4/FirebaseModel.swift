@@ -75,6 +75,7 @@ class FirebaseModel {
    // MARK: Food Postings
    
    func postFood(title: String, description: String, quantity: String, location: String) {
+      guard let currentUser = FIRAuth.auth()?.currentUser?.uid else { return }
       
       let foodRef = FIRDatabase.database().reference(withPath: "foodPosted")
       let foodChild = foodRef.childByAutoId()
@@ -87,7 +88,7 @@ class FirebaseModel {
       let location = foodChild.child("location")
       location.setValue(location)
       let vendor = foodChild.child("vendor")
-      vendor.setValue(FIRAuth.auth()?.currentUser?.uid)
+      vendor.setValue(currentUser)
    }
    
    
