@@ -134,6 +134,82 @@
             </objects>
             <point key="canvasLocation" x="1124" y="2248"/>
         </scene>
+        <!--Vendor Home View Controller-->
+        <scene sceneID="8Sa-Ev-HmM">
+            <objects>
+                <viewController storyboardIdentifier="VendorHomeViewController" id="GF4-Al-IkH" customClass="VendorHomeViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdv-g6-gBk"/>
+                        <viewControllerLayoutGuide type="bottom" id="gAx-1f-RLz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rfz-4L-3gf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saL-sD-3mO">
+                                <rect key="frame" x="16" y="139" width="343" height="479"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ml5-1D-46Z" customClass="VendorHomeTableViewCell" customModule="Project_4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ml5-1D-46Z" id="oZl-Ws-zfR">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="139"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddf-MF-4W9">
+                                                    <rect key="frame" x="8" y="37" width="171" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPe-Ab-d7E">
+                                                    <rect key="frame" x="8" y="86" width="171" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-b4-9PC">
+                                                    <rect key="frame" x="237" y="86" width="98" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postDate" destination="vPe-Ab-d7E" id="uKT-gj-13z"/>
+                                            <outlet property="postDescription" destination="Ddf-MF-4W9" id="jSy-zR-alg"/>
+                                            <outlet property="postStatus" destination="MVf-b4-9PC" id="ZWA-hW-MyF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GF4-Al-IkH" id="lzp-cp-fnM"/>
+                                    <outlet property="delegate" destination="GF4-Al-IkH" id="8Td-NM-U0d"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0X-Zh-83N">
+                                <rect key="frame" x="218" y="72" width="141" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Post New">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uGJ-B9-EQt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZi-4h-mFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2053.5999999999999" y="1568.3658170914543"/>
+        </scene>
         <!--Vendor Signup View Controller-->
         <scene sceneID="NMS-gQ-818">
             <objects>
@@ -193,6 +269,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="alreadyHaveAnAccountPressed:" destination="SOJ-SG-TLi" eventType="touchUpInside" id="fOo-Qp-wcR"/>
                                     <segue destination="UEU-kD-BFW" kind="show" id="Idh-2G-haL"/>
                                 </connections>
                             </button>
@@ -203,14 +280,20 @@
                                 <state key="normal" title="Sign In As User">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInAsUserPressed:" destination="SOJ-SG-TLi" eventType="touchUpInside" id="1Aq-Tu-eXv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKx-sz-Vfd">
-                                <rect key="frame" x="16" y="589" width="343" height="70"/>
+                                <rect key="frame" x="16" y="592" width="343" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerPressed:" destination="SOJ-SG-TLi" eventType="touchUpInside" id="bzI-dN-bRn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -265,10 +348,10 @@
             </objects>
             <point key="canvasLocation" x="185" y="865"/>
         </scene>
-        <!--View Controller-->
+        <!--Vendor Login View Controller-->
         <scene sceneID="9Bj-NI-Bwg">
             <objects>
-                <viewController id="UEU-kD-BFW" sceneMemberID="viewController">
+                <viewController id="UEU-kD-BFW" customClass="VendorLoginViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SKx-rn-4CL"/>
                         <viewControllerLayoutGuide type="bottom" id="Xxc-Dh-T6Q"/>
@@ -281,14 +364,6 @@
                                 <rect key="frame" x="67" y="157" width="240" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7G-yx-bwd">
-                                <rect key="frame" x="16" y="577" width="343" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHi-yh-kSg">
                                 <rect key="frame" x="16" y="522" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -296,6 +371,9 @@
                                 <state key="normal" title="Don't have an account?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="dontHaveAccountPressed:" destination="UEU-kD-BFW" eventType="touchUpInside" id="tag-eY-O6Y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQY-lS-chl">
                                 <rect key="frame" x="216" y="72" width="143" height="30"/>
@@ -304,6 +382,9 @@
                                 <state key="normal" title="Login As User">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginAsUserPressed:" destination="UEU-kD-BFW" eventType="touchUpInside" id="Af8-li-ixP"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XYL-mc-gek">
                                 <rect key="frame" x="16" y="374" width="343" height="30"/>
@@ -319,10 +400,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7G-yx-bwd">
+                                <rect key="frame" x="16" y="592" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="UEU-kD-BFW" eventType="touchUpInside" id="517-FV-Ogp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="CPw-qo-XFh"/>
+                    <connections>
+                        <outlet property="loginButtonOutlet" destination="z7G-yx-bwd" id="ltr-U1-lg5"/>
+                        <outlet property="vendorEmailTF" destination="XYL-mc-gek" id="HNV-1V-pkd"/>
+                        <outlet property="vendorPasswordTF" destination="FyJ-Kh-9jP" id="l1F-6E-q6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCw-Oe-OdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,7 +428,7 @@
         <!--Food Vendor-->
         <scene sceneID="iXd-u5-Op3">
             <objects>
-                <viewController id="hYA-Uf-Onx" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="hYA-Uf-Onx" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L0U-Du-YfV"/>
                         <viewControllerLayoutGuide type="bottom" id="kM0-vi-vkF"/>
@@ -381,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdE-Ws-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063.1999999999998" y="1569.265367316342"/>
+            <point key="canvasLocation" x="2252" y="2296"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="11c-8f-WaL">
@@ -414,7 +511,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hYA-Uf-Onx" kind="relationship" relationship="rootViewController" id="1bh-GI-ZGb"/>
+                        <segue destination="GF4-Al-IkH" kind="relationship" relationship="rootViewController" id="j9d-fV-C3s"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWp-XO-Nfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
