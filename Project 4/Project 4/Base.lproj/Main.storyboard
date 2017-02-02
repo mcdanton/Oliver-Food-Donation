@@ -176,7 +176,7 @@
         <!--Vendor Post Successful View Controller-->
         <scene sceneID="lYA-sG-xQh">
             <objects>
-                <viewController id="tAk-bd-iSi" customClass="VendorPostSuccessfulViewController" sceneMemberID="viewController">
+                <viewController id="tAk-bd-iSi" customClass="VendorPostSuccessfulViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bHL-iL-8FD"/>
                         <viewControllerLayoutGuide type="bottom" id="0m0-c0-ID7"/>
