@@ -12,7 +12,7 @@ import Firebase
 class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
    // MARK: Properties
-
+   
    var allPosts = [DataModel.sharedInstance.post] {
       didSet {
          tableViewOutlet.reloadData()
@@ -24,18 +24,18 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    
    @IBOutlet weak var tableViewOutlet: UITableView!
    
-
+   
    
    
    
    
    //MARK: View Did Load
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      
+      // Do any additional setup after loading the view.
+   }
    
    
    override func viewDidAppear(_ animated: Bool) {
@@ -47,13 +47,13 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
          unwrappedSelf.allPosts = posts
       })
    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
+   
+   override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+   }
+   
+   
    // MARK: Table View Protocol Functions
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,14 +64,42 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "VendorHomeTableViewCell", for: indexPath) as! VendorHomeTableViewCell
       
-      cell.postDescription.text = allPosts[indexPath.row]?.description      
+      
+      cell.postTitle.text = allPosts[indexPath.row]?.title
+      cell.postStatus.text = allPosts[indexPath.row]?.status
+      cell.postDate.text = allPosts[indexPath.row]?.date.description
+      
+      // read with var date = NSDate(timeIntervalSince1970: interval)
+      
       
       return cell
    }
    
-
+   
+   // MARK: Random Functions
+   
+   @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
+   }
    
    
+   let secondsToMinute = 60
+   let secondsToHour = 60*60
+   let secondsToDay = 60*60*24
+   
+   
+   func convertToDateFormat(dateToConvert: Date) {
+      
+      let now = Date()
+      let timeInterval = now.timeIntervalSince(dateToConvert)
+      
+      
+      
+      
+      
+      
+   }
    
    
 }
+
+

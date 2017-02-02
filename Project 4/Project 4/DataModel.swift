@@ -74,15 +74,21 @@ class Post {
    var description: String
    var quantity: String
    var location: String
+   var deadline: String
+   var date: Date
+   var status = "Open"
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
-   init(title: String, description: String, quantity: String, location: String) {
+   init(title: String, description: String, quantity: String, location: String, deadline: String, date: Date, status: String) {
       
       self.title = title
       self.description = description
       self.quantity = quantity
       self.location = location
+      self.deadline = deadline
+      self.date = date
+      self.status = status
    }
    
    
@@ -98,6 +104,15 @@ class Post {
       
       let postLocation = snapshot.childSnapshot(forPath: "location")
       location = postLocation.value as! String
+      
+      let postDeadline = snapshot.childSnapshot(forPath: "deadline")
+      deadline = postDeadline.value as! String
+      
+      let postDate = snapshot.childSnapshot(forPath: "datePosted")
+      date = Date(timeIntervalSince1970: postDate.value as! Double)
+      
+      let postStatus = snapshot.childSnapshot(forPath: "status")
+      status = postStatus.value as! String
       
       uID = snapshot.key
       firebaseRef = snapshot.ref

@@ -74,19 +74,25 @@ class FirebaseModel {
    
    // MARK: Food Postings
    
-   func postFood(title: String, description: String, quantity: String, location: String) {
+   func postFood(title: String, description: String, quantity: String, location: String, deadline: String, date: Date, status: String) {
       guard let currentUser = FIRAuth.auth()?.currentUser?.uid else { return }
       
       let foodRef = FIRDatabase.database().reference(withPath: "foodPosted")
       let foodChild = foodRef.childByAutoId()
-      let title = foodChild.child("title")
-      title.setValue(title)
-      let description = foodChild.child("description")
-      description.setValue(description)
-      let quantity = foodChild.child("quantity")
-      quantity.setValue(quantity)
-      let location = foodChild.child("location")
-      location.setValue(location)
+      let postTitle = foodChild.child("title")
+      postTitle.setValue(title)
+      let postDescription = foodChild.child("description")
+      postDescription.setValue(description)
+      let postQuantity = foodChild.child("quantity")
+      postQuantity.setValue(quantity)
+      let postLocation = foodChild.child("location")
+      postLocation.setValue(location)
+      let postDeadline = foodChild.child("deadline")
+      postDeadline.setValue(deadline)
+      let postDate = foodChild.child("datePosted")
+      postDate.setValue(date.timeIntervalSince1970)
+      let postStatus = foodChild.child("status")
+      postStatus.setValue(status)
       let vendor = foodChild.child("vendor")
       vendor.setValue(currentUser)
    }

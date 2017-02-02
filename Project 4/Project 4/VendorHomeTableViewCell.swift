@@ -13,7 +13,8 @@ class VendorHomeTableViewCell: UITableViewCell {
    
    // MARK: Outlets
    
-   @IBOutlet weak var postDescription: UILabel!
+
+   @IBOutlet weak var postTitle: UILabel!
    @IBOutlet weak var postDate: UILabel!
    @IBOutlet weak var postStatus: UILabel!
    
