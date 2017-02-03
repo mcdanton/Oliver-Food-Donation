@@ -522,6 +522,33 @@
             </objects>
             <point key="canvasLocation" x="1721" y="865"/>
         </scene>
+        <!--Consumer Map View Controller-->
+        <scene sceneID="p0J-Zh-LuB">
+            <objects>
+                <viewController id="cue-xd-sHI" customClass="ConsumerMapViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k5F-va-qPu"/>
+                        <viewControllerLayoutGuide type="bottom" id="gvE-JS-XN3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jlJ-ee-POW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wfz-Nb-feu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="wfz-Nb-feu" id="xmY-hR-gTo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NuQ-Ig-JfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2680.8000000000002" y="385.45727136431788"/>
+        </scene>
         <!--Food Vendor-->
         <scene sceneID="iXd-u5-Op3">
             <objects>

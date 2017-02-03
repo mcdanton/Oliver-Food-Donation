@@ -9,6 +9,9 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import CoreLocation
+import GeoFire
+
 
 class FirebaseModel {
    
@@ -74,7 +77,7 @@ class FirebaseModel {
    
    // MARK: Food Postings
    
-   func postFood(title: String, description: String, quantity: String, location: String, deadline: String, date: Date, status: String) {
+   func postFood(title: String, description: String, quantity: String, deadline: String, date: Date, status: String) {
       guard let currentUser = FIRAuth.auth()?.currentUser?.uid else { return }
       
       let foodRef = FIRDatabase.database().reference(withPath: "foodPosted")
@@ -85,8 +88,7 @@ class FirebaseModel {
       postDescription.setValue(description)
       let postQuantity = foodChild.child("quantity")
       postQuantity.setValue(quantity)
-      let postLocation = foodChild.child("location")
-      postLocation.setValue(location)
+
       let postDeadline = foodChild.child("deadline")
       postDeadline.setValue(deadline)
       let postDate = foodChild.child("datePosted")
@@ -97,6 +99,20 @@ class FirebaseModel {
       vendor.setValue(currentUser)
    }
    
+   
+   
+   func addVendorLocation() {
+      LocationManagerModel.sharedInstance.getLocation(complete: { [ weak self] location in
+      let vendorLocation = location
+         let key = "key"
+         let locationLat = vendorLocation.coordinate.latitude
+         let locationLong = vendorLocation.coordinate.longitude
+         
+         let geofireRef = FIRDatabase.database().reference(withPath: "locations")
+         let geoFire = GeoFire(firebaseRef: geofireRef)
+         geoFire?.setLocation(CLLocation(latitude: locationLat, longitude: locationLong), forKey: key)
+   })
+   }
    
    
    

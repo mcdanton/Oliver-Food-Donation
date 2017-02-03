@@ -21,14 +21,17 @@
 		3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */; };
 		3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */; };
 		377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */; };
-		377931341E4411CE00AF8826 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931331E4411CE00AF8826 /* File.swift */; };
+		377931341E4411CE00AF8826 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931331E4411CE00AF8826 /* DateExtension.swift */; };
+		377931361E44CD8700AF8826 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377931351E44CD8700AF8826 /* CoreLocation.framework */; };
+		377931381E44CE1300AF8826 /* ConsumerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */; };
+		3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931391E44D80700AF8826 /* LocationManagerModel.swift */; };
 		37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA181F1E3FEB7500042656 /* AppDelegate.swift */; };
 		37AA18221E3FEB7500042656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA18211E3FEB7500042656 /* ViewController.swift */; };
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
 		37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18261E3FEB7500042656 /* Assets.xcassets */; };
 		37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */; };
 		37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */; };
-		47A4BA9A84ACBFBCDCB44694 /* libPods-Project 4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */; };
+		A2391E7DA4F26DB4DAF9A1A8 /* Pods_Project_4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +49,10 @@
 		3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostViewController.swift; sourceTree = "<group>"; };
 		377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostSuccessfulViewController.swift; sourceTree = "<group>"; };
-		377931331E4411CE00AF8826 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		377931331E4411CE00AF8826 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		377931351E44CD8700AF8826 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapViewController.swift; sourceTree = "<group>"; };
+		377931391E44D80700AF8826 /* LocationManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerModel.swift; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AA18211E3FEB7500042656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +61,7 @@
 		37AA18291E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AA182B1E3FEB7500042656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
-		5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project 4.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,7 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47A4BA9A84ACBFBCDCB44694 /* libPods-Project 4.a in Frameworks */,
+				377931361E44CD8700AF8826 /* CoreLocation.framework in Frameworks */,
+				A2391E7DA4F26DB4DAF9A1A8 /* Pods_Project_4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				377931251E413B2C00AF8826 /* Vendor */,
+				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
+				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
 				37AA181F1E3FEB7500042656 /* AppDelegate.swift */,
 				37AA18211E3FEB7500042656 /* ViewController.swift */,
 				37AA18231E3FEB7500042656 /* Main.storyboard */,
@@ -122,7 +131,7 @@
 				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
 				377931151E411C1E00AF8826 /* DataModel.swift */,
 				377931261E4147F000AF8826 /* GoogleService-Info.plist */,
-				377931331E4411CE00AF8826 /* File.swift */,
+				377931331E4411CE00AF8826 /* DateExtension.swift */,
 			);
 			path = "Project 4";
 			sourceTree = "<group>";
@@ -130,7 +139,8 @@
 		5D33FA3A1E365CBB2AC2F131 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */,
+				377931351E44CD8700AF8826 /* CoreLocation.framework */,
+				CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,13 +288,15 @@
 				37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */,
 				377931161E411C1E00AF8826 /* DataModel.swift in Sources */,
 				377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */,
+				377931381E44CE1300AF8826 /* ConsumerMapViewController.swift in Sources */,
 				3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */,
 				3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */,
+				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
 				37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */,
 				3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */,
-				377931341E4411CE00AF8826 /* File.swift in Sources */,
+				377931341E4411CE00AF8826 /* DateExtension.swift in Sources */,
 				377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
