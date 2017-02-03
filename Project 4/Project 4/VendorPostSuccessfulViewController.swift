@@ -12,6 +12,7 @@ class VendorPostSuccessfulViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      FirebaseModel.sharedInstance.retrieveLocation()
       dismissViewController()
    }
 

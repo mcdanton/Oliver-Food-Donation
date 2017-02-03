@@ -69,9 +69,7 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
       cell.postTitle.text = allPosts[indexPath.row]?.title
       cell.postStatus.text = allPosts[indexPath.row]?.status
       cell.postDate.text = allPosts[indexPath.row]?.date.prettyLocaleFormatted
-      
-      // read with var date = NSDate(timeIntervalSince1970: interval)
-      
+            
       
       return cell
    }

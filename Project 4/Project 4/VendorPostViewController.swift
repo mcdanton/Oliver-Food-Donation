@@ -31,8 +31,6 @@ class VendorPostViewController: UIViewController {
       FirebaseModel.sharedInstance.addVendorLocation()
    
          self.view.alpha = 0
-      
-      
    }
    
    

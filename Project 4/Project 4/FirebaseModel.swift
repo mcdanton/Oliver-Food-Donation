@@ -88,7 +88,7 @@ class FirebaseModel {
       postDescription.setValue(description)
       let postQuantity = foodChild.child("quantity")
       postQuantity.setValue(quantity)
-
+      
       let postDeadline = foodChild.child("deadline")
       postDeadline.setValue(deadline)
       let postDate = foodChild.child("datePosted")
@@ -100,21 +100,42 @@ class FirebaseModel {
    }
    
    
+   // MARK: Location Functions
    
    func addVendorLocation() {
-      LocationManagerModel.sharedInstance.getLocation(complete: { [ weak self] location in
-      let vendorLocation = location
-         let key = "key"
+      LocationManagerModel.sharedInstance.getLocation(complete: { location in
+         let vendorLocation = location
+         let key = FIRAuth.auth()?.currentUser?.uid
          let locationLat = vendorLocation.coordinate.latitude
          let locationLong = vendorLocation.coordinate.longitude
          
          let geofireRef = FIRDatabase.database().reference(withPath: "locations")
          let geoFire = GeoFire(firebaseRef: geofireRef)
-         geoFire?.setLocation(CLLocation(latitude: locationLat, longitude: locationLong), forKey: key)
-   })
+         geoFire?.setLocation(CLLocation(latitude: locationLat, longitude: locationLong), forKey: key) { (error) in
+            if (error != nil) {
+               print("An error occured: \(error)")
+            } else {
+               print("Saved location successfully!")
+            }
+         }
+      })
    }
    
    
+   func retrieveLocation(){
+      if let unwrappedAuthenticatedUserUID = FIRAuth.auth()?.currentUser?.uid {
+      
+      geoFire.getLocationForKey(unwrappedAuthenticatedUserUID, withCallback: { (location, error) in
+         if (error != nil) {
+            print("An error occurred getting the location for \(unwrappedAuthenticatedUserUID): \(error.localizedDescription)")
+         } else if (location != nil) {
+            print("Location for \(unwrappedAuthenticatedUserUID) is: [\(location.coordinate.latitude), \(location.coordinate.longitude)]")
+         } else {
+            print("GeoFire does not contain a location for \(unwrappedAuthenticatedUserUID)")
+         }
+      })
+      }
+   }
    
    // MARK: Observe Functions
    
