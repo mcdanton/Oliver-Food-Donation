@@ -2,5 +2,7 @@ target 'Project 4' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc'
+
 
 end

@@ -64,10 +64,11 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "VendorHomeTableViewCell", for: indexPath) as! VendorHomeTableViewCell
       
+ 
       
       cell.postTitle.text = allPosts[indexPath.row]?.title
       cell.postStatus.text = allPosts[indexPath.row]?.status
-      cell.postDate.text = allPosts[indexPath.row]?.date.description
+      cell.postDate.text = allPosts[indexPath.row]?.date.prettyLocaleFormatted
       
       // read with var date = NSDate(timeIntervalSince1970: interval)
       
@@ -82,23 +83,8 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    }
    
    
-   let secondsToMinute = 60
-   let secondsToHour = 60*60
-   let secondsToDay = 60*60*24
    
-   
-   func convertToDateFormat(dateToConvert: Date) {
-      
-      let now = Date()
-      let timeInterval = now.timeIntervalSince(dateToConvert)
-      
-      
-      
-      
-      
-      
-   }
-   
+
    
 }
 

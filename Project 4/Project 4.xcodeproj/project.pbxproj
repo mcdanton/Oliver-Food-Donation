@@ -21,6 +21,7 @@
 		3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */; };
 		3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */; };
 		377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */; };
+		377931341E4411CE00AF8826 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931331E4411CE00AF8826 /* File.swift */; };
 		37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA181F1E3FEB7500042656 /* AppDelegate.swift */; };
 		37AA18221E3FEB7500042656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA18211E3FEB7500042656 /* ViewController.swift */; };
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostViewController.swift; sourceTree = "<group>"; };
 		377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostSuccessfulViewController.swift; sourceTree = "<group>"; };
+		377931331E4411CE00AF8826 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AA18211E3FEB7500042656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
 				377931151E411C1E00AF8826 /* DataModel.swift */,
 				377931261E4147F000AF8826 /* GoogleService-Info.plist */,
+				377931331E4411CE00AF8826 /* File.swift */,
 			);
 			path = "Project 4";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
 				37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */,
 				3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */,
+				377931341E4411CE00AF8826 /* File.swift in Sources */,
 				377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

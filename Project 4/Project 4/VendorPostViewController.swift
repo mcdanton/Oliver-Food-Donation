@@ -27,7 +27,7 @@ class VendorPostViewController: UIViewController {
       
       FirebaseModel.sharedInstance.postFood(title: postTitle.text!, description: postDescription.text!, quantity: quantity.text!, location: location.text!, deadline: deadline.text!, date: Date(), status: "Open")
 
-      
+      view.alpha = 0
    }
    
 
