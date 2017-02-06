@@ -18,6 +18,11 @@ class FirebaseModel {
    static let sharedInstance = FirebaseModel()
    
    
+   lazy var geoFire: GeoFire = {
+      let geofireRef = FIRDatabase.database().reference(withPath: "locations")
+      return GeoFire(firebaseRef: geofireRef)!
+   }()
+   
    // MARK: Vendor Signup
    func FoodVendorSignup(name: String, location: String, emailTextField: String, passwordTextField: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
       
@@ -77,7 +82,7 @@ class FirebaseModel {
    
    // MARK: Food Postings
    
-   func postFood(title: String, description: String, quantity: String, deadline: String, date: Date, status: String) {
+   func postFood(title: String, description: String, quantity: String, deadline: String, date: Date, complete: @escaping (String) -> ()) {
       guard let currentUser = FIRAuth.auth()?.currentUser?.uid else { return }
       
       let foodRef = FIRDatabase.database().reference(withPath: "foodPosted")
@@ -94,24 +99,23 @@ class FirebaseModel {
       let postDate = foodChild.child("datePosted")
       postDate.setValue(date.timeIntervalSince1970)
       let postStatus = foodChild.child("status")
-      postStatus.setValue(status)
+      postStatus.setValue("Open")
       let vendor = foodChild.child("vendor")
       vendor.setValue(currentUser)
+      complete(String(describing: foodChild.key))
    }
    
    
    // MARK: Location Functions
    
-   func addVendorLocation() {
+   func addVendorLocation(foodPostingUID: String) {
       LocationManagerModel.sharedInstance.getLocation(complete: { location in
          let vendorLocation = location
-         let key = FIRAuth.auth()?.currentUser?.uid
+         let key = foodPostingUID
          let locationLat = vendorLocation.coordinate.latitude
          let locationLong = vendorLocation.coordinate.longitude
          
-         let geofireRef = FIRDatabase.database().reference(withPath: "locations")
-         let geoFire = GeoFire(firebaseRef: geofireRef)
-         geoFire?.setLocation(CLLocation(latitude: locationLat, longitude: locationLong), forKey: key) { (error) in
+         self.geoFire.setLocation(CLLocation(latitude: locationLat, longitude: locationLong), forKey: key) { (error) in
             if (error != nil) {
                print("An error occured: \(error)")
             } else {
@@ -123,19 +127,52 @@ class FirebaseModel {
    
    
    func retrieveLocation(){
-      if let unwrappedAuthenticatedUserUID = FIRAuth.auth()?.currentUser?.uid {
-      
-      geoFire.getLocationForKey(unwrappedAuthenticatedUserUID, withCallback: { (location, error) in
-         if (error != nil) {
-            print("An error occurred getting the location for \(unwrappedAuthenticatedUserUID): \(error.localizedDescription)")
-         } else if (location != nil) {
-            print("Location for \(unwrappedAuthenticatedUserUID) is: [\(location.coordinate.latitude), \(location.coordinate.longitude)]")
-         } else {
-            print("GeoFire does not contain a location for \(unwrappedAuthenticatedUserUID)")
-         }
-      })
-      }
+      guard let unwrappedAuthenticatedUserUID = FIRAuth.auth()?.currentUser?.uid  else { return }
+         geoFire.getLocationForKey(unwrappedAuthenticatedUserUID, withCallback: { (location, error) in
+            if (error != nil) {
+               print("An error occurred getting the location for \(unwrappedAuthenticatedUserUID): \(error!.localizedDescription)")
+            } else if (location != nil) {
+               print("Location for \(unwrappedAuthenticatedUserUID) is: [\(location?.coordinate.latitude), \(location?.coordinate.longitude)]")
+            } else {
+               print("GeoFire does not contain a location for \(unwrappedAuthenticatedUserUID)")
+            }
+         })
    }
+   
+   
+   // let query = geoFire.queryAtLocation(currentLocation, withRadius: radius)
+
+   func queryLocations(locationToQuery: CLLocation) {
+      var locations = [CLLocation]()
+      let center = CLLocation(latitude: 37.785834, longitude: -122.406417)
+      let query = self.geoFire.query(at: center, withRadius: 0.6)
+      
+      query?.observeEventType(.gfeventtypeKeyEntered, withBlock: { location in
+         
+         print("------------ THE LOCATION SEARCHED IS \(location)")
+
+      })
+   }
+   
+   
+   func queryLocation() {
+      var locations = [CLLocation]()
+      let center = CLLocation(latitude: 37.785834, longitude: -122.406417)
+      // Query locations at [37.7832889, -122.4056973] with a radius of 600 meters
+      var circleQuery = geoFire.query(at: center, withRadius: 0.6)
+      
+      // Query location by region
+      let span = MKCoordinateSpanMake(0.001, 0.001)
+      let region = MKCoordinateRegionMake(center.coordinate, span)
+      var regionQuery = geoFire.query(with: region)
+      
+      for location in locations {
+         print("HERE IS MORE LOCATION INFO is \(location)")
+      }
+      print("NO LOCATIONS RETURNED")
+
+   }
+   
    
    // MARK: Observe Functions
    
