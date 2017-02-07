@@ -143,9 +143,8 @@ class FirebaseModel {
 
    // MARK: Queries
    
-   func queryLocations(locationToQuery: CLLocation) {
-      let center = CLLocation(latitude: 37.785834, longitude: -122.406417)
-      let query = self.geoFire.query(at: center, withRadius: 0.6)
+   func queryLocations(locationToQuery: CLLocation, complete: @escaping [CLLocation]) {
+      let query = self.geoFire.query(at: locationToQuery, withRadius: 0.6)
       query?.observe(.keyEntered, with: { location in
          
          print("------------ THE LOCATION SEARCHED IS \(location)")

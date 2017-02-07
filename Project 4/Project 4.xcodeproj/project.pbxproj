@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */; };
+		3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */; };
 		377931161E411C1E00AF8826 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931151E411C1E00AF8826 /* DataModel.swift */; };
 		377931181E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */; };
 		3779311A1E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */; };
@@ -33,18 +35,22 @@
 		37EACEB21E49153000EBC806 /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB11E49153000EBC806 /* ConsumerViewController.swift */; };
 		37EACEB51E4A2C4F00EBC806 /* ButtonExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */; };
 		37EACEB71E4A30E800EBC806 /* OpeningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */; };
+		37EACEBA1E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */; };
 		37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */; };
 		A2391E7DA4F26DB4DAF9A1A8 /* Pods_Project_4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3775F3541E4A4DF700F39C07 /* Project 4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project 4.entitlements"; sourceTree = "<group>"; };
+		3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeViewController.swift; sourceTree = "<group>"; };
+		3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeTableViewCell.swift; sourceTree = "<group>"; };
 		377931151E411C1E00AF8826 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3f9fd2eeea7e6464627135c7554403d3.jpg; sourceTree = "<group>"; };
-		377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d7c6904b68285dce2c0d033f8ca38f27.jpg; sourceTree = "<group>"; };
-		3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Feed-the-Hungry.jpg"; sourceTree = "<group>"; };
-		3779311C1E41271D00AF8826 /* god-giving-health.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "god-giving-health.jpg"; sourceTree = "<group>"; };
-		3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; sourceTree = "<group>"; };
-		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
+		377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3f9fd2eeea7e6464627135c7554403d3.jpg; path = "Project 4/3f9fd2eeea7e6464627135c7554403d3.jpg"; sourceTree = "<group>"; };
+		377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = d7c6904b68285dce2c0d033f8ca38f27.jpg; path = "Project 4/d7c6904b68285dce2c0d033f8ca38f27.jpg"; sourceTree = "<group>"; };
+		3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Feed-the-Hungry.jpg"; path = "Project 4/Feed-the-Hungry.jpg"; sourceTree = "<group>"; };
+		3779311C1E41271D00AF8826 /* god-giving-health.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "god-giving-health.jpg"; path = "Project 4/god-giving-health.jpg"; sourceTree = "<group>"; };
+		3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; path = "Project 4/11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; sourceTree = "<group>"; };
+		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Spirit-of-Giving.jpg"; path = "Project 4/Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
 		377931231E413B2800AF8826 /* VendorSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorSignupViewController.swift; sourceTree = "<group>"; };
 		377931261E4147F000AF8826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		377931281E41490B00AF8826 /* VendorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +60,7 @@
 		377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostSuccessfulViewController.swift; sourceTree = "<group>"; };
 		377931331E4411CE00AF8826 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		377931351E44CD8700AF8826 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapViewController.swift; sourceTree = "<group>"; };
+		377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerMapViewController.swift; path = "Project 4/ConsumerMapViewController.swift"; sourceTree = "<group>"; };
 		377931391E44D80700AF8826 /* LocationManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerModel.swift; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,9 +69,10 @@
 		37AA18261E3FEB7500042656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AA18291E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AA182B1E3FEB7500042656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37EACEB11E49153000EBC806 /* ConsumerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerViewController.swift; sourceTree = "<group>"; };
+		37EACEB11E49153000EBC806 /* ConsumerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerViewController.swift; path = "Project 4/ConsumerViewController.swift"; sourceTree = "<group>"; };
 		37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtensionClass.swift; sourceTree = "<group>"; };
 		37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningPageViewController.swift; sourceTree = "<group>"; };
+		37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUserRoleViewController.swift; sourceTree = "<group>"; };
 		37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +92,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3775F3581E4A5A9D00F39C07 /* Consumer */ = {
+			isa = PBXGroup;
+			children = (
+				3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */,
+				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
+				37EACEB11E49153000EBC806 /* ConsumerViewController.swift */,
+				3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */,
+			);
+			name = Consumer;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3775F35B1E4A5B1900F39C07 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */,
+				377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */,
+				3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */,
+				3779311C1E41271D00AF8826 /* god-giving-health.jpg */,
+				3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */,
+				3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */,
+			);
+			name = Images;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3775F35E1E4A666300F39C07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
+				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
+				377931151E411C1E00AF8826 /* DataModel.swift */,
+				377931331E4411CE00AF8826 /* DateExtension.swift */,
+				37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		377931251E413B2C00AF8826 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,30 +164,30 @@
 		37AA181E1E3FEB7500042656 /* Project 4 */ = {
 			isa = PBXGroup;
 			children = (
+				3775F35E1E4A666300F39C07 /* Models */,
+				3775F3541E4A4DF700F39C07 /* Project 4.entitlements */,
 				377931251E413B2C00AF8826 /* Vendor */,
-				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
-				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
+				3775F3581E4A5A9D00F39C07 /* Consumer */,
+				37EACEB81E4A3D9D00EBC806 /* Onboarding */,
 				37AA181F1E3FEB7500042656 /* AppDelegate.swift */,
 				37AA18211E3FEB7500042656 /* ViewController.swift */,
 				37AA18231E3FEB7500042656 /* Main.storyboard */,
 				37AA18261E3FEB7500042656 /* Assets.xcassets */,
-				377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */,
-				377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */,
-				3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */,
-				3779311C1E41271D00AF8826 /* god-giving-health.jpg */,
-				3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */,
-				3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */,
+				3775F35B1E4A5B1900F39C07 /* Images */,
 				37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */,
 				37AA182B1E3FEB7500042656 /* Info.plist */,
-				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
-				377931151E411C1E00AF8826 /* DataModel.swift */,
 				377931261E4147F000AF8826 /* GoogleService-Info.plist */,
-				37EACEB11E49153000EBC806 /* ConsumerViewController.swift */,
-				377931331E4411CE00AF8826 /* DateExtension.swift */,
-				37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */,
-				37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */,
 			);
 			path = "Project 4";
+			sourceTree = "<group>";
+		};
+		37EACEB81E4A3D9D00EBC806 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */,
+				37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		5D33FA3A1E365CBB2AC2F131 /* Frameworks */ = {
@@ -198,8 +243,13 @@
 				TargetAttributes = {
 					37AA181B1E3FEB7500042656 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = DZ528PGQF5;
+						DevelopmentTeam = R92756Z4HH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -297,10 +347,13 @@
 				37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */,
 				377931161E411C1E00AF8826 /* DataModel.swift in Sources */,
 				377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */,
+				37EACEBA1E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift in Sources */,
 				377931381E44CE1300AF8826 /* ConsumerMapViewController.swift in Sources */,
+				3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */,
 				3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */,
 				3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */,
 				37EACEB71E4A30E800EBC806 /* OpeningPageViewController.swift in Sources */,
+				3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */,
 				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
@@ -433,10 +486,11 @@
 			baseConfigurationReference = DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZ528PGQF5;
+				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";
+				DEVELOPMENT_TEAM = R92756Z4HH;
 				INFOPLIST_FILE = "Project 4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danhefter.Project-4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danhefter.Project4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -447,10 +501,11 @@
 			baseConfigurationReference = E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZ528PGQF5;
+				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";
+				DEVELOPMENT_TEAM = R92756Z4HH;
 				INFOPLIST_FILE = "Project 4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danhefter.Project-4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danhefter.Project4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

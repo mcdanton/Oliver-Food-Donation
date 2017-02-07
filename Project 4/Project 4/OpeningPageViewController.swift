@@ -10,9 +10,10 @@ import UIKit
 
 class OpeningPageViewController: UIViewController {
    
+   // MARK: Outlets
    
+
    
-   @IBOutlet weak var newButton: MyButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()

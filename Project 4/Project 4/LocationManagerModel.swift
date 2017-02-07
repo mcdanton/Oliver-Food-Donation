@@ -29,7 +29,6 @@ class LocationManagerModel: NSObject, CLLocationManagerDelegate {
       locationManager.delegate = self
       locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
       locationManager.requestWhenInUseAuthorization()
-      locationManager.requestLocation()
    }
    
    
