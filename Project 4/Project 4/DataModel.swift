@@ -76,11 +76,11 @@ class Post {
    var quantity: String
    var deadline: String
    var date: Date
-   var status = "Open"
+   var status: PostStatus = .open
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
-   init(title: String, description: String, quantity: String, deadline: String, date: Date, status: String) {
+   init(title: String, description: String, quantity: String, deadline: String, date: Date, status: PostStatus) {
       
       self.title = title
       self.description = description
@@ -108,7 +108,7 @@ class Post {
       date = Date(timeIntervalSince1970: postDate.value as! Double)
       
       let postStatus = snapshot.childSnapshot(forPath: "status")
-      status = postStatus.value as! String
+      status = PostStatus(rawValue: postStatus.value as! String)!
       
       uID = snapshot.key
       firebaseRef = snapshot.ref
