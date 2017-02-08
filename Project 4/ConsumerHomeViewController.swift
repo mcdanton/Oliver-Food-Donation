@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import INTULocationManager
 
 class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -32,6 +33,16 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
+      
+         FirebaseModel.sharedInstance.queryLocations(locationToQuery: location!, complete: { posts in
+            
+            print("-------------------\(posts)")
+            
+         })
+         
+      })
+      
       
     }
 

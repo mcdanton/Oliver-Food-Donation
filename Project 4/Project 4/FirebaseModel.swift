@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import CoreLocation
 import GeoFire
+import INTULocationManager
 
 
 class FirebaseModel {
@@ -109,34 +110,25 @@ class FirebaseModel {
    // MARK: Location Functions
    
    func addVendorLocation(foodPostingUID: String, title: String, description: String, quantity: String, deadline: String, date: Date) {
-      LocationManagerModel.sharedInstance.getLocation(complete: { location in
-         let vendorLocation = location
-         let key = foodPostingUID
-         let locationLat = vendorLocation.coordinate.latitude
-         let locationLong = vendorLocation.coordinate.longitude
+      
+      INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
          
-         self.geoFire.setLocation(CLLocation(latitude: locationLat, longitude: locationLong), forKey: key) { (error) in
-            if (error != nil) {
-               print("An error occured: \(error)")
-            } else {
-               
-               let locationRef = FIRDatabase.database().reference(withPath: key)
-               let postTitle = locationRef.child("title")
-               postTitle.setValue(title)
-               let postDescription = locationRef.child("description")
-               postDescription.setValue(description)
-               let postQuantity = locationRef.child("quantity")
-               postQuantity.setValue(quantity)
-               
-               let postDeadline = locationRef.child("deadline")
-               postDeadline.setValue(deadline)
-               let postDate = locationRef.child("datePosted")
-               postDate.setValue(date.timeIntervalSince1970)
-               let postStatus = locationRef.child("status")
-               postStatus.setValue("Open")
-               
-               print("Saved location successfully!")
+         guard let unwrappedSelf = self else { return }
+         if let unwrappedLocation = location {
+            let vendorLocation = location
+            let key = foodPostingUID
+            let locationLat = unwrappedLocation.coordinate.latitude
+            let locationLong = unwrappedLocation.coordinate.longitude
+            
+            unwrappedSelf.geoFire.setLocation(CLLocation(latitude: locationLat, longitude: locationLong), forKey: key) { (error) in
+               if (error != nil) {
+                  print("An error occured: \(error)")
+               } else {
+                  print("Saved location successfully!")
+               }
             }
+         } else {
+            print("location is nil")
          }
       })
    }
@@ -159,12 +151,22 @@ class FirebaseModel {
    
    // MARK: Queries
    
-   func queryLocations(locationToQuery: CLLocation) {
-      let query = self.geoFire.query(at: locationToQuery, withRadius: 0.6)
-      query?.observe(.keyEntered, with: { location in
-         
-         print("------------ THE LOCATION SEARCHED IS \(location)")
+   func queryLocations(locationToQuery: CLLocation, complete: @escaping ([Post]) -> ()) {
+      var arrayOfLocationKeys = [String]()
+      
+      let query = geoFire.query(at: locationToQuery, withRadius: 0.6)
+      
+      query?.observe(.keyEntered, with: { (locationKey, nil) in
+         guard let unwrappedLocationKey = locationKey else { return }
+         arrayOfLocationKeys.append(unwrappedLocationKey)
       })
+      
+      query?.observeReady({ [weak self] in
+         guard let unwrappedSelf = self else { return }
+         unwrappedSelf.matchFoodToArea(keysToSearch: arrayOfLocationKeys, complete: complete)
+      })
+      
+      
    }
    
    
@@ -210,7 +212,7 @@ class FirebaseModel {
    }
    
    
-   func matchingFoodToArea(keysToSearch: [String], complete: @escaping ([Post]) -> ()) {
+   func matchFoodToArea(keysToSearch: [String], complete: @escaping ([Post]) -> ()) {
       var arrayOfPosts = [Post]()
       
       let databaseRef = FIRDatabase.database().reference()
@@ -224,10 +226,10 @@ class FirebaseModel {
                arrayOfPosts.append(postInstance)
             }
          }
+         DispatchQueue.main.async {
+            complete(arrayOfPosts)
+         }
       })
-      DispatchQueue.main.async {
-         complete(arrayOfPosts)
-      }
    }
    
    
