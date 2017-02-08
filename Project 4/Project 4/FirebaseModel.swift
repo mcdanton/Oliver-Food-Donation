@@ -189,6 +189,30 @@ class FirebaseModel {
    }
    
    
+   func queryVendorPosts(searchPath: String, key:String, valueToSearch:String, success: @escaping ([Post]) -> ()) {
+      var arrayOfPosts = [Post]()
+      
+      let updatesRef = FIRDatabase.database().reference(withPath: searchPath)
+      let query = updatesRef.queryOrdered(byChild: key).queryEqual(toValue: valueToSearch)
+      
+      query.observeSingleEvent(of: .value, with: { snapshot in
+         
+         for post in snapshot.children {
+            
+            if let postSnapshot = post as? FIRDataSnapshot {
+               let postInstance = Post(snapshot: postSnapshot)
+               arrayOfPosts.append(postInstance)
+            }
+         }
+         DispatchQueue.main.async {
+            success(arrayOfPosts)
+         }
+      })
+   }
+
+   
+
+
    // MARK: Observe Functions
    
    func observePosts(success: @escaping ([Post]) -> ()) {
@@ -201,7 +225,7 @@ class FirebaseModel {
          for singlePost in allPostsSnapshot.children {
             
             if let postSnapshot = singlePost as? FIRDataSnapshot {
-               var postInstance = Post(snapshot: postSnapshot)
+               let postInstance = Post(snapshot: postSnapshot)
                arrayOfPosts.append(postInstance)
             }
          }

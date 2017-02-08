@@ -41,11 +41,12 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       
-      FirebaseModel.sharedInstance.observePosts(success: { [weak self] posts in
-         
+      FirebaseModel.sharedInstance.queryVendorPosts(searchPath: "foodPosted", key: "vendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfPosts in
          guard let unwrappedSelf = self else { return }
-         unwrappedSelf.allPosts = posts
+         unwrappedSelf.allPosts = arrayOfPosts
       })
+      
+   
    }
    
    override func didReceiveMemoryWarning() {
