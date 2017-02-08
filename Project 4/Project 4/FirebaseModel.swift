@@ -108,7 +108,7 @@ class FirebaseModel {
    
    // MARK: Location Functions
    
-   func addVendorLocation(foodPostingUID: String) {
+   func addVendorLocation(foodPostingUID: String, title: String, description: String, quantity: String, deadline: String, date: Date) {
       LocationManagerModel.sharedInstance.getLocation(complete: { location in
          let vendorLocation = location
          let key = foodPostingUID
@@ -119,6 +119,22 @@ class FirebaseModel {
             if (error != nil) {
                print("An error occured: \(error)")
             } else {
+               
+               let locationRef = FIRDatabase.database().reference(withPath: key)
+               let postTitle = locationRef.child("title")
+               postTitle.setValue(title)
+               let postDescription = locationRef.child("description")
+               postDescription.setValue(description)
+               let postQuantity = locationRef.child("quantity")
+               postQuantity.setValue(quantity)
+               
+               let postDeadline = locationRef.child("deadline")
+               postDeadline.setValue(deadline)
+               let postDate = locationRef.child("datePosted")
+               postDate.setValue(date.timeIntervalSince1970)
+               let postStatus = locationRef.child("status")
+               postStatus.setValue("Open")
+               
                print("Saved location successfully!")
             }
          }
@@ -128,27 +144,27 @@ class FirebaseModel {
    
    func retrieveLocation(){
       guard let unwrappedAuthenticatedUserUID = FIRAuth.auth()?.currentUser?.uid  else { return }
-         geoFire.getLocationForKey(unwrappedAuthenticatedUserUID, withCallback: { (location, error) in
-            if (error != nil) {
-               print("An error occurred getting the location for \(unwrappedAuthenticatedUserUID): \(error!.localizedDescription)")
-            } else if (location != nil) {
-               print("Location for \(unwrappedAuthenticatedUserUID) is: [\(location?.coordinate.latitude), \(location?.coordinate.longitude)]")
-            } else {
-               print("GeoFire does not contain a location for \(unwrappedAuthenticatedUserUID)")
-            }
-         })
+      geoFire.getLocationForKey(unwrappedAuthenticatedUserUID, withCallback: { (location, error) in
+         if (error != nil) {
+            print("An error occurred getting the location for \(unwrappedAuthenticatedUserUID): \(error!.localizedDescription)")
+         } else if (location != nil) {
+            print("Location for \(unwrappedAuthenticatedUserUID) is: [\(location?.coordinate.latitude), \(location?.coordinate.longitude)]")
+         } else {
+            print("GeoFire does not contain a location for \(unwrappedAuthenticatedUserUID)")
+         }
+      })
    }
    
    
-
+   
    // MARK: Queries
    
-   func queryLocations(locationToQuery: CLLocation, complete: @escaping [CLLocation]) {
+   func queryLocations(locationToQuery: CLLocation) {
       let query = self.geoFire.query(at: locationToQuery, withRadius: 0.6)
       query?.observe(.keyEntered, with: { location in
          
          print("------------ THE LOCATION SEARCHED IS \(location)")
-         })
+      })
    }
    
    
@@ -167,7 +183,7 @@ class FirebaseModel {
          print("HERE IS MORE LOCATION INFO is \(location)")
       }
       print("NO LOCATIONS RETURNED")
-
+      
    }
    
    
@@ -192,6 +208,28 @@ class FirebaseModel {
          }
       })
    }
+   
+   
+   func matchingFoodToArea(keysToSearch: [String], complete: @escaping ([Post]) -> ()) {
+      var arrayOfPosts = [Post]()
+      
+      let databaseRef = FIRDatabase.database().reference()
+      databaseRef.observeSingleEvent(of: .value, with: { snapshot in
+         
+         let allPostsSnapshot = snapshot.childSnapshot(forPath: "foodPosted")
+         
+         for key in keysToSearch {
+            if allPostsSnapshot.childSnapshot(forPath: key).exists() {
+               let postInstance = Post(snapshot: allPostsSnapshot.childSnapshot(forPath: key))
+               arrayOfPosts.append(postInstance)
+            }
+         }
+      })
+      DispatchQueue.main.async {
+         complete(arrayOfPosts)
+      }
+   }
+   
    
    
    

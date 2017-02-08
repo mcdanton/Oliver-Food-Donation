@@ -29,8 +29,8 @@ class VendorPostViewController: UIViewController {
       
       FirebaseModel.sharedInstance.postFood(title: self.postTitle.text!, description: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date(), complete: { foodPostingUID in
          
-         FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
-
+         FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID, title: self.postTitle.text!, description: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date())
+         
       })
       
    

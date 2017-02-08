@@ -15,7 +15,6 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    
    var allPosts = [DataModel.sharedInstance.post] {
       didSet {
-         tableViewOutlet.reloadData()
       }
    }
    
@@ -33,10 +32,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      LocationManagerModel.sharedInstance.getLocation(complete: { myLocation in
-         FirebaseModel.sharedInstance.queryLocations(locationToQuery: myLocation)
-      })
-
+      
     }
 
     override func didReceiveMemoryWarning() {

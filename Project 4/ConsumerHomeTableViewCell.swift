@@ -12,11 +12,8 @@ class ConsumerHomeTableViewCell: UITableViewCell {
    
    // MARK: Outlets
    
-   @IBOutlet weak var imageView: UIImageView!
-   @IBOutlet weak var postTitle: UILabel!
-   @IBOutlet weak var postDistance: UILabel!
-   @IBOutlet weak var postStatus: UILabel!
-   
+
+
    
    
 
