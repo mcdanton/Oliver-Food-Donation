@@ -16,6 +16,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    
    var allPosts = [DataModel.sharedInstance.post] {
       didSet {
+         consumerHomeTableViewOutlet.reloadData()
       }
    }
    
@@ -23,7 +24,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    
    // MARK: Outlets
    
-   
+   @IBOutlet weak var consumerHomeTableViewOutlet: UITableView!
    
    
    // MARK: Actions
@@ -35,10 +36,10 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
 
       INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
       
-         FirebaseModel.sharedInstance.queryLocations(locationToQuery: location!, complete: { posts in
+         FirebaseModel.sharedInstance.queryLocations(locationToQuery: location!, complete: { [weak self] posts in
             
-            print("-------------------\(posts)")
-            
+            guard let unwrappedSelf = self else { return }
+            unwrappedSelf.allPosts = posts
          })
          
       })
@@ -65,7 +66,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerHomeTableViewCell", for: indexPath) as! ConsumerHomeTableViewCell
       
-      
+      cell.foodPostTitle.text = allPosts[indexPath.row]?.title
       
       
       return cell

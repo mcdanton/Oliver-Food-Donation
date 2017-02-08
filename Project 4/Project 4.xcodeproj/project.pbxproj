@@ -32,7 +32,6 @@
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
 		37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18261E3FEB7500042656 /* Assets.xcassets */; };
 		37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */; };
-		37EACEB21E49153000EBC806 /* ConsumerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB11E49153000EBC806 /* ConsumerViewController.swift */; };
 		37EACEB51E4A2C4F00EBC806 /* ButtonExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */; };
 		37EACEB71E4A30E800EBC806 /* OpeningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */; };
 		37EACEBA1E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */; };
@@ -69,7 +68,6 @@
 		37AA18261E3FEB7500042656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AA18291E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AA182B1E3FEB7500042656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37EACEB11E49153000EBC806 /* ConsumerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerViewController.swift; path = "Project 4/ConsumerViewController.swift"; sourceTree = "<group>"; };
 		37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtensionClass.swift; sourceTree = "<group>"; };
 		37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningPageViewController.swift; sourceTree = "<group>"; };
 		37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUserRoleViewController.swift; sourceTree = "<group>"; };
@@ -96,9 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */,
-				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
-				37EACEB11E49153000EBC806 /* ConsumerViewController.swift */,
 				3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */,
+				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
 			);
 			name = Consumer;
 			path = ..;
@@ -358,7 +355,6 @@
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
 				37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */,
-				37EACEB21E49153000EBC806 /* ConsumerViewController.swift in Sources */,
 				3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */,
 				37EACEB51E4A2C4F00EBC806 /* ButtonExtensionClass.swift in Sources */,
 				377931341E4411CE00AF8826 /* DateExtension.swift in Sources */,

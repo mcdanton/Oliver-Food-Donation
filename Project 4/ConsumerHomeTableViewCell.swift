@@ -12,9 +12,10 @@ class ConsumerHomeTableViewCell: UITableViewCell {
    
    // MARK: Outlets
    
-
-
-   
+   @IBOutlet weak var foodPostTitle: UILabel!
+   @IBOutlet weak var foodPostDistance: UILabel!
+   @IBOutlet weak var foodPostStatus: UILabel!
+   @IBOutlet weak var foodPostImage: UIImageView!
    
 
     override func awakeFromNib() {

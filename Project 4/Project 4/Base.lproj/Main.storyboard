@@ -800,6 +800,12 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodPostDistance" destination="T73-dQ-8Ue" id="4UR-rl-r09"/>
+                                            <outlet property="foodPostImage" destination="GNk-uX-Frs" id="eNw-qu-3o3"/>
+                                            <outlet property="foodPostStatus" destination="8yx-cB-M7S" id="CB0-mw-uLy"/>
+                                            <outlet property="foodPostTitle" destination="Pba-OU-eRU" id="Xne-Bd-9fa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -811,6 +817,9 @@
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="nkw-Fc-NKh"/>
+                    <connections>
+                        <outlet property="consumerHomeTableViewOutlet" destination="fd4-oN-RoO" id="kDf-Lu-VUC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpv-nv-qYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
