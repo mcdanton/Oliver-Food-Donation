@@ -30,6 +30,11 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    }
    
    
+   // MARK: Properties
+   
+   var currentPost: Post?
+   
+   
    
    // MARK: Outlets
    @IBOutlet weak var tableViewOutlet: UITableView!
@@ -88,12 +93,16 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       var cell:UITableViewCell?
+      guard let currentPost = currentPost else { return cell! }
       
       switch Sections(rawValue: indexPath.section)! {
       case .main:
          switch MainRows(rawValue: indexPath.row)! {
          case .GeneralFoodInfo:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailGeneralFoodInfoTableViewCell", for: indexPath)
+            let generalFoodInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailGeneralFoodInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailGeneralFoodInfoTableViewCell
+            
+            generalFoodInfoCell.foodTitle.text! = currentPost.title
+            cell = generalFoodInfoCell
          case .VendorInfo:
             cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailVendorInfoTableViewCell", for: indexPath)
          case .AdditionalInfo:

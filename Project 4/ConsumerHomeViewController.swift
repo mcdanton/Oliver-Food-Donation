@@ -30,68 +30,77 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    // MARK: Actions
    
    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
       
-      if LocationManagerModel.locationAccessGranted {
-
-      INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
+      
+      LocationManagerModel.wasLocationRequested(complete: { success in
          
-         switch status {
-         case .success:
-            FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] posts in
+         print("-------_______---------- I succeeded!!!")
+         if LocationManagerModel.locationAccessGranted {
+            
+            INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
                
-               guard let unwrappedSelf = self else { return }
-               unwrappedSelf.allPosts = posts
+               switch status {
+               case .success:
+                  // Consider moving to the main thread - check INTULocation Manager Request Location function block for details
+                  FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] posts in
+                     
+                     guard let unwrappedSelf = self else { return }
+                     unwrappedSelf.allPosts = posts
+                  })
+               case .servicesDenied:
+                  guard let unwrappedSelf = self else { return }
+                  let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(action)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               case .servicesDisabled:
+                  guard let unwrappedSelf = self else { return }
+                  let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(action)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               case .servicesRestricted:
+                  guard let unwrappedSelf = self else { return }
+                  let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location. Please visit Settings > Privacy > Location Services to enable Location", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(action)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               case .timedOut:
+                  guard let unwrappedSelf = self else { return }
+                  let alertController = UIAlertController(title: "Location Request Timed Out", message: "We are having trouble accessing your location. Please try again.", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(action)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               case .servicesNotDetermined:
+                  guard let unwrappedSelf = self else { return }
+                  let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(action)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               default:
+                  break
+               }
             })
-         case .servicesDenied:
-            guard let unwrappedSelf = self else { return }
+            
+         } else {
             let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(action)
-            unwrappedSelf.present(alertController, animated: true, completion: nil)
-         case .servicesDisabled:
-            guard let unwrappedSelf = self else { return }
-            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(action)
-            unwrappedSelf.present(alertController, animated: true, completion: nil)
-         case .servicesRestricted:
-            guard let unwrappedSelf = self else { return }
-            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(action)
-            unwrappedSelf.present(alertController, animated: true, completion: nil)
-         case .timedOut:
-            guard let unwrappedSelf = self else { return }
-            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(action)
-            unwrappedSelf.present(alertController, animated: true, completion: nil)
-         case .servicesNotDetermined:
-            guard let unwrappedSelf = self else { return }
-            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(action)
-            unwrappedSelf.present(alertController, animated: true, completion: nil)
-         default:
-            break
+            self.present(alertController, animated: true, completion: nil)
          }
+         
       })
       
-      } else {
-         LocationManagerModel.requestLocationAccess()
-         
-      }
-      
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   }
    
+   
+   // Used to bring Consumer back to home page after successful food request
+   @IBAction func consumerRequestSuccessfulVCToConsumerHomeVC(_ sender: UIStoryboardSegue) {
+   }
+
    
    
    
@@ -103,15 +112,25 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    }
    
    
+   
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerHomeTableViewCell", for: indexPath) as! ConsumerHomeTableViewCell
       
       cell.foodPostTitle.text = allPosts[indexPath.row]?.title
       
-      
       return cell
    }
    
-
+   
+   
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "ConsumerHomeVCToConsumerFoodPostDetailVC" {
+         let consumerFoodPostDetailVC = segue.destination as! ConsumerFoodPostDetailViewController
+         if let indexPathRow = consumerHomeTableViewOutlet.indexPathForSelectedRow?.row {
+            consumerFoodPostDetailVC.currentPost = allPosts[indexPathRow]
+         }
+      }
+   }
+   
    
 }

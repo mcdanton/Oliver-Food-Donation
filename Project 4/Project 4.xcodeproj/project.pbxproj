@@ -39,6 +39,7 @@
 		37C85FD61E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD51E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift */; };
 		37C85FD81E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD71E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift */; };
 		37C85FDA1E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD91E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift */; };
+		37C85FDC1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */; };
 		37EACEB51E4A2C4F00EBC806 /* ButtonExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */; };
 		37EACEB71E4A30E800EBC806 /* OpeningPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */; };
 		37EACEBA1E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */; };
@@ -82,6 +83,7 @@
 		37C85FD51E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift; sourceTree = "<group>"; };
 		37C85FD71E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailMessageToVendorTableViewCell.swift; sourceTree = "<group>"; };
 		37C85FD91E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailSubmitButtonTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerRequestSuccessfulViewController.swift; sourceTree = "<group>"; };
 		37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtensionClass.swift; sourceTree = "<group>"; };
 		37EACEB61E4A30E800EBC806 /* OpeningPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningPageViewController.swift; sourceTree = "<group>"; };
 		37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUserRoleViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */,
 				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
 				37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */,
+				37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */,
 			);
 			name = Consumer;
 			path = ..;
@@ -372,6 +375,7 @@
 			files = (
 				37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */,
 				377931161E411C1E00AF8826 /* DataModel.swift in Sources */,
+				37C85FDC1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift in Sources */,
 				377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */,
 				37EACEBA1E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift in Sources */,
 				37C85FD41E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift in Sources */,

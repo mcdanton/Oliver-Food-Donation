@@ -13,12 +13,38 @@ struct LocationManagerModel {
    
    static let manager = CLLocationManager()
    
+   // MARK: Determining Location Authorization Status
+   
+   static var locationAccessNotYetAsked : Bool {
+      return CLLocationManager.authorizationStatus() == .notDetermined
+   }
+   
+   
    static var locationAccessGranted : Bool {
       return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
    }
    
    static func requestLocationAccess() {
       manager.requestWhenInUseAuthorization()
+   }
+   
+   
+   
+//   static func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//   }
+//      if status == .authorizedWhenInUse {
+//
+//      }
+//   }
+   
+   static func wasLocationRequested(complete: () -> ()) {
+      
+      if locationAccessNotYetAsked {
+         LocationManagerModel.requestLocationAccess()
+         complete()
+      } else {
+         complete()
+      }
    }
    
 }
