@@ -33,17 +33,57 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      if LocationManagerModel.locationAccessGranted {
 
       INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
-      
-         FirebaseModel.sharedInstance.queryLocations(locationToQuery: location!, complete: { [weak self] posts in
-            
-            guard let unwrappedSelf = self else { return }
-            unwrappedSelf.allPosts = posts
-         })
          
+         switch status {
+         case .success:
+            FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] posts in
+               
+               guard let unwrappedSelf = self else { return }
+               unwrappedSelf.allPosts = posts
+            })
+         case .servicesDenied:
+            guard let unwrappedSelf = self else { return }
+            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            unwrappedSelf.present(alertController, animated: true, completion: nil)
+         case .servicesDisabled:
+            guard let unwrappedSelf = self else { return }
+            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            unwrappedSelf.present(alertController, animated: true, completion: nil)
+         case .servicesRestricted:
+            guard let unwrappedSelf = self else { return }
+            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            unwrappedSelf.present(alertController, animated: true, completion: nil)
+         case .timedOut:
+            guard let unwrappedSelf = self else { return }
+            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            unwrappedSelf.present(alertController, animated: true, completion: nil)
+         case .servicesNotDetermined:
+            guard let unwrappedSelf = self else { return }
+            let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            unwrappedSelf.present(alertController, animated: true, completion: nil)
+         default:
+            break
+         }
       })
       
+      } else {
+         LocationManagerModel.requestLocationAccess()
+         
+      }
       
     }
 

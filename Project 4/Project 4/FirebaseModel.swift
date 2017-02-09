@@ -151,10 +151,11 @@ class FirebaseModel {
    
    // MARK: Queries
    
-   func queryLocations(locationToQuery: CLLocation, complete: @escaping ([Post]) -> ()) {
+   func queryLocations(locationToQuery: CLLocation?, complete: @escaping ([Post]) -> ()) {
       var arrayOfLocationKeys = [String]()
       
-      let query = geoFire.query(at: locationToQuery, withRadius: 0.6)
+      guard let unwrappedLocation = locationToQuery else { complete([]); return }
+      let query = geoFire.query(at: unwrappedLocation, withRadius: 0.6)
       
       query?.observe(.keyEntered, with: { (locationKey, nil) in
          guard let unwrappedLocationKey = locationKey else { return }
@@ -166,25 +167,6 @@ class FirebaseModel {
          unwrappedSelf.matchFoodToArea(keysToSearch: arrayOfLocationKeys, complete: complete)
       })
       
-      
-   }
-   
-   
-   func queryLocation() {
-      var locations = [CLLocation]()
-      let center = CLLocation(latitude: 37.785834, longitude: -122.406417)
-      // Query locations at [37.7832889, -122.4056973] with a radius of 600 meters
-      var circleQuery = geoFire.query(at: center, withRadius: 0.6)
-      
-      // Query location by region
-      let span = MKCoordinateSpanMake(0.001, 0.001)
-      let region = MKCoordinateRegionMake(center.coordinate, span)
-      var regionQuery = geoFire.query(with: region)
-      
-      for location in locations {
-         print("HERE IS MORE LOCATION INFO is \(location)")
-      }
-      print("NO LOCATIONS RETURNED")
       
    }
    

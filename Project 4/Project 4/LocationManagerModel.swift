@@ -8,10 +8,17 @@
 
 import Foundation
 import CoreLocation
-import MapKit
 
-class LocationManagerModel: NSObject {
+struct LocationManagerModel {
    
+   static let manager = CLLocationManager()
    
+   static var locationAccessGranted : Bool {
+      return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
+   }
+   
+   static func requestLocationAccess() {
+      manager.requestWhenInUseAuthorization()
+   }
    
 }
