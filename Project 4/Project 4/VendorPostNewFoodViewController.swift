@@ -46,6 +46,9 @@ class VendorPostNewFoodViewController: UIViewController, UITableViewDelegate, UI
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(notification: )), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
       
       
+      tableViewOutlet.rowHeight = UITableViewAutomaticDimension
+      tableViewOutlet.estimatedRowHeight = 44.0
+      
    }
    
    
@@ -141,7 +144,32 @@ class VendorPostNewFoodViewController: UIViewController, UITableViewDelegate, UI
    
    
    
-   
-   
-   
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      
+      switch MainRows(rawValue: indexPath.row)! {
+      case .foodTitle:
+         return 100
+         
+      case .foodQuantity:
+         return 100
+         
+      case .foodDuration:
+
+         return 100
+      case .foodLocation:
+
+         return 100
+      case .foodAdditionalInfo:
+
+         return 50
+      case .foodUploadImage:
+
+         return 100
+      case .foodPostButton:
+          return 50
+         
+      default:
+         return 75
+      }
+   }
 }

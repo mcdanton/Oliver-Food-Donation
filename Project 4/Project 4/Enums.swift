@@ -8,10 +8,18 @@
 
 import Foundation
 
+
 enum PostStatus: String {
    
    case open = "Open"
    case pending = "Pending"
    case closed = "Closed"
+}
+
+
+enum UserRole: String {
+   
+   case vendor = "Vendor"
+   case consumer = "Consumer"
    
 }

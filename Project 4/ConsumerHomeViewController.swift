@@ -14,24 +14,14 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    
    // MARK: Properties
    
-   var allPosts = [DataModel.sharedInstance.post] {
+   var allPosts = [Post]() {
       didSet {
+         
+         allPosts = allPosts.filter() { $0.status == .open }
+         
          consumerHomeTableViewOutlet.reloadData()
       }
    }
-   
-   
-//   var openPosts = [DataModel.sharedInstance.post] {
-//      get {
-//         var tempOpenPostsArray = [Post]()
-//         for post in allPosts {
-//            if post?.status == .open {
-//               tempOpenPostsArray.append(post!)
-//            }
-//         }
-//         return tempOpenPostsArray
-//      }
-//   }
    
    
    // MARK: Outlets
@@ -128,7 +118,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerHomeTableViewCell", for: indexPath) as! ConsumerHomeTableViewCell
       
-      cell.foodPostTitle.text = allPosts[indexPath.row]?.title
+      cell.foodPostTitle.text = allPosts[indexPath.row].title
       
       return cell
    }
