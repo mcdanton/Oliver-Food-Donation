@@ -83,15 +83,15 @@ class FirebaseModel {
    
    // MARK: Food Postings
    
-   func postFood(title: String, description: String, quantity: String, deadline: String, date: Date, complete: @escaping (String) -> ()) {
+   func postFood(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, complete: @escaping (String) -> ()) {
       guard let currentUser = FIRAuth.auth()?.currentUser?.uid else { return }
       
       let foodRef = FIRDatabase.database().reference(withPath: "foodPosted")
       let foodChild = foodRef.childByAutoId()
       let postTitle = foodChild.child("title")
       postTitle.setValue(title)
-      let postDescription = foodChild.child("description")
-      postDescription.setValue(description)
+      let postAdditionalInfo = foodChild.child("additionalInfo")
+      postAdditionalInfo.setValue(additionalInfo)
       let postQuantity = foodChild.child("quantity")
       postQuantity.setValue(quantity)
       
@@ -109,7 +109,7 @@ class FirebaseModel {
    
    // MARK: Location Functions
    
-   func addVendorLocation(foodPostingUID: String, title: String, description: String, quantity: String, deadline: String, date: Date) {
+   func addVendorLocation(foodPostingUID: String, title: String, additionalInfo: String, quantity: String, deadline: String, date: Date) {
       
       INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
          

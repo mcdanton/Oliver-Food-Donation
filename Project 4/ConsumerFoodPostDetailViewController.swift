@@ -126,15 +126,28 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
             let generalFoodInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailGeneralFoodInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailGeneralFoodInfoTableViewCell
             
             generalFoodInfoCell.foodTitle.text! = currentPost.title
+            generalFoodInfoCell.foodAmount.text! = currentPost.quantity
             cell = generalFoodInfoCell
          case .VendorInfo:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailVendorInfoTableViewCell", for: indexPath)
+            let vendorInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailVendorInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailVendorInfoTableViewCell
+            
+            cell = vendorInfoCell
          case .AdditionalInfo:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailAdditionalInfoTableViewCell", for: indexPath)
+            let additionalInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailAdditionalInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailAdditionalInfoTableViewCell
+            
+            additionalInfoCell.additionalDetails.text = currentPost.additionalInfo
+            cell = additionalInfoCell
+            
+            
          case .MessageToVendor:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailMessageToVendorTableViewCell", for: indexPath)
+            let messageToVendorCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailMessageToVendorTableViewCell", for: indexPath) as! ConsumerFoodPostDetailMessageToVendorTableViewCell
+            
+            
+            cell = messageToVendorCell
          case .SubmitButton:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailSubmitButtonTableViewCell", for: indexPath)
+            let submitButtonCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailSubmitButtonTableViewCell", for: indexPath) as! ConsumerFoodPostDetailSubmitButtonTableViewCell
+            
+            cell = submitButtonCell
          }
       }
       return cell!

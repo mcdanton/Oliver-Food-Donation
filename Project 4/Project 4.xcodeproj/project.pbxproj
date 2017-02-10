@@ -28,6 +28,8 @@
 		377931361E44CD8700AF8826 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377931351E44CD8700AF8826 /* CoreLocation.framework */; };
 		377931381E44CE1300AF8826 /* ConsumerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */; };
 		3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931391E44D80700AF8826 /* LocationManagerModel.swift */; };
+		379A62171E4E51C3006FD48C /* VendorRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */; };
+		379A62191E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */; };
 		37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA181F1E3FEB7500042656 /* AppDelegate.swift */; };
 		37AA18221E3FEB7500042656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA18211E3FEB7500042656 /* ViewController.swift */; };
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		377931351E44CD8700AF8826 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerMapViewController.swift; path = "Project 4/ConsumerMapViewController.swift"; sourceTree = "<group>"; };
 		377931391E44D80700AF8826 /* LocationManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerModel.swift; sourceTree = "<group>"; };
+		379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorRequestsViewController.swift; sourceTree = "<group>"; };
+		379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AA18211E3FEB7500042656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,9 +155,9 @@
 		3775F35E1E4A666300F39C07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
-				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
 				377931151E411C1E00AF8826 /* DataModel.swift */,
+				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
+				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
 				377931331E4411CE00AF8826 /* DateExtension.swift */,
 				37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */,
 				3775F3801E4BDC6C00F39C07 /* Enums.swift */,
@@ -169,6 +173,7 @@
 				3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */,
 				3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */,
 				377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */,
+				379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				37C85FE81E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift */,
 				37C85FEA1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift */,
 				37C85FEC1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift */,
+				379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */,
 			);
 			name = TableViewItems;
 			sourceTree = "<group>";
@@ -413,11 +419,13 @@
 				37C85FD41E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift in Sources */,
 				377931381E44CE1300AF8826 /* ConsumerMapViewController.swift in Sources */,
 				37C85FDA1E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift in Sources */,
+				379A62191E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift in Sources */,
 				3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */,
 				37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */,
 				37C85FE51E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift in Sources */,
 				37C85FD61E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift in Sources */,
 				3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */,
+				379A62171E4E51C3006FD48C /* VendorRequestsViewController.swift in Sources */,
 				3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */,
 				3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */,
 				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,

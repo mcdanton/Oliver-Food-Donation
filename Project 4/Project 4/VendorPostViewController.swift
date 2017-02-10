@@ -27,9 +27,9 @@ class VendorPostViewController: UIViewController {
    @IBAction func postButtonPressed(_ sender: Any) {
       
       
-      FirebaseModel.sharedInstance.postFood(title: self.postTitle.text!, description: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date(), complete: { foodPostingUID in
+      FirebaseModel.sharedInstance.postFood(title: self.postTitle.text!, additionalInfo: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date(), complete: { foodPostingUID in
          
-         FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID, title: self.postTitle.text!, description: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date())
+         FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID, title: self.postTitle.text!, additionalInfo: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date())
          
       })
       

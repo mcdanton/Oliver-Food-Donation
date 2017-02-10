@@ -72,7 +72,7 @@ class FoodVendor {
 class Post {
    
    var title: String
-   var description: String
+   var additionalInfo: String
    var quantity: String
    var deadline: String
    var date: Date
@@ -80,10 +80,10 @@ class Post {
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
-   init(title: String, description: String, quantity: String, deadline: String, date: Date, status: PostStatus) {
+   init(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, status: PostStatus) {
       
       self.title = title
-      self.description = description
+      self.additionalInfo = additionalInfo
       self.quantity = quantity
       self.deadline = deadline
       self.date = date
@@ -95,8 +95,8 @@ class Post {
       let postTitle = snapshot.childSnapshot(forPath: "title")
       title = postTitle.value as! String
       
-      let postDescription = snapshot.childSnapshot(forPath: "description")
-      description = postDescription.value as! String
+      let postadditionalInfo = snapshot.childSnapshot(forPath: "additionalInfo")
+      additionalInfo = postadditionalInfo.value as! String
       
       let postQuantity = snapshot.childSnapshot(forPath: "quantity")
       quantity = postQuantity.value as! String

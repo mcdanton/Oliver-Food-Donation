@@ -119,6 +119,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
       let cell = tableView.dequeueReusableCell(withIdentifier: "ConsumerHomeTableViewCell", for: indexPath) as! ConsumerHomeTableViewCell
       
       cell.foodPostTitle.text = allPosts[indexPath.row].title
+      cell.foodPostStatus.text = allPosts[indexPath.row].status.rawValue
       
       return cell
    }
