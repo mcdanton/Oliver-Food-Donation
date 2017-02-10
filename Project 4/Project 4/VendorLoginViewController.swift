@@ -19,9 +19,6 @@ class VendorLoginViewController: UIViewController {
    
    //MARK: Actions
    
-   @IBAction func loginAsUserPressed(_ sender: Any) {
-   }
-   
    @IBAction func dontHaveAccountPressed(_ sender: Any) {
    }
    

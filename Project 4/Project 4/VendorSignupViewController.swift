@@ -11,7 +11,11 @@ import UIKit
 class VendorSignupViewController: UIViewController {
    
    
-   //MARK: Outlets
+   // MARK: Properties
+   
+   var userRole: String?
+   
+   // MARK: Outlets
 
    @IBOutlet weak var vendorNameTF: UITextField!
    @IBOutlet weak var vendorEmailTF: UITextField!
@@ -21,22 +25,17 @@ class VendorSignupViewController: UIViewController {
    @IBOutlet weak var registerButtonOutlet: UIButton!
    
    
-   //MARK: Actions
-   
-   @IBAction func signInAsUserPressed(_ sender: Any) {
-      
-   }
+   // MARK: Actions
    
    @IBAction func alreadyHaveAnAccountPressed(_ sender: Any) {
    }
    
    @IBAction func registerPressed(_ sender: Any) {
       validateVendor()
-      
    }
    
    
-   //MARK: View Did Load
+   // MARK: View Did Load
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -51,7 +50,7 @@ class VendorSignupViewController: UIViewController {
    }
    
    
-   //MARK: Additional Functions
+   // MARK: Additional Functions
    
    func validateVendor() {
       

@@ -1,27 +1,24 @@
 //
-//  VendorHomeTableViewCell.swift
+//  VendorFoodDurationTableViewCell.swift
 //  Project 4
 //
-//  Created by Dan Hefter on 1/31/17.
+//  Created by Dan Hefter on 2/9/17.
 //  Copyright © 2017 GA. All rights reserved.
 //
 
 import UIKit
 
-class VendorHomeTableViewCell: UITableViewCell {
+class VendorFoodDurationTableViewCell: UITableViewCell {
    
    
    // MARK: Outlets
    
-
-   @IBOutlet weak var postTitle: UILabel!
-   @IBOutlet weak var postDate: UILabel!
-   @IBOutlet weak var postStatus: UILabel!
-   @IBOutlet weak var postImage: UIImageView!
-      
-
+   @IBOutlet weak var foodDuration: UILabel!
+   @IBOutlet weak var foodDurationTextField: UITextField!
    
    
+   
+   // MARK: View Functions
 
     override func awakeFromNib() {
         super.awakeFromNib()
