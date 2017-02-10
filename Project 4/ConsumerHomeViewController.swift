@@ -21,6 +21,18 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    }
    
    
+//   var openPosts = [DataModel.sharedInstance.post] {
+//      get {
+//         var tempOpenPostsArray = [Post]()
+//         for post in allPosts {
+//            if post?.status == .open {
+//               tempOpenPostsArray.append(post!)
+//            }
+//         }
+//         return tempOpenPostsArray
+//      }
+//   }
+   
    
    // MARK: Outlets
    
@@ -100,7 +112,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    // Used to bring Consumer back to home page after successful food request
    @IBAction func consumerRequestSuccessfulVCToConsumerHomeVC(_ sender: UIStoryboardSegue) {
    }
-
+   
    
    
    
@@ -125,9 +137,11 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "ConsumerHomeVCToConsumerFoodPostDetailVC" {
-         let consumerFoodPostDetailVC = segue.destination as! ConsumerFoodPostDetailViewController
          if let indexPathRow = consumerHomeTableViewOutlet.indexPathForSelectedRow?.row {
+            let consumerFoodPostDetailVC = segue.destination as! ConsumerFoodPostDetailViewController
             consumerFoodPostDetailVC.currentPost = allPosts[indexPathRow]
+         } else {
+            print("THERE IS NO CURRENT POST SELECTED")
          }
       }
    }

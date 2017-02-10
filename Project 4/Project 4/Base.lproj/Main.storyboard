@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fcd-BQ-gWs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EMX-Il-XUV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -623,7 +623,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vf-k8-35O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="144"/>
+            <point key="canvasLocation" x="372" y="143"/>
         </scene>
         <!--Item-->
         <scene sceneID="IW1-gY-CrS">
@@ -642,7 +642,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qo2-4A-19y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="950" y="143"/>
+            <point key="canvasLocation" x="1057" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l0k-ml-mBT">
@@ -1131,15 +1131,13 @@
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="eag-QR-uVL" kind="show" id="Cth-bi-H2d"/>
+                                                        <action selector="submitButtonPressed:" destination="zsA-13-SLP" eventType="touchUpInside" id="aBr-G2-t6e"/>
+                                                        <segue destination="eag-QR-uVL" kind="show" identifier="ConsumerFoodPostDetailVCToConsumerRequestSuccessfulVC" id="Cth-bi-H2d"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="submitButtonPressed" destination="uPn-pk-s9v" id="z7E-YJ-zIo"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

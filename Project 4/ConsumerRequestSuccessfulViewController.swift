@@ -9,7 +9,14 @@
 import UIKit
 
 class ConsumerRequestSuccessfulViewController: UIViewController {
+   
+   // MARK: Properties
+   
+   var currentPost: Post?
+   
 
+   
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 

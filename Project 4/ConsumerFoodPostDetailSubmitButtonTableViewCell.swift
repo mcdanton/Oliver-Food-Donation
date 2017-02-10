@@ -13,7 +13,7 @@ class ConsumerFoodPostDetailSubmitButtonTableViewCell: UITableViewCell {
    
    // MARK: Properties
    
-   
+   var currentPost: Post?
    
    // MARK: Outlets
    
@@ -22,7 +22,12 @@ class ConsumerFoodPostDetailSubmitButtonTableViewCell: UITableViewCell {
    
    // MARK: Actions
    
-   @IBOutlet weak var submitButtonPressed: UIButton!
+   @IBAction func submitButtonPressed(_ sender: Any) {
+      
+      
+      
+   }
+   
    
    
    

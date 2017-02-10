@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -77,6 +80,27 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    }
    
    
+   // MARK: Prepare For Segue
+   
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "ConsumerFoodPostDetailVCToConsumerRequestSuccessfulVC" {
+         if let currentPost = currentPost {
+               let ConsumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
+               let foodPostedRef = FIRDatabase.database().reference(withPath: "foodPosted").child(currentPost.uID!)
+               foodPostedRef.updateChildValues(["status" : PostStatus.pending.rawValue], withCompletionBlock: { [weak self] (error, databaseReference) in
+                  if error != nil {
+                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                     
+                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                     alertController.addAction(defaultAction)
+                     
+                     self?.present(alertController, animated: true, completion: nil)
+                  }
+               })
+         }
+      }
+   }
+   
    
    // MARK: Table View Functions
    
@@ -115,7 +139,6 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
       }
       return cell!
    }
-   
    
    
    
