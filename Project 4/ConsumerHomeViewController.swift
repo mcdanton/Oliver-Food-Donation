@@ -197,6 +197,7 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
       
       cell.foodPostTitle.text = allPosts[indexPath.row].title
       cell.foodPostStatus.text = allPosts[indexPath.row].status.rawValue
+      cell.postImageURL = allPosts[indexPath.row].imageURL
       
       return cell
    }

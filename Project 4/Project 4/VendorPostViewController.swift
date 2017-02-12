@@ -8,13 +8,16 @@
 
 import UIKit
 import CoreLocation
+import Firebase
+import FirebaseStorage
 
 class VendorPostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
    
    // MARK: Properties
    
    let imagePicker = UIImagePickerController()
-   var imageHasBeenSet: Bool = false
+   var imageToPost: UIImage?
+   var imageDownloadURL = ""
    
    
    // MARK: Outlets
@@ -46,20 +49,66 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
          imagePicker.sourceType = UIImagePickerControllerSourceType.camera
          imagePicker.allowsEditing = true
          self.present(imagePicker, animated: true, completion: nil)
+      } else {
+         let alertController = UIAlertController(title: "No Camera", message: "Unable to access the camera", preferredStyle: .alert)
+         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+         alertController.addAction(action)
+         self.present(alertController, animated: true, completion: nil)
       }
    }
    
    
+   
    @IBAction func postButtonPressed(_ sender: Any) {
       
-      
-      FirebaseModel.sharedInstance.postFood(title: self.postTitle.text!, additionalInfo: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date(), complete: { foodPostingUID in
+      if let postImage = imageToPost {
          
-         FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID, title: self.postTitle.text!, additionalInfo: self.postDescription.text!, quantity: self.quantity.text!, deadline: self.deadline.text!, date: Date())
+         let imageStorageUID = UUID().uuidString
          
-      })
-      
-      self.view.alpha = 0
+         let uploadData = UIImageJPEGRepresentation(postImage, 0.1)
+         
+         let storageRef = FIRStorage.storage().reference()
+         let imageRef = storageRef.child(imageStorageUID)
+         
+         let _ = imageRef.put(uploadData!, metadata: nil, completion: { [weak self] (metadata, error) in
+            guard let unwrappedSelf = self else {return}
+            let downloadURL = metadata?.downloadURL()?.absoluteString
+            print(downloadURL!)
+            unwrappedSelf.imageDownloadURL = downloadURL!
+            
+            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+               print("----------- LOOKING GOOD!! ---------------")
+
+               
+               FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
+               print("----------- THANKS YOU TOO!! ---------------")
+
+            })
+         })
+      } else {
+         let postImage = UIImage(named: "Apple")
+         let imageStorageUID = UUID().uuidString
+         
+         let uploadData = UIImageJPEGRepresentation(postImage!, 0.1)
+         
+         let storageRef = FIRStorage.storage().reference()
+         let imageRef = storageRef.child(imageStorageUID)
+         
+         let _ = imageRef.put(uploadData!, metadata: nil, completion: { [weak self] (metadata, error) in
+            guard let unwrappedSelf = self else {return}
+            let downloadURL = metadata?.downloadURL()?.absoluteString
+            print(downloadURL!)
+            unwrappedSelf.imageDownloadURL = downloadURL!
+            
+            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+               
+               print("----------- I WORKED!! ---------------")
+               FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
+               print("----------- SO DID I !! ---------------")
+
+            })
+         })
+      }
    }
    
    
@@ -78,10 +127,13 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       if (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil {
          if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             postImageView.image = image
-            imageHasBeenSet = true
+            imageToPost = image
          }
       } else {
-         print("THERE WAS A PROBLEM WITH THE IMAGE SELECTED")
+         let alertController = UIAlertController(title: "No Image", message: "There was a problem with the selected image", preferredStyle: .alert)
+         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+         alertController.addAction(action)
+         self.present(alertController, animated: true, completion: nil)
       }
       self.dismiss(animated: true, completion: nil)
    }

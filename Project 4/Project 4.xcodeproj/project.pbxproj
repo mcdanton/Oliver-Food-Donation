@@ -35,6 +35,7 @@
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
 		37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18261E3FEB7500042656 /* Assets.xcassets */; };
 		37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */; };
+		37B2C1421E51186C00F88227 /* ImageFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1411E51186C00F88227 /* ImageFetch.swift */; };
 		37C85FCD1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */; };
 		37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */; };
 		37C85FD41E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		37AA18261E3FEB7500042656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AA18291E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AA182B1E3FEB7500042656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37B2C1411E51186C00F88227 /* ImageFetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetch.swift; sourceTree = "<group>"; };
 		37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailViewController.swift; sourceTree = "<group>"; };
 		37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift; sourceTree = "<group>"; };
 		37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailVendorInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				377931331E4411CE00AF8826 /* DateExtension.swift */,
 				37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */,
 				3775F3801E4BDC6C00F39C07 /* Enums.swift */,
+				37B2C1411E51186C00F88227 /* ImageFetch.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */,
 				37C85FE51E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift in Sources */,
 				37C85FD61E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift in Sources */,
+				37B2C1421E51186C00F88227 /* ImageFetch.swift in Sources */,
 				3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */,
 				379A62171E4E51C3006FD48C /* VendorRequestsViewController.swift in Sources */,
 				3779312B1E4152C200AF8826 /* UserLoginViewController.swift in Sources */,

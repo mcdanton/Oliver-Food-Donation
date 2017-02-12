@@ -94,10 +94,11 @@ class Post {
    var date: Date
    var status: PostStatus = .open
    var vendor: String
+   var imageURL: String
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
-   init(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, status: PostStatus, vendor: String) {
+   init(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, status: PostStatus, vendor: String, imageURL: String) {
       
       self.title = title
       self.additionalInfo = additionalInfo
@@ -106,6 +107,7 @@ class Post {
       self.date = date
       self.status = status
       self.vendor = vendor
+      self.imageURL = imageURL
    }
    
    
@@ -130,6 +132,9 @@ class Post {
       
       let postVendor = snapshot.childSnapshot(forPath: "vendor")
       vendor = postVendor.value as! String
+      
+      let postImageURL = snapshot.childSnapshot(forPath: "imageURL")
+      imageURL = postImageURL.value as! String
       
       uID = snapshot.key
       firebaseRef = snapshot.ref
