@@ -8,12 +8,16 @@
 
 import UIKit
 
-class VendorLoginViewController: UIViewController {
+class UserLoginViewController: UIViewController {
+   
+   // MARK: Properties
+   
+   var userRole: String?
    
    //MARK: Outlets
    
-   @IBOutlet weak var vendorEmailTF: UITextField!
-   @IBOutlet weak var vendorPasswordTF: UITextField!
+   @IBOutlet weak var userEmailTF: UITextField!
+   @IBOutlet weak var userPasswordTF: UITextField!
    
    
    //MARK: Actions
@@ -23,29 +27,41 @@ class VendorLoginViewController: UIViewController {
    
    @IBAction func loginPressed(_ sender: Any) {
       
-      if (vendorEmailTF.text?.isEmpty)! {
+      if (userEmailTF.text?.isEmpty)! {
          let alertController = UIAlertController(title: "Invalid Email", message: "Please enter company email", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorPasswordTF?.text?.isEmpty)! {
+      } else if (userPasswordTF?.text?.isEmpty)! {
          let alertController = UIAlertController(title: "Invalid Password", message: "Please enter a password", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorPasswordTF.text?.characters.count)! < 6 {
+      } else if (userPasswordTF.text?.characters.count)! < 6 {
          let alertController = UIAlertController(title: "Invalid Password", message: "Password must be at least 6 characters long", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
       } else {
          
-         FirebaseModel.sharedInstance.login(email: vendorEmailTF.text!, password: vendorPasswordTF.text!, viewController: self, complete: { [weak self] success in
+         FirebaseModel.sharedInstance.login(email: userEmailTF.text!, password: userPasswordTF.text!, viewController: self, complete: { [weak self] success in
             guard let unwrappedSelf = self else { return }
-            unwrappedSelf.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: unwrappedSelf)
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            guard let unwrappedvendorHomeVC = storyboard.instantiateViewController(withIdentifier :"VendorHomeViewController") as? VendorHomeViewController ?? nil else { return }
-//            unwrappedSelf.present(unwrappedvendorHomeVC, animated: true)
+            if let assignedUserRole = unwrappedSelf.userRole {
+               if assignedUserRole == "Vendor" {
+                  
+                  unwrappedSelf.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: unwrappedSelf)
+                  
+               } else if assignedUserRole == "Consumer" {
+                  unwrappedSelf.performSegue(withIdentifier: "ShowConsumerHomeTabBarController", sender: unwrappedSelf)
+                  
+               } else {
+                  print("NO USER ROLE SELECTED")
+                  let alertController = UIAlertController(title: "Sign In Issue", message: "There was an issue setting up your account. Please close the app and try again.", preferredStyle: .alert)
+                  let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(defaultAction)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               }
+            }
          })
       }
    }
@@ -59,20 +75,5 @@ class VendorLoginViewController: UIViewController {
       
    }
    
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-   }
-   
-   
-   /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
    
 }

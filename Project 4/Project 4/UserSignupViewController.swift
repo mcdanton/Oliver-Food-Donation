@@ -50,7 +50,7 @@ class UserSignupViewController: UIViewController {
    }
    
    
-   // MARK: Additional Functions
+   // MARK: Sign In User
    
    func validateVendor() {
       
@@ -113,6 +113,15 @@ class UserSignupViewController: UIViewController {
          }
       }
    }
+   
+   
+   // MARK: Prepare For Segue
+   
+   // Passing along user type in case User has account and wants to log in
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let loginPage = segue.destination as! UserLoginViewController
+         loginPage.userRole = userRole
+      }
    
    
    

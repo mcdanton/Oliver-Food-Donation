@@ -20,7 +20,7 @@
 		377931221E41271D00AF8826 /* Spirit-of-Giving.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */; };
 		377931241E413B2800AF8826 /* UserSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931231E413B2800AF8826 /* UserSignupViewController.swift */; };
 		377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931281E41490B00AF8826 /* VendorHomeViewController.swift */; };
-		3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */; };
+		3779312B1E4152C200AF8826 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312A1E4152C200AF8826 /* UserLoginViewController.swift */; };
 		3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */; };
 		3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */; };
 		377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */; };
@@ -71,13 +71,13 @@
 		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Spirit-of-Giving.jpg"; path = "Project 4/Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
 		377931231E413B2800AF8826 /* UserSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignupViewController.swift; sourceTree = "<group>"; };
 		377931281E41490B00AF8826 /* VendorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeViewController.swift; sourceTree = "<group>"; };
-		3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorLoginViewController.swift; sourceTree = "<group>"; };
+		3779312A1E4152C200AF8826 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostViewController.swift; sourceTree = "<group>"; };
 		377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostSuccessfulViewController.swift; sourceTree = "<group>"; };
 		377931331E4411CE00AF8826 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		377931351E44CD8700AF8826 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerMapViewController.swift; path = "Project 4/ConsumerMapViewController.swift"; sourceTree = "<group>"; };
+		377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapViewController.swift; sourceTree = "<group>"; };
 		377931391E44D80700AF8826 /* LocationManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerModel.swift; sourceTree = "<group>"; };
 		379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorRequestsViewController.swift; sourceTree = "<group>"; };
 		379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */,
 				3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */,
 				37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */,
-				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
 				37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */,
 			);
 			name = Consumer;
@@ -208,6 +207,7 @@
 				37AA18211E3FEB7500042656 /* ViewController.swift */,
 				37AA18231E3FEB7500042656 /* Main.storyboard */,
 				37C85FDD1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift */,
+				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
 				37AA18261E3FEB7500042656 /* Assets.xcassets */,
 				3775F35B1E4A5B1900F39C07 /* Images */,
 				37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */,
@@ -249,7 +249,7 @@
 			children = (
 				37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */,
 				377931231E413B2800AF8826 /* UserSignupViewController.swift */,
-				3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */,
+				3779312A1E4152C200AF8826 /* UserLoginViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 				37C85FD61E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift in Sources */,
 				3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */,
 				379A62171E4E51C3006FD48C /* VendorRequestsViewController.swift in Sources */,
-				3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */,
+				3779312B1E4152C200AF8826 /* UserLoginViewController.swift in Sources */,
 				3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */,
 				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
