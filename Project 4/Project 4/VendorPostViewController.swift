@@ -59,7 +59,6 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
          
       })
       
-      
       self.view.alpha = 0
    }
    

@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 import CoreLocation
 import GeoFire
 import INTULocationManager
@@ -330,6 +332,37 @@ class FirebaseModel {
             success(arrayOfRequests)
          }
       })
+   }
+   
+   
+   //MARK: Firebase Storage
+   
+   func uploadImageToFirebase(data: Data, imageName: String) {
+      
+      let storageRef = FIRStorage.storage().reference()
+      let imageRef = storageRef.child(imageName)
+      
+      let _ = imageRef.put(data, metadata: nil) { (metadata, error) in
+         guard let metadata = metadata else {
+            return
+         }
+         let downloadURL = metadata.downloadURL
+      }
+   }
+   
+   
+   func downloadImage(name: String, complete: @escaping (UIImage?) -> ()) {
+      
+      let imageRef = FIRStorage.storage().reference(forURL: name)
+      imageRef.data(withMaxSize: 1 * 1000024 * 1024) { data, error in
+         
+         if let data = data,
+            let image = UIImage(data: data) {
+            complete(image)
+         } else {
+            complete(nil)
+         }
+      }
    }
    
    

@@ -9,11 +9,13 @@
 import Foundation
 import CoreLocation
 
+
 struct LocationManagerModel {
    
+   // Location manager for CLLocation Protocol
    static let manager = CLLocationManager()
    
-   var closer: () -> Void?
+   static var closer: (() -> Void)?
    
    // MARK: Determining Location Authorization Status
    
@@ -26,7 +28,8 @@ struct LocationManagerModel {
       return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
    }
    
-   static func requestLocationAccess() {
+   static func requestLocationAccess(complete: @escaping ()->()) {
+      closer = complete
       manager.requestWhenInUseAuthorization()
    }
    
@@ -35,16 +38,9 @@ struct LocationManagerModel {
    static func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
       
       if status == .authorizedWhenInUse {
-
+         closer?()
       }
    }
 
-   static func wasLocationRequested(complete: () -> ()) {
-      
-      if locationAccessNotYetAsked {
-         LocationManagerModel.requestLocationAccess()
-      } else {
-      }
-   }
    
 }
