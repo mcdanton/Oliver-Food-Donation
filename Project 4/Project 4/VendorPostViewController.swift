@@ -9,7 +9,12 @@
 import UIKit
 import CoreLocation
 
-class VendorPostViewController: UIViewController {
+class VendorPostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+   
+   // MARK: Properties
+   
+   let imagePicker = UIImagePickerController()
+   
    
    // MARK: Outlets
    
@@ -18,11 +23,31 @@ class VendorPostViewController: UIViewController {
    @IBOutlet weak var deadline: UITextField!
    @IBOutlet weak var postDescription: UITextField!
    @IBOutlet weak var location: UITextField!
-   
+   @IBOutlet weak var postImageView: UIImageView!
    
    
    
    // MARK: Actions
+   
+   @IBAction func imageFromPhoneSelected(_ sender: Any) {
+      
+      if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+         
+         imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+         imagePicker.allowsEditing = true
+         self.present(imagePicker, animated: true, completion: nil)
+      }
+   }
+   
+   @IBAction func takePhotoSelected(_ sender: Any) {
+      if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+         
+         imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+         imagePicker.allowsEditing = true
+         self.present(imagePicker, animated: true, completion: nil)
+      }
+   }
+   
    
    @IBAction func postButtonPressed(_ sender: Any) {
       
@@ -33,20 +58,31 @@ class VendorPostViewController: UIViewController {
          
       })
       
-   
-         self.view.alpha = 0
+      
+      self.view.alpha = 0
    }
    
+   
+   // MARK: View Loading
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
-      // Do any additional setup after loading the view.
+      imagePicker.delegate = self
    }
    
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+   
+   // MARK: Saving Image To Camera
+   
+   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+      
+      if (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil {
+         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            postImageView.image = image
+         }
+      } else {
+         print("THERE WAS A PROBLEM WITH THE IMAGE SELECTED")
+      }
+      self.dismiss(animated: true, completion: nil)
    }
    
    
