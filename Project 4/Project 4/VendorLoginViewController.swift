@@ -14,7 +14,6 @@ class VendorLoginViewController: UIViewController {
    
    @IBOutlet weak var vendorEmailTF: UITextField!
    @IBOutlet weak var vendorPasswordTF: UITextField!
-   @IBOutlet weak var loginButtonOutlet: UIButton!
    
    
    //MARK: Actions
@@ -43,9 +42,10 @@ class VendorLoginViewController: UIViewController {
          
          FirebaseModel.sharedInstance.login(email: vendorEmailTF.text!, password: vendorPasswordTF.text!, viewController: self, complete: { [weak self] success in
             guard let unwrappedSelf = self else { return }
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let unwrappedvendorHomeVC = storyboard.instantiateViewController(withIdentifier :"VendorHomeViewController") as? VendorHomeViewController ?? nil else { return }
-            unwrappedSelf.present(unwrappedvendorHomeVC, animated: true)
+            unwrappedSelf.performSegue(withIdentifier: "showVendorHomeTabBarController", sender: unwrappedSelf)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            guard let unwrappedvendorHomeVC = storyboard.instantiateViewController(withIdentifier :"VendorHomeViewController") as? VendorHomeViewController ?? nil else { return }
+//            unwrappedSelf.present(unwrappedvendorHomeVC, animated: true)
          })
       }
    }
@@ -56,10 +56,6 @@ class VendorLoginViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
-      loginButtonOutlet.layer.borderColor = UIColor.white.cgColor
-      loginButtonOutlet.layer.borderWidth = 1.0
-      
       
    }
    

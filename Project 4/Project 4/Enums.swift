@@ -27,7 +27,7 @@ enum UserRole: String {
 // For Requested Food
 enum StatusOfPickup: String {
    
-   case pending = "Pending"
+   case pending = "Pending Pick Up"
    case pickedUp = "Picked Up"
    case canceled = "Canceled"
    case closed = "Closed"
