@@ -42,7 +42,7 @@ class VendorLoginViewController: UIViewController {
          
          FirebaseModel.sharedInstance.login(email: vendorEmailTF.text!, password: vendorPasswordTF.text!, viewController: self, complete: { [weak self] success in
             guard let unwrappedSelf = self else { return }
-            unwrappedSelf.performSegue(withIdentifier: "showVendorHomeTabBarController", sender: unwrappedSelf)
+            unwrappedSelf.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: unwrappedSelf)
 //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //            guard let unwrappedvendorHomeVC = storyboard.instantiateViewController(withIdentifier :"VendorHomeViewController") as? VendorHomeViewController ?? nil else { return }
 //            unwrappedSelf.present(unwrappedvendorHomeVC, animated: true)

@@ -18,7 +18,7 @@
 		377931201E41271D00AF8826 /* god-giving-health.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311C1E41271D00AF8826 /* god-giving-health.jpg */; };
 		377931211E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */; };
 		377931221E41271D00AF8826 /* Spirit-of-Giving.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */; };
-		377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931231E413B2800AF8826 /* VendorSignupViewController.swift */; };
+		377931241E413B2800AF8826 /* UserSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931231E413B2800AF8826 /* UserSignupViewController.swift */; };
 		377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931281E41490B00AF8826 /* VendorHomeViewController.swift */; };
 		3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */; };
 		3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */; };
@@ -69,7 +69,7 @@
 		3779311C1E41271D00AF8826 /* god-giving-health.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "god-giving-health.jpg"; path = "Project 4/god-giving-health.jpg"; sourceTree = "<group>"; };
 		3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; path = "Project 4/11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; sourceTree = "<group>"; };
 		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Spirit-of-Giving.jpg"; path = "Project 4/Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
-		377931231E413B2800AF8826 /* VendorSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorSignupViewController.swift; sourceTree = "<group>"; };
+		377931231E413B2800AF8826 /* UserSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignupViewController.swift; sourceTree = "<group>"; };
 		377931281E41490B00AF8826 /* VendorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeViewController.swift; sourceTree = "<group>"; };
 		3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorLoginViewController.swift; sourceTree = "<group>"; };
 		3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */,
-				377931231E413B2800AF8826 /* VendorSignupViewController.swift */,
+				377931231E413B2800AF8826 /* UserSignupViewController.swift */,
 				3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */,
 			);
 			name = Onboarding;
@@ -441,7 +441,7 @@
 				37EACEB51E4A2C4F00EBC806 /* ButtonExtensionClass.swift in Sources */,
 				37C85FE11E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift in Sources */,
 				377931341E4411CE00AF8826 /* DateExtension.swift in Sources */,
-				377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */,
+				377931241E413B2800AF8826 /* UserSignupViewController.swift in Sources */,
 				3775F3811E4BDC6C00F39C07 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

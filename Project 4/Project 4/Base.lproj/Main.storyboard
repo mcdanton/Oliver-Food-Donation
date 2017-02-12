@@ -789,10 +789,10 @@
             </objects>
             <point key="canvasLocation" x="225" y="3022"/>
         </scene>
-        <!--Vendor Signup View Controller-->
+        <!--UserSignupViewController-->
         <scene sceneID="NMS-gQ-818">
             <objects>
-                <viewController id="SOJ-SG-TLi" customClass="VendorSignupViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="UserSignupViewController" id="SOJ-SG-TLi" customClass="UserSignupViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNg-r9-Ag0"/>
                         <viewControllerLayoutGuide type="bottom" id="x86-Wj-1xu"/>
@@ -877,11 +877,13 @@
                     <navigationItem key="navigationItem" id="wMg-zP-VPX"/>
                     <connections>
                         <outlet property="registerButtonOutlet" destination="bKx-sz-Vfd" id="c6S-in-dZP"/>
-                        <outlet property="vendorAddressTF" destination="qA6-Ze-kXl" id="u2j-7b-Ptn"/>
-                        <outlet property="vendorConfirmPasswordTF" destination="Evc-KJ-wxu" id="tLX-pf-jbg"/>
-                        <outlet property="vendorEmailTF" destination="wdN-hH-3RJ" id="OOh-Xl-JiT"/>
-                        <outlet property="vendorNameTF" destination="rMj-A2-V6M" id="Is7-vT-mHo"/>
-                        <outlet property="vendorPasswordTF" destination="2hU-dS-yuA" id="QWn-HI-lpK"/>
+                        <outlet property="userAddressTF" destination="qA6-Ze-kXl" id="ZoT-GX-nux"/>
+                        <outlet property="userConfirmPasswordTF" destination="Evc-KJ-wxu" id="xdj-GY-jIK"/>
+                        <outlet property="userEmailTF" destination="wdN-hH-3RJ" id="WE2-S5-fpJ"/>
+                        <outlet property="userNameTF" destination="rMj-A2-V6M" id="8vd-29-sUT"/>
+                        <outlet property="userPasswordTF" destination="2hU-dS-yuA" id="rNI-ZZ-yMP"/>
+                        <segue destination="6NY-vw-n4l" kind="show" identifier="ShowVendorHomeTabBarController" id="Ecs-ch-J5T"/>
+                        <segue destination="EMX-Il-XUV" kind="show" identifier="ShowConsumerHomeTabBarController" id="qss-e6-ooq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aP5-HF-su8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1007,7 +1009,8 @@
                     <connections>
                         <outlet property="vendorEmailTF" destination="XYL-mc-gek" id="HNV-1V-pkd"/>
                         <outlet property="vendorPasswordTF" destination="FyJ-Kh-9jP" id="l1F-6E-q6Q"/>
-                        <segue destination="6NY-vw-n4l" kind="show" identifier="showVendorHomeTabBarController" id="SPN-Kj-D6z"/>
+                        <segue destination="6NY-vw-n4l" kind="show" identifier="ShowVendorHomeTabBarController" id="SPN-Kj-D6z"/>
+                        <segue destination="EMX-Il-XUV" kind="show" identifier="ShowConsumerHomeTabBarController" id="D0E-tf-sgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCw-Oe-OdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1484,6 +1487,8 @@
         <image name="heart_icon" width="97" height="99"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="qss-e6-ooq"/>
         <segue reference="1KU-C2-1P4"/>
+        <segue reference="Ecs-ch-J5T"/>
     </inferredMetricsTieBreakers>
 </document>

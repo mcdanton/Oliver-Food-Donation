@@ -28,7 +28,7 @@ class FirebaseModel {
    
    
    // MARK: Vendor Signup
-   func FoodVendorSignup(name: String, location: String, emailTextField: String, passwordTextField: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
+   func foodVendorSignup(name: String, location: String, emailTextField: String, passwordTextField: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
       
       FIRAuth.auth()?.createUser(withEmail: emailTextField, password: passwordTextField, completion: { user, error in
          
@@ -43,9 +43,7 @@ class FirebaseModel {
             
             viewController.present(alertController, animated: true, completion: nil)
          }
-         
       })
-      
    }
    
    
@@ -61,9 +59,50 @@ class FirebaseModel {
       vendorName.setValue(name)
       
       let vendorLocation = vendorChild.child("location")
-      vendorName.setValue(location)
+      vendorLocation.setValue(location)
+      
+      let userRole = vendorChild.child("role")
+      userRole.setValue("Vendor")
    }
    
+   
+   // MARK: Consumer Sign Up
+   func consumerSignup(name: String, location: String, emailTextField: String, passwordTextField: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
+      
+      FIRAuth.auth()?.createUser(withEmail: emailTextField, password: passwordTextField, completion: { user, error in
+         
+         if error == nil {
+            self.addConsumer(name: name, location: location)
+            complete(user != nil)
+         } else {
+            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            viewController.present(alertController, animated: true, completion: nil)
+         }
+      })
+   }
+   
+   
+   func addConsumer(name: String, location: String) {
+      guard let user = FIRAuth.auth()?.currentUser else {
+         return
+      }
+      
+      let consumerRef = FIRDatabase.database().reference(withPath: "Consumer")
+      let consumerChild = consumerRef.child(user.uid)
+      
+      let consumerName = consumerChild.child("name")
+      consumerName.setValue(name)
+      
+      let consumerLocation = consumerChild.child("location")
+      consumerLocation.setValue(location)
+      
+      let userRole = consumerChild.child("role")
+      userRole.setValue("Consumer")
+   }
    
    // MARK: Login
    

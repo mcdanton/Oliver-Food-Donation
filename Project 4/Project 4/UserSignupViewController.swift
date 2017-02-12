@@ -1,5 +1,5 @@
 //
-//  VendorSignupViewController.swift
+//  UserSignupViewController.swift
 //  Project 4
 //
 //  Created by Dan Hefter on 1/31/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VendorSignupViewController: UIViewController {
+class UserSignupViewController: UIViewController {
    
    
    // MARK: Properties
@@ -16,12 +16,12 @@ class VendorSignupViewController: UIViewController {
    var userRole: String?
    
    // MARK: Outlets
-
-   @IBOutlet weak var vendorNameTF: UITextField!
-   @IBOutlet weak var vendorEmailTF: UITextField!
-   @IBOutlet weak var vendorAddressTF: UITextField!
-   @IBOutlet weak var vendorPasswordTF: UITextField!
-   @IBOutlet weak var vendorConfirmPasswordTF: UITextField!
+   
+   @IBOutlet weak var userNameTF: UITextField!
+   @IBOutlet weak var userEmailTF: UITextField!
+   @IBOutlet weak var userAddressTF: UITextField!
+   @IBOutlet weak var userPasswordTF: UITextField!
+   @IBOutlet weak var userConfirmPasswordTF: UITextField!
    @IBOutlet weak var registerButtonOutlet: UIButton!
    
    
@@ -54,50 +54,63 @@ class VendorSignupViewController: UIViewController {
    
    func validateVendor() {
       
-      if (vendorNameTF.text?.isEmpty)! {
+      if (userNameTF.text?.isEmpty)! {
          let alertController = UIAlertController(title: "Invalid Name", message: "Please enter company name", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorEmailTF.text?.isEmpty)! {
+      } else if (userEmailTF.text?.isEmpty)! {
          let alertController = UIAlertController(title: "Invalid Email", message: "Please enter company email", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorAddressTF.text?.isEmpty)! {
+      } else if (userAddressTF.text?.isEmpty)! {
          let alertController = UIAlertController(title: "Invalid Address", message: "Please enter company address", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorPasswordTF?.text?.isEmpty)! {
+      } else if (userPasswordTF?.text?.isEmpty)! {
          let alertController = UIAlertController(title: "Invalid Password", message: "Please enter a password", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorPasswordTF.text?.characters.count)! < 6 {
+      } else if (userPasswordTF.text?.characters.count)! < 6 {
          let alertController = UIAlertController(title: "Invalid Password", message: "Password must be at least 6 characters long", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorConfirmPasswordTF?.text?.isEmpty)! {
+      } else if (userConfirmPasswordTF?.text?.isEmpty)! {
          let alertController = UIAlertController(title: "Invalid Confirm Password", message: "Please confirm your password", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
-      } else if (vendorPasswordTF.text) != (self.vendorConfirmPasswordTF.text) {
+      } else if (userPasswordTF.text) != (self.userConfirmPasswordTF.text) {
          let alertController = UIAlertController(title: "Invalid Password", message: "Confirm password does not match password", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
       } else {
-         FirebaseModel.sharedInstance.FoodVendorSignup(name: vendorNameTF.text!, location: vendorAddressTF.text!, emailTextField: vendorEmailTF.text!, passwordTextField: vendorPasswordTF.text!, viewController: self, complete: { success in
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vendorHomeVC = storyboard.instantiateViewController(withIdentifier :"VendorHomeViewController") as! VendorHomeViewController
-            self.present(vendorHomeVC, animated: true)
-
-            
-         })
+         
+         if let assignedUserRole = userRole {
+            if assignedUserRole == "Vendor" {
+               FirebaseModel.sharedInstance.foodVendorSignup(name: userNameTF.text!, location: userAddressTF.text!, emailTextField: userEmailTF.text!, passwordTextField: userPasswordTF.text!, viewController: self, complete: { success in
+                  
+                  self.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: self)                  
+               })
+               
+            } else if assignedUserRole == "Consumer" {
+               FirebaseModel.sharedInstance.consumerSignup(name: userNameTF.text!, location: userAddressTF.text!, emailTextField: userEmailTF.text!, passwordTextField: userPasswordTF.text!, viewController: self, complete: { success in
+                  
+                  self.performSegue(withIdentifier: "ShowConsumerHomeTabBarController", sender: self)
+               })
+            }
+         } else {
+            print("NO USER ROLE SELECTED")
+            let alertController = UIAlertController(title: "Sign In Issue", message: "There was an issue setting up your account. Please close the app and try again.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+         }
       }
    }
    

@@ -17,19 +17,22 @@ class DataModel {
    var foodVendor: FoodVendor?
    var consumer: Consumer?
    var post: Post?
+   var request: Request?
 }
 
 
 class FoodVendor {
    
    var name: String
-   var uID: String?
    var location: String
+   var role: UserRole = .vendor
+   var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
-   init(name: String, location: String) {
+   init(name: String, location: String, role: UserRole) {
       self.name = name
       self.location = location
+      self.role = role
    }
    
    // Firebase Snapshot init
@@ -41,6 +44,9 @@ class FoodVendor {
       let vendorLocation = snapshot.childSnapshot(forPath: "location")
       location = vendorLocation.value as! String
       
+      let vendorRole = snapshot.childSnapshot(forPath: "role")
+      role = UserRole(rawValue: vendorRole.value as! String)!
+      
       uID = snapshot.key
       firebaseRef = snapshot.ref
    }
@@ -49,19 +55,29 @@ class FoodVendor {
    
    class Consumer {
       
-      var uID: String?
+      var name: String
       var location: String
+      var role: UserRole = .consumer
+      var uID: String?
       var firebaseRef: FIRDatabaseReference?
       
-      init(location: String) {
+      init(name: String, location: String, role: UserRole) {
+         self.name = name
          self.location = location
+         self.role = role
       }
       
       // Firebase Snapshot init
       init(snapshot: FIRDataSnapshot) {
          
+         let consumerName = snapshot.childSnapshot(forPath: "name")
+         name = consumerName.value as! String
+         
          let consumerLocation = snapshot.childSnapshot(forPath: "location")
          location = consumerLocation.value as! String
+         
+         let consumerRole = snapshot.childSnapshot(forPath: "role")
+         role = UserRole(rawValue: consumerRole.value as! String)!
          
          uID = snapshot.key
          firebaseRef = snapshot.ref

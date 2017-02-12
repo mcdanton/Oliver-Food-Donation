@@ -25,10 +25,10 @@ class ChooseUserRoleViewController: UIViewController {
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "SignInAsVendor" {
-         let signUpPage = segue.destination as! VendorSignupViewController
+         let signUpPage = segue.destination as! UserSignupViewController
          signUpPage.userRole = "Vendor"
       } else if segue.identifier == "SignInAsConsumer" {
-         let signUpPage = segue.destination as! VendorSignupViewController
+         let signUpPage = segue.destination as! UserSignupViewController
          signUpPage.userRole = "Consumer"
       }
    }
