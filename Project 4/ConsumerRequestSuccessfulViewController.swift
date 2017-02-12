@@ -31,7 +31,7 @@ class ConsumerRequestSuccessfulViewController: UIViewController {
             
             if error == nil {
                
-               FirebaseModel.sharedInstance.addRequestToFirebase(vendorUID: currentPost.uID!, requester: (FIRAuth.auth()?.currentUser?.email)!, itemRequested: currentPost.title, requestDate: Date(), requestMessage: "Come back to me later Dan!")
+               FirebaseModel.sharedInstance.addRequestToFirebase(vendorUID: currentPost.uID!, requester: (FIRAuth.auth()?.currentUser?.email)!, itemRequested: currentPost.title, requestDate: Date(), requestMessage: "Come back to me later Dan!", itemVendor: currentPost.vendor)
             } else {
                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                

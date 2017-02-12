@@ -77,10 +77,11 @@ class Post {
    var deadline: String
    var date: Date
    var status: PostStatus = .open
+   var vendor: String
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
-   init(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, status: PostStatus) {
+   init(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, status: PostStatus, vendor: String) {
       
       self.title = title
       self.additionalInfo = additionalInfo
@@ -88,6 +89,7 @@ class Post {
       self.deadline = deadline
       self.date = date
       self.status = status
+      self.vendor = vendor
    }
    
    
@@ -110,6 +112,9 @@ class Post {
       let postStatus = snapshot.childSnapshot(forPath: "status")
       status = PostStatus(rawValue: postStatus.value as! String)!
       
+      let postVendor = snapshot.childSnapshot(forPath: "vendor")
+      vendor = postVendor.value as! String
+      
       uID = snapshot.key
       firebaseRef = snapshot.ref
    }
@@ -117,5 +122,57 @@ class Post {
 
 
 
+
+
+class Request {
+   
+   var requester: String
+   var foodRequested: String
+   var requestDate: Date
+   var requestMessage: String
+   var pickupStatus: StatusOfPickup = .pending
+   var requestStatus: StatusOfRequest = .pending
+   var itemVendor: String
+   var uID: String?
+   var firebaseRef: FIRDatabaseReference?
+   
+   init(requester: String, foodRequested: String, requestDate: Date, requestMessage: String, pickupStatus: StatusOfPickup, requestStatus: StatusOfRequest, itemVendor: String) {
+      
+      self.requester = requester
+      self.foodRequested = foodRequested
+      self.requestDate = requestDate
+      self.requestMessage = requestMessage
+      self.pickupStatus = pickupStatus
+      self.requestStatus = requestStatus
+      self.itemVendor = itemVendor
+   }
+   
+   
+   init(snapshot: FIRDataSnapshot) {
+      let requestedBy = snapshot.childSnapshot(forPath: "requestedBy")
+      requester = requestedBy.value as! String
+      
+      let requestedItem = snapshot.childSnapshot(forPath: "foodRequested")
+      foodRequested = requestedItem.value as! String
+      
+      let dateOfRequest = snapshot.childSnapshot(forPath: "dateRequested")
+      requestDate = Date(timeIntervalSince1970: dateOfRequest.value as! Double)
+      
+      let message = snapshot.childSnapshot(forPath: "requestMessage")
+      requestMessage = message.value as! String
+      
+      let statusOfRequest = snapshot.childSnapshot(forPath: "statusOfRequest")
+      requestStatus = StatusOfRequest(rawValue: statusOfRequest.value as! String)!
+      
+      let statusOfPickup = snapshot.childSnapshot(forPath: "statusOfPickup")
+      pickupStatus = StatusOfPickup(rawValue: statusOfPickup.value as! String)!
+      
+      let vendorOfItem = snapshot.childSnapshot(forPath: "itemVendor")
+      itemVendor = vendorOfItem.value as! String
+      
+      uID = snapshot.key
+      firebaseRef = snapshot.ref
+   }
+}
 
 

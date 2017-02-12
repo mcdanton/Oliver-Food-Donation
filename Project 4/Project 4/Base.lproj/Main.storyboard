@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EMX-Il-XUV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xFV-Og-reT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -393,7 +393,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qpY-bZ-LH0">
-                                    <size key="itemSize" width="289" height="150"/>
+                                    <size key="itemSize" width="335" height="263"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -512,6 +512,7 @@
                                             <outlet property="requestDate" destination="omR-tN-QbM" id="K4k-CA-LSX"/>
                                             <outlet property="requestMessage" destination="hTl-B2-iQa" id="NGM-cj-a0m"/>
                                             <outlet property="requestStatus" destination="uDV-TJ-p5z" id="ItA-xD-spB"/>
+                                            <outlet property="requester" destination="bxA-iv-ClY" id="0FQ-ia-XBD"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -524,6 +525,9 @@
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="vdJ-On-wqs"/>
+                    <connections>
+                        <outlet property="collectionViewOutlet" destination="YOv-U3-N8c" id="Q3B-kv-Ky1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1g5-qL-Yqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -957,10 +961,10 @@
             </objects>
             <point key="canvasLocation" x="185" y="882"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--VendorTabBarController-->
         <scene sceneID="11c-8f-WaL">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6NY-vw-n4l" sceneMemberID="viewController">
+                <tabBarController title="VendorTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="6NY-vw-n4l" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cis-wG-uPj">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

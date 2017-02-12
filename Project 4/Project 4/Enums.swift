@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// Assigning a status to a food that was posted
 enum PostStatus: String {
    
    case open = "Open"
@@ -16,10 +16,27 @@ enum PostStatus: String {
    case closed = "Closed"
 }
 
-
+// Assigning a Role to a new user
 enum UserRole: String {
    
    case vendor = "Vendor"
    case consumer = "Consumer"
+}
+
+
+// For Requested Food
+enum StatusOfPickup: String {
    
+   case pending = "Pending"
+   case pickedUp = "Picked Up"
+   case canceled = "Canceled"
+   case closed = "Closed"
+}
+
+enum StatusOfRequest: String {
+   
+   case pending = "Pending"
+   case approved = "Approved"
+   case rejected = "Rejected"
+   case canceled = "Canceled"
 }

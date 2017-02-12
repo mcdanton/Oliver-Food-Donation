@@ -13,7 +13,7 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    
    // MARK: Properties
    
-   var allPosts = [DataModel.sharedInstance.post] {
+   var allPosts = [Post]() {
       didSet {
          tableViewOutlet.reloadData()
       }
@@ -67,9 +67,9 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
       
  
       
-      cell.postTitle.text = allPosts[indexPath.row]?.title
-      cell.postStatus.text = allPosts[indexPath.row]?.status.rawValue
-      cell.postDate.text = allPosts[indexPath.row]?.date.prettyLocaleFormatted
+      cell.postTitle.text = allPosts[indexPath.row].title
+      cell.postStatus.text = allPosts[indexPath.row].status.rawValue
+      cell.postDate.text = allPosts[indexPath.row].date.prettyLocaleFormatted
             
       
       return cell

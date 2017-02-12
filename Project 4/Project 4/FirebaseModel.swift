@@ -112,7 +112,7 @@ class FirebaseModel {
    
    // MARK: Add Request To Firebase
    
-   func addRequestToFirebase(vendorUID: String, requester: String, itemRequested: String, requestDate: Date, requestMessage: String) {
+   func addRequestToFirebase(vendorUID: String, requester: String, itemRequested: String, requestDate: Date, requestMessage: String, itemVendor: String) {
       let requestRef = FIRDatabase.database().reference(withPath: "requests")
       let requestChild = requestRef.child(vendorUID)
       
@@ -129,10 +129,13 @@ class FirebaseModel {
       message.setValue(requestMessage)
       
       let statusOfRequest = requestChild.child("statusOfRequest")
-      statusOfRequest.setValue("pending")
+      statusOfRequest.setValue("Pending")
       
       let statusOfPickup = requestChild.child("statusOfPickup")
-      statusOfPickup.setValue("pending")
+      statusOfPickup.setValue("Pending")
+      
+      let vendorOfItem = requestChild.child("itemVendor")
+      vendorOfItem.setValue(itemVendor)
    }
    
    
@@ -220,10 +223,10 @@ class FirebaseModel {
          }
       })
    }
-
    
-
-
+   
+   
+   
    // MARK: Observe Functions
    
    func observePosts(success: @escaping ([Post]) -> ()) {
@@ -267,6 +270,57 @@ class FirebaseModel {
       })
    }
    
+   
+   
+   func queryRequests(searchPath: String, key:String, valueToSearch:String, success: @escaping ([Request]) -> ()) {
+      var arrayOfRequests = [Request]()
+      
+      let updatesRef = FIRDatabase.database().reference(withPath: searchPath)
+      let query = updatesRef.queryOrdered(byChild: key).queryEqual(toValue: valueToSearch)
+      
+      query.observeSingleEvent(of: .value, with: { snapshot in
+         
+         for request in snapshot.children {
+            
+            if let requestSnapshot = request as? FIRDataSnapshot {
+               let requestInstance = Request(snapshot: requestSnapshot)
+               arrayOfRequests.append(requestInstance)
+            }
+         }
+         DispatchQueue.main.async {
+            success(arrayOfRequests)
+         }
+      })
+   }
+   
+   
+   
+   /*
+   func observeRequests(complete: @escaping ([Request]) -> ()) {
+      var arrayOfRequests = [Request]()
+      
+      let updatesRef = FIRDatabase.database().reference(withPath: "requests")
+      let query = updatesRef.queryOrdered(byChild: "vendor").queryEqual(toValue: FIRAuth.auth()?.currentUser?.uid)
+      
+      query.observe(.value, with: { snapshot in
+         for request in snapshot.children {
+            
+            if let requestSnapshot = request as? FIRDataSnapshot {
+               let requestInstance = Request(snapshot: requestSnapshot)
+               arrayOfRequests.append(requestInstance)
+            }
+         }        
+         //         let allRequestsSnapshot = snapshot.childSnapshot(forPath: "requests")
+         //         if allRequestsSnapshot.childSnapshot(forPath: keyToSearch).exists() {
+         //            let postInstance = Request(snapshot: allRequestsSnapshot.childSnapshot(forPath: keyToSearch))
+         //            arrayOfRequests.append(postInstance)
+         //         }
+         DispatchQueue.main.async {
+            complete(arrayOfRequests)
+         }
+      })
+   }
+   */
    
    
    

@@ -18,6 +18,6 @@ class VendorRequestsCollectionViewCell: UICollectionViewCell {
    @IBOutlet weak var requestStatus: UILabel!
    @IBOutlet weak var pickupStatus: UILabel!
    @IBOutlet weak var actionView: UIView!
-   
+   @IBOutlet weak var requester: UILabel!
    
 }
