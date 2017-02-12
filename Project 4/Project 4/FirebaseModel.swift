@@ -168,7 +168,7 @@ class FirebaseModel {
       message.setValue(requestMessage)
       
       let statusOfRequest = requestChild.child("statusOfRequest")
-      statusOfRequest.setValue("Pending")
+      statusOfRequest.setValue("Pending Pick Up")
       
       let statusOfPickup = requestChild.child("statusOfPickup")
       statusOfPickup.setValue("Pending")
@@ -226,7 +226,7 @@ class FirebaseModel {
       var arrayOfLocationKeys = [String]()
       
       guard let unwrappedLocation = locationToQuery else { complete([]); return }
-      let query = geoFire.query(at: unwrappedLocation, withRadius: 0.6)
+      let query = geoFire.query(at: unwrappedLocation, withRadius: 10.0)
       
       query?.observe(.keyEntered, with: { (locationKey, nil) in
          guard let unwrappedLocationKey = locationKey else { return }

@@ -14,6 +14,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    // MARK: Properties
    
    let imagePicker = UIImagePickerController()
+   var imageHasBeenSet: Bool = false
    
    
    // MARK: Outlets
@@ -78,6 +79,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       if (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil {
          if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             postImageView.image = image
+            imageHasBeenSet = true
          }
       } else {
          print("THERE WAS A PROBLEM WITH THE IMAGE SELECTED")

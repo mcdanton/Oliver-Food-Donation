@@ -30,13 +30,17 @@ class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, 
    // MARK: View Loading
    
    
-   override func viewDidLoad() {
-      super.viewDidLoad()
+   override func viewWillAppear(_ animated: Bool) {
       
       FirebaseModel.sharedInstance.queryRequests(searchPath: "requests", key: "itemVendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfRequests in
          guard let unwrappedSelf = self else { return }
          unwrappedSelf.allRequests = arrayOfRequests
       })
+   }
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+
    }
    
    override func didReceiveMemoryWarning() {

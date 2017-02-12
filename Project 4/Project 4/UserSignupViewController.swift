@@ -28,6 +28,7 @@ class UserSignupViewController: UIViewController {
    // MARK: Actions
    
    @IBAction func alreadyHaveAnAccountPressed(_ sender: Any) {
+      
    }
    
    @IBAction func registerPressed(_ sender: Any) {
@@ -40,15 +41,9 @@ class UserSignupViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      registerButtonOutlet.layer.borderColor = UIColor.white.cgColor
-      registerButtonOutlet.layer.borderWidth = 1.0
    }
    
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-   }
-   
+
    
    // MARK: Sign In User
    
@@ -95,7 +90,7 @@ class UserSignupViewController: UIViewController {
             if assignedUserRole == "Vendor" {
                FirebaseModel.sharedInstance.foodVendorSignup(name: userNameTF.text!, location: userAddressTF.text!, emailTextField: userEmailTF.text!, passwordTextField: userPasswordTF.text!, viewController: self, complete: { success in
                   
-                  self.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: self)                  
+                  self.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: self)
                })
                
             } else if assignedUserRole == "Consumer" {
@@ -119,9 +114,11 @@ class UserSignupViewController: UIViewController {
    
    // Passing along user type in case User has account and wants to log in
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "ShowUserLoginVC" {
          let loginPage = segue.destination as! UserLoginViewController
          loginPage.userRole = userRole
       }
+   }
    
    
    
