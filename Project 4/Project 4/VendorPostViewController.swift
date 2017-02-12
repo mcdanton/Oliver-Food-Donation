@@ -83,6 +83,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
                FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
                print("----------- THANKS YOU TOO!! ---------------")
 
+               self?.performSegue(withIdentifier: "VendorPostVCToVendorPostSuccessfulVC", sender: self)
             })
          })
       } else {
@@ -105,6 +106,8 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
                print("----------- I WORKED!! ---------------")
                FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
                print("----------- SO DID I !! ---------------")
+               
+               self?.performSegue(withIdentifier: "VendorPostVCToVendorPostSuccessfulVC", sender: self)
 
             })
          })
@@ -119,6 +122,9 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       imagePicker.delegate = self
    }
    
+   func dismissViewController() {
+      self.performSegue(withIdentifier: "unwindFromAddNewItemVCToVendorHomeVC", sender: self)
+   }
    
    // MARK: Saving Image To Camera
    

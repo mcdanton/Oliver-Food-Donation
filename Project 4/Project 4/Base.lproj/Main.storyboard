@@ -324,7 +324,6 @@
                                 </state>
                                 <connections>
                                     <action selector="postButtonPressed:" destination="82A-bW-hIv" eventType="touchUpInside" id="Sjf-ED-E6Q"/>
-                                    <segue destination="tAk-bd-iSi" kind="show" id="Zz8-uX-5DY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload an image?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgw-c3-o9a">
@@ -373,6 +372,7 @@
                         <outlet property="postImageView" destination="Xnk-EX-RBk" id="7p5-ik-VD1"/>
                         <outlet property="postTitle" destination="arP-9B-Yew" id="C47-T1-6tV"/>
                         <outlet property="quantity" destination="oQ6-sT-999" id="KT5-TB-t4X"/>
+                        <segue destination="tAk-bd-iSi" kind="show" identifier="VendorPostVCToVendorPostSuccessfulVC" id="KO5-DH-fIa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Oo-U2-vzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -739,7 +739,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fork" translatesAutoresizingMaskIntoConstraints="NO" id="dVD-7e-bVF">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVD-7e-bVF">
                                                     <rect key="frame" x="8" y="9" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -931,7 +931,6 @@
         <!--Navigation Controller-->
         <scene sceneID="l0k-ml-mBT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OtX-Pf-Tej" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="Fcd-BQ-gWs" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AbP-8U-wbC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -941,6 +940,7 @@
                         <segue destination="R6E-ru-wQJ" kind="relationship" relationship="rootViewController" id="OkY-0Z-icm"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtX-Pf-Tej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2878" y="896"/>
         </scene>

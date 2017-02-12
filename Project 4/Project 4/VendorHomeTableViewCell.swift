@@ -10,9 +10,16 @@ import UIKit
 
 class VendorHomeTableViewCell: UITableViewCell {
    
+   // MARK: Properties
+   
+   var postImageURL: String? {
+      didSet {
+         postImage.setImageWithURL(urlString: postImageURL)
+      }
+   }
+   
    
    // MARK: Outlets
-   
 
    @IBOutlet weak var postTitle: UILabel!
    @IBOutlet weak var postDate: UILabel!

@@ -29,7 +29,7 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    
    
    
-   //MARK: View Did Load
+   //MARK: View Loading
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -45,14 +45,8 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
          guard let unwrappedSelf = self else { return }
          unwrappedSelf.allPosts = arrayOfPosts
       })
-      
-   
    }
    
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-   }
    
    
    // MARK: Table View Protocol Functions
@@ -70,8 +64,7 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
       cell.postTitle.text = allPosts[indexPath.row].title
       cell.postStatus.text = allPosts[indexPath.row].status.rawValue
       cell.postDate.text = allPosts[indexPath.row].date.prettyLocaleFormatted
-      
-            
+      cell.postImageURL = allPosts[indexPath.row].imageURL
       
       return cell
    }
