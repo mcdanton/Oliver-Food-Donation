@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class VendorRequestsCollectionViewCell: UICollectionViewCell {
+   
+   // MARK: Properties
+   
+   var currentRequest: Request?
+   let vendorRequestsVC = VendorRequestsViewController()
+
    
    // MARK: Outlets
    
@@ -19,5 +27,55 @@ class VendorRequestsCollectionViewCell: UICollectionViewCell {
    @IBOutlet weak var pickupStatus: UILabel!
    @IBOutlet weak var actionView: UIView!
    @IBOutlet weak var requester: UILabel!
+   @IBOutlet weak var noOpenRequestsView: UIView!
+   
+   
+   // MARK: Actions
+   
+   @IBAction func approveRequestPressed(_ sender: Any) {
+      
+      if let currentRequest = currentRequest {
+         
+         let foodRequestRef = FIRDatabase.database().reference(withPath: "requests").child(currentRequest.uID!)
+         foodRequestRef.updateChildValues(["statusOfRequest" : StatusOfRequest.approved.rawValue], withCompletionBlock: { [weak self] (error, databaseReference) in
+            
+            self?.actionView.alpha = 0.0
+            self?.requestStatus.text = "Approved"
+
+            if error != nil {
+               
+               let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+               
+               let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(defaultAction)
+               
+               self?.vendorRequestsVC.present(alertController, animated: true, completion: nil)
+            }
+         })
+      }
+   }
+   
+   @IBAction func rejectRequestPressed(_ sender: Any) {
+      if let currentRequest = currentRequest {
+         
+         let foodRequestRef = FIRDatabase.database().reference(withPath: "requests").child(currentRequest.uID!)
+         foodRequestRef.updateChildValues(["statusOfRequest" : StatusOfRequest.rejected.rawValue], withCompletionBlock: { [weak self] (error, databaseReference) in
+            
+            self?.actionView.alpha = 0.0
+            self?.requestStatus.text = "Rejected"
+
+            
+            if error != nil {
+               
+               let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+               
+               let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(defaultAction)
+               
+               self?.vendorRequestsVC.present(alertController, animated: true, completion: nil)
+            }
+         })
+      }
+   }
    
 }

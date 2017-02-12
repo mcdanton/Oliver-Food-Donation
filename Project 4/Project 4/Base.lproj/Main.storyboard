@@ -462,7 +462,7 @@
                                                     <color key="textColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Approved!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDV-TJ-p5z">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDV-TJ-p5z">
                                                     <rect key="frame" x="72" y="217" width="75" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
@@ -488,6 +488,9 @@
                                                             <state key="normal" title="Approve">
                                                                 <color key="titleColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="approveRequestPressed:" destination="dkh-Gv-8vT" eventType="touchUpInside" id="vxq-ey-50A"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gj-O3-6Z2">
                                                             <rect key="frame" x="184.5" y="5" width="130.5" height="39.5"/>
@@ -497,9 +500,26 @@
                                                             <state key="normal" title="Reject">
                                                                 <color key="titleColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="rejectRequestPressed:" destination="dkh-Gv-8vT" eventType="touchUpInside" id="Fp3-BQ-cgn"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtQ-P4-htd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="263"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Have No Open Requests At This Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10V-ct-DsV">
+                                                            <rect key="frame" x="8" y="52" width="319" height="110"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                         </view>
@@ -508,6 +528,7 @@
                                         <connections>
                                             <outlet property="actionView" destination="UmH-co-mcK" id="0DB-iJ-Mg0"/>
                                             <outlet property="foodTitle" destination="ark-TP-lfK" id="1fy-vW-d6K"/>
+                                            <outlet property="noOpenRequestsView" destination="EtQ-P4-htd" id="eh9-4e-Z5Z"/>
                                             <outlet property="pickupStatus" destination="PYi-CM-AaH" id="mSI-oy-OK1"/>
                                             <outlet property="requestDate" destination="omR-tN-QbM" id="K4k-CA-LSX"/>
                                             <outlet property="requestMessage" destination="hTl-B2-iQa" id="NGM-cj-a0m"/>
@@ -531,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1g5-qL-Yqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2961" y="3024"/>
+            <point key="canvasLocation" x="2960.8000000000002" y="3023.8380809595205"/>
         </scene>
         <!--Welcome Back ABC Catering-->
         <scene sceneID="8Sa-Ev-HmM">

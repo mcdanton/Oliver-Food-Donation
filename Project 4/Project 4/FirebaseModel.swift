@@ -295,36 +295,6 @@ class FirebaseModel {
    
    
    
-   /*
-   func observeRequests(complete: @escaping ([Request]) -> ()) {
-      var arrayOfRequests = [Request]()
-      
-      let updatesRef = FIRDatabase.database().reference(withPath: "requests")
-      let query = updatesRef.queryOrdered(byChild: "vendor").queryEqual(toValue: FIRAuth.auth()?.currentUser?.uid)
-      
-      query.observe(.value, with: { snapshot in
-         for request in snapshot.children {
-            
-            if let requestSnapshot = request as? FIRDataSnapshot {
-               let requestInstance = Request(snapshot: requestSnapshot)
-               arrayOfRequests.append(requestInstance)
-            }
-         }        
-         //         let allRequestsSnapshot = snapshot.childSnapshot(forPath: "requests")
-         //         if allRequestsSnapshot.childSnapshot(forPath: keyToSearch).exists() {
-         //            let postInstance = Request(snapshot: allRequestsSnapshot.childSnapshot(forPath: keyToSearch))
-         //            arrayOfRequests.append(postInstance)
-         //         }
-         DispatchQueue.main.async {
-            complete(arrayOfRequests)
-         }
-      })
-   }
-   */
-   
-   
-   
-   
 }
 
 
