@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class ConsumerRequestSuccessfulViewController: UIViewController {
    
@@ -14,16 +17,39 @@ class ConsumerRequestSuccessfulViewController: UIViewController {
    
    var currentPost: Post?
    
-
    
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      
+      // If there is a current post, change the Post Status in Firebase from "Open" to "Pending", and add a request to the vendor for that food item in Firebase as well. Function includes protections to ensure the current post exists and its status is successfully updated in Firebase.
+      if let currentPost = currentPost {
+         
+         let foodPostedRef = FIRDatabase.database().reference(withPath: "foodPosted").child(currentPost.uID!)
+         foodPostedRef.updateChildValues(["status" : PostStatus.pending.rawValue], withCompletionBlock: { [weak self] (error, databaseReference) in
+            
+            if error == nil {
+               
+               FirebaseModel.sharedInstance.addRequestToFirebase(vendorUID: currentPost.uID!, requester: (FIRAuth.auth()?.currentUser?.email)!, itemRequested: currentPost.title, requestDate: Date(), requestMessage: "Come back to me later Dan!")
+            } else {
+               let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+               
+               let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(defaultAction)
+               
+               self?.present(alertController, animated: true, completion: nil)
+            }
+         })
+      } else {
+         let alertController = UIAlertController(title: "No Current Post", message: "There's no current food item showing up!", preferredStyle: .alert)
+         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+         alertController.addAction(action)
+         self.present(alertController, animated: true, completion: nil)
+      }
       dismissViewController()
    }
-
-
+   
    
    // Used to bring Consumer back to home page after successful food request
    func dismissViewController() {
@@ -32,5 +58,5 @@ class ConsumerRequestSuccessfulViewController: UIViewController {
          self?.performSegue(withIdentifier: "ConsumerRequestSuccessfulVCToConsumerHomeVC", sender: self)
       })
    }
-
+   
 }

@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex5-6g-j5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="2284"/>
+            <point key="canvasLocation" x="-887" y="2812"/>
         </scene>
         <!--Food Vendor-->
         <scene sceneID="lmG-hj-so0">
@@ -343,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Oo-U2-vzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="2596"/>
+            <point key="canvasLocation" x="1006" y="3024"/>
         </scene>
         <!--Vendor Post Successful View Controller-->
         <scene sceneID="lYA-sG-xQh">
@@ -374,9 +374,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcp-gH-6v2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K0t-CU-Adm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2054" y="2284"/>
+            <point key="canvasLocation" x="1798" y="3022"/>
         </scene>
-        <!--Vendor Requests View Controller-->
+        <!--Item-->
         <scene sceneID="jdS-Ay-E0q">
             <objects>
                 <viewController id="xFV-Og-reT" customClass="VendorRequestsViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
@@ -406,7 +406,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="263"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABC Catering Company" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxA-iv-ClY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABC Food Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxA-iv-ClY">
                                                     <rect key="frame" x="8" y="21" width="319" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
@@ -523,10 +523,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="vdJ-On-wqs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1g5-qL-Yqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999.1999999999998" y="2283.5082458770617"/>
+            <point key="canvasLocation" x="2961" y="3024"/>
         </scene>
         <!--Welcome Back ABC Catering-->
         <scene sceneID="8Sa-Ev-HmM">
@@ -642,7 +643,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZi-4h-mFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2053.5999999999999" y="1568.3658170914543"/>
+            <point key="canvasLocation" x="225" y="3022"/>
         </scene>
         <!--Vendor Signup View Controller-->
         <scene sceneID="NMS-gQ-818">
@@ -968,11 +969,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="Zud-8J-IKp" kind="relationship" relationship="viewControllers" id="sNM-Ae-EZT"/>
+                        <segue destination="xFV-Og-reT" kind="relationship" relationship="viewControllers" id="xoh-tA-Wxz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4E-5I-1yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184.80000000000001" y="1569.265367316342"/>
+            <point key="canvasLocation" x="1001" y="1568"/>
         </scene>
         <!--Home-->
         <scene sceneID="opQ-pa-bzv">
@@ -991,7 +993,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWp-XO-Nfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="1569.265367316342"/>
+            <point key="canvasLocation" x="1001" y="2316"/>
         </scene>
         <!--Submit Request-->
         <scene sceneID="9DA-nx-F5G">

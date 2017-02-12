@@ -29,17 +29,19 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    @IBOutlet weak var consumerHomeTableViewOutlet: UITableView!
    
    
-   // MARK: Actions
    
-   
+   // MARK: View Loading
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+   }
+   
+   
+   // First checks to see if location auth was ever requested and requests it if not. If it was previously requested, will check the status of the location auth and in the case of authorized location will show all food posted in User's area while in the cases of unauthorized location will direct the user to change this in their settings.
+   override func viewDidAppear(_ animated: Bool) {
       
       LocationManagerModel.wasLocationRequested(complete: { success in
          
-         print("-------_______---------- I succeeded!!!")
          if LocationManagerModel.locationAccessGranted {
             
             INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
@@ -132,7 +134,10 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
             let consumerFoodPostDetailVC = segue.destination as! ConsumerFoodPostDetailViewController
             consumerFoodPostDetailVC.currentPost = allPosts[indexPathRow]
          } else {
-            print("THERE IS NO CURRENT POST SELECTED")
+            let alertController = UIAlertController(title: "No Current Post", message: "There's no current food item showing up!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
          }
       }
    }

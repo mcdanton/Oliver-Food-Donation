@@ -16,6 +16,7 @@ import INTULocationManager
 
 class FirebaseModel {
    
+   // MARK: Properties
    static let sharedInstance = FirebaseModel()
    
    
@@ -23,6 +24,8 @@ class FirebaseModel {
       let geofireRef = FIRDatabase.database().reference(withPath: "locations")
       return GeoFire(firebaseRef: geofireRef)!
    }()
+   
+   
    
    // MARK: Vendor Signup
    func FoodVendorSignup(name: String, location: String, emailTextField: String, passwordTextField: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
@@ -104,6 +107,32 @@ class FirebaseModel {
       let vendor = foodChild.child("vendor")
       vendor.setValue(currentUser)
       complete(String(describing: foodChild.key))
+   }
+   
+   
+   // MARK: Add Request To Firebase
+   
+   func addRequestToFirebase(vendorUID: String, requester: String, itemRequested: String, requestDate: Date, requestMessage: String) {
+      let requestRef = FIRDatabase.database().reference(withPath: "requests")
+      let requestChild = requestRef.child(vendorUID)
+      
+      let requesterName = requestChild.child("requestedBy")
+      requesterName.setValue(requester)
+      
+      let requestedItem = requestChild.child("foodRequested")
+      requestedItem.setValue(itemRequested)
+      
+      let dateOfRequest = requestChild.child("dateRequested")
+      dateOfRequest.setValue(requestDate.timeIntervalSince1970)
+      
+      let message = requestChild.child("requestMessage")
+      message.setValue(requestMessage)
+      
+      let statusOfRequest = requestChild.child("statusOfRequest")
+      statusOfRequest.setValue("pending")
+      
+      let statusOfPickup = requestChild.child("statusOfPickup")
+      statusOfPickup.setValue("pending")
    }
    
    
