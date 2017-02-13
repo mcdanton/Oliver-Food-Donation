@@ -60,6 +60,13 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "VendorHomeTableViewCell", for: indexPath) as! VendorHomeTableViewCell
       
+      cell.layer.shadowColor = UIColor.black.cgColor
+      cell.layer.shadowOffset = CGSize(width: 5, height: 5)
+      cell.layer.shadowOpacity = 1
+      cell.layer.shadowRadius = 5
+      cell.layer.masksToBounds = false
+      cell.layer.cornerRadius = 10
+      
       cell.postTitle.text = allPosts[indexPath.row].title
       cell.postStatus.text = allPosts[indexPath.row].status.rawValue
       cell.postDate.text = allPosts[indexPath.row].date.prettyLocaleFormatted

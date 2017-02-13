@@ -60,6 +60,13 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
 
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewVendorHomeCollectionViewCell", for: indexPath) as! NewVendorHomeCollectionViewCell
+      
+      cell.layer.shadowColor = UIColor.black.cgColor
+      cell.layer.shadowOffset = CGSize(width: 5, height: 5)
+      cell.layer.shadowOpacity = 1
+      cell.layer.shadowRadius = 5
+      cell.layer.masksToBounds = false
+      cell.layer.cornerRadius = 10
 
       
       cell.postTitle.text = allPosts[indexPath.row].title
