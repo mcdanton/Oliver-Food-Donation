@@ -14,6 +14,7 @@ enum PostStatus: String {
    case open = "Open"
    case pending = "Pending"
    case closed = "Closed"
+   case awaitingPickup = "Awaiting Pickup"
 }
 
 // Assigning a Role to a new user

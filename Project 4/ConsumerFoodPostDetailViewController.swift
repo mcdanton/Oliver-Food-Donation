@@ -159,7 +159,7 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
       case .main:
          switch MainRows(rawValue: indexPath.row)! {
          case .generalFoodInfo:
-            return 164
+            return 179
          case .vendorInfo:
             return 60
          case .additionalInfo:
@@ -167,7 +167,7 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
          case .messageToVendor:
             return 124
          case .submitButton:
-            return 100
+            return 85
          }
       }
    }

@@ -173,10 +173,10 @@ class FirebaseModel {
       message.setValue(requestMessage)
       
       let statusOfRequest = requestChild.child("statusOfRequest")
-      statusOfRequest.setValue("Pending Pick Up")
+      statusOfRequest.setValue("Pending")
       
       let statusOfPickup = requestChild.child("statusOfPickup")
-      statusOfPickup.setValue("Pending")
+      statusOfPickup.setValue("Pending Pick Up")
       
       let vendorOfItem = requestChild.child("itemVendor")
       vendorOfItem.setValue(itemVendor)

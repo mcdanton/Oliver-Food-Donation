@@ -16,7 +16,7 @@ class VendorRequestsCollectionViewCell: UICollectionViewCell {
    
    var currentRequest: Request?
    let vendorRequestsVC = VendorRequestsViewController()
-
+   
    
    // MARK: Outlets
    
@@ -41,7 +41,7 @@ class VendorRequestsCollectionViewCell: UICollectionViewCell {
             
             self?.actionView.alpha = 0.0
             self?.requestStatus.text = "Approved"
-
+            
             if error != nil {
                
                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -51,6 +51,19 @@ class VendorRequestsCollectionViewCell: UICollectionViewCell {
                
                self?.vendorRequestsVC.present(alertController, animated: true, completion: nil)
             }
+            let foodPostRef = FIRDatabase.database().reference(withPath: "foodPosted").child(currentRequest.uID!)
+            foodPostRef.updateChildValues(["status" : PostStatus.awaitingPickup.rawValue],  withCompletionBlock: { [weak self] (error, databaseReference) in
+               
+               if error != nil {
+                  
+                  let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                  
+                  let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(defaultAction)
+                  
+                  self?.vendorRequestsVC.present(alertController, animated: true, completion: nil)
+               }
+            })
          })
       }
    }
@@ -63,7 +76,7 @@ class VendorRequestsCollectionViewCell: UICollectionViewCell {
             
             self?.actionView.alpha = 0.0
             self?.requestStatus.text = "Rejected"
-
+            
             
             if error != nil {
                
@@ -74,6 +87,19 @@ class VendorRequestsCollectionViewCell: UICollectionViewCell {
                
                self?.vendorRequestsVC.present(alertController, animated: true, completion: nil)
             }
+            let foodPostRef = FIRDatabase.database().reference(withPath: "foodPosted").child(currentRequest.uID!)
+            foodPostRef.updateChildValues(["status" : PostStatus.open.rawValue],  withCompletionBlock: { [weak self] (error, databaseReference) in
+               
+               if error != nil {
+                  
+                  let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                  
+                  let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(defaultAction)
+                  
+                  self?.vendorRequestsVC.present(alertController, animated: true, completion: nil)
+               }
+            })
          })
       }
    }
