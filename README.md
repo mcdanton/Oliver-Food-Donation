@@ -13,10 +13,10 @@
 
 
 ##Screenshots
-![Vendor Home Screen](/Users/Dan 1/Desktop/GA-iOS-Bootcamp/Project-4/Screenshots/Vendor Home Page.png "Vendor Home Screen")
-![Consumer Food Request](/Users/Dan 1/Desktop/GA-iOS-Bootcamp/Project-4/Screenshots/Consumer Request.png "Consumer Food Request")
-![Vendor Request Review](/Users/Dan 1/Desktop/GA-iOS-Bootcamp/Project-4/Screenshots/Vendor Requests.png "Vendor Request Review")
-![User Profile](/Users/Dan 1/Desktop/GA-iOS-Bootcamp/Project-4/Screenshots/User Profile.png "User Profile")
+![Vendor Home Screen](Screenshots/Vendor Home Page.png "Vendor Home Screen")
+![Consumer Food Request](Screenshots/Consumer Request.png "Consumer Food Request")
+![Vendor Request Review](Screenshots/Vendor Requests.png "Vendor Request Review")
+![User Profile](Screenshots/User Profile.png "User Profile")
 
 
 ##Description
