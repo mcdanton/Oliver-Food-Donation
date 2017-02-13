@@ -39,8 +39,6 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       
-      sendMessage()
-
       FirebaseModel.sharedInstance.queryVendorPosts(searchPath: "foodPosted", key: "vendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfPosts in
          guard let unwrappedSelf = self else { return }
          unwrappedSelf.allPosts = arrayOfPosts
@@ -74,41 +72,6 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
       
       return cell
    }
-   
-   
-   
-   
-   // MARK: Push Notifications
-   
-   func sendMessage() {
-      
-      let url = URL(string: "https://fcm.googleapis.com/fcm/send")!
-      var request = URLRequest(url: url)
-      request.httpMethod = "POST"
-      request.allHTTPHeaderFields = [
-         "Content-Type":"application/json",
-         "Authorization":"key=cdJbTbVJOko:APA91bGQq9JemoYaJHfjRwjlUfhypnJZ3S6fW4ed6111AIRVhA_HiD2pNLs_Z2tG0BlJs5COwnxL8t5x-3s2sNH_AY1yTxXDMYozp08If8vGnl-BPZbDjh0fsx8TNjCqtsVsuxZMN7z9"
-      ]
-      let body: [String: Any] = [
-         "to": "/topics/app",
-         "notification" : [
-            "body": "You da man",
-            "title": "To Dan"
-         ]
-      ]
-      let data = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
-      request.httpBody = data
-      
-      URLSession.shared.dataTask(with: request) { data, response, error in
-         
-         if let data = data {
-            
-            let resp = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            
-         }
-         }.resume()
-   }
-
 
    
 }

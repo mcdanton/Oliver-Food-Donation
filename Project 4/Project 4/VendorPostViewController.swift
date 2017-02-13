@@ -77,15 +77,13 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
             unwrappedSelf.imageDownloadURL = downloadURL!
             
             FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
-               print("----------- LOOKING GOOD!! ---------------")
-
                
                FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
-               print("----------- THANKS YOU TOO!! ---------------")
 
                self?.performSegue(withIdentifier: "VendorPostVCToVendorPostSuccessfulVC", sender: self)
             })
          })
+         
       } else {
          let postImage = UIImage(named: "Apple")
          let imageStorageUID = UUID().uuidString
@@ -103,9 +101,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
             
             FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
                
-               print("----------- I WORKED!! ---------------")
                FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
-               print("----------- SO DID I !! ---------------")
                
                self?.performSegue(withIdentifier: "VendorPostVCToVendorPostSuccessfulVC", sender: self)
 
@@ -120,9 +116,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    override func viewDidLoad() {
       super.viewDidLoad()
       imagePicker.delegate = self
-      sendMessage()
       hideKeyboardWhenTappedAround()
-
    }
    
    func dismissViewController() {
@@ -146,38 +140,5 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       }
       self.dismiss(animated: true, completion: nil)
    }
-   
-   
-   // MARK: Push Notifications
-   
-   func sendMessage() {
-      
-      let url = URL(string: "https://fcm.googleapis.com/fcm/send")!
-      var request = URLRequest(url: url)
-      request.httpMethod = "POST"
-      request.allHTTPHeaderFields = [
-         "Content-Type":"application/json",
-         "Authorization":"key=cdJbTbVJOko:APA91bGQq9JemoYaJHfjRwjlUfhypnJZ3S6fW4ed6111AIRVhA_HiD2pNLs_Z2tG0BlJs5COwnxL8t5x-3s2sNH_AY1yTxXDMYozp08If8vGnl-BPZbDjh0fsx8TNjCqtsVsuxZMN7z9"
-      ]
-      let body: [String: Any] = [
-         "to": "/topics/app",
-         "notification" : [
-            "body": "You da man",
-            "title": "To Dan"
-         ]
-      ]
-      let data = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
-      request.httpBody = data
-      
-      URLSession.shared.dataTask(with: request) { data, response, error in
-         
-         if let data = data {
-            
-            let resp = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            
-         }
-         }.resume()
-   }
-   
    
 }
