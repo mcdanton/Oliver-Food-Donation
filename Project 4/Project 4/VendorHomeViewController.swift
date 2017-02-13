@@ -47,7 +47,8 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
       })
    }
    
-   
+   @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
+   }
    
    // MARK: Table View Protocol Functions
    
@@ -59,8 +60,6 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "VendorHomeTableViewCell", for: indexPath) as! VendorHomeTableViewCell
       
- 
-      
       cell.postTitle.text = allPosts[indexPath.row].title
       cell.postStatus.text = allPosts[indexPath.row].status.rawValue
       cell.postDate.text = allPosts[indexPath.row].date.prettyLocaleFormatted
@@ -68,14 +67,6 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
       
       return cell
    }
-   
-   
-   // MARK: Random Functions
-   
-   @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
-   }
-   
-   
    
 
    

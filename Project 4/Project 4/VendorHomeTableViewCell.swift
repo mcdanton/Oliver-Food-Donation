@@ -27,7 +27,7 @@ class VendorHomeTableViewCell: UITableViewCell {
    @IBOutlet weak var postImage: UIImageView!
       
 
-   
+   // MARK: View Loading
    
 
     override func awakeFromNib() {
