@@ -49,6 +49,8 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      self.navigationItem.hidesBackButton = true
    }
    
    

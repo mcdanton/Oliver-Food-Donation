@@ -22,13 +22,13 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    }
    
    enum MainRows: Int {
-      case GeneralFoodInfo = 0
-      case VendorInfo
-      case AdditionalInfo
-      case MessageToVendor
-      case SubmitButton
+      case generalFoodInfo = 0
+      case vendorInfo
+      case additionalInfo
+      case messageToVendor
+      case submitButton
       
-      static var count = MainRows.SubmitButton.rawValue + 1
+      static var count = MainRows.submitButton.rawValue + 1
       
    }
    
@@ -47,8 +47,9 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      self.navigationItem.hidesBackButton = true
       hideKeyboardWhenTappedAround()
-
+      
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(notification: )), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
       
@@ -87,9 +88,9 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "ConsumerFoodPostDetailVCToConsumerRequestSuccessfulVC" {
          if let currentPost = currentPost {
-               let consumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
+            let consumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
             consumerRequestSuccessfulVC.currentPost = currentPost
-
+            
          }
       }
    }
@@ -115,35 +116,60 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
       switch Sections(rawValue: indexPath.section)! {
       case .main:
          switch MainRows(rawValue: indexPath.row)! {
-         case .GeneralFoodInfo:
+         case .generalFoodInfo:
             let generalFoodInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailGeneralFoodInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailGeneralFoodInfoTableViewCell
             
             generalFoodInfoCell.foodTitle.text! = currentPost.title
             generalFoodInfoCell.foodAmount.text! = currentPost.quantity
+            generalFoodInfoCell.postImageURL = currentPost.imageURL
+            
             cell = generalFoodInfoCell
-         case .VendorInfo:
+         case .vendorInfo:
             let vendorInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailVendorInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailVendorInfoTableViewCell
             
             cell = vendorInfoCell
-         case .AdditionalInfo:
+         case .additionalInfo:
             let additionalInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailAdditionalInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailAdditionalInfoTableViewCell
             
             additionalInfoCell.additionalDetails.text = currentPost.additionalInfo
             cell = additionalInfoCell
             
             
-         case .MessageToVendor:
+         case .messageToVendor:
             let messageToVendorCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailMessageToVendorTableViewCell", for: indexPath) as! ConsumerFoodPostDetailMessageToVendorTableViewCell
             
             
             cell = messageToVendorCell
-         case .SubmitButton:
+         case .submitButton:
             let submitButtonCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailSubmitButtonTableViewCell", for: indexPath) as! ConsumerFoodPostDetailSubmitButtonTableViewCell
             
             cell = submitButtonCell
          }
       }
       return cell!
+   }
+   
+   
+   
+   // To set custom cell heights
+   
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      
+      switch Sections(rawValue: indexPath.section)! {
+      case .main:
+         switch MainRows(rawValue: indexPath.row)! {
+         case .generalFoodInfo:
+            return 164
+         case .vendorInfo:
+            return 60
+         case .additionalInfo:
+            return 80
+         case .messageToVendor:
+            return 124
+         case .submitButton:
+            return 100
+         }
+      }
    }
    
    

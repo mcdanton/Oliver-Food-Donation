@@ -23,6 +23,8 @@ class ConsumerRequestSuccessfulViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      self.navigationItem.hidesBackButton = true
+      
       // If there is a current post, change the Post Status in Firebase from "Open" to "Pending", and add a request to the vendor for that food item in Firebase as well. Function includes protections to ensure the current post exists and its status is successfully updated in Firebase.
       if let currentPost = currentPost {
          

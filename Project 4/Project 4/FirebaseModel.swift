@@ -269,6 +269,25 @@ class FirebaseModel {
    }
    
    
+   func observeVendor(vendorToObserve: String, success: @escaping (FoodVendor?) -> ()) {
+      var selectedVendor: FoodVendor?
+      
+      let databaseRef = FIRDatabase.database().reference()
+      databaseRef.observeSingleEvent(of: .value, with: { snapshot in
+         
+         let allVendorsSnapshot = snapshot.childSnapshot(forPath: "Food Vendor")
+         if allVendorsSnapshot.childSnapshot(forPath: vendorToObserve).exists() {
+            
+            let vendorInstance = FoodVendor(snapshot: allVendorsSnapshot.childSnapshot(forPath: vendorToObserve))
+            selectedVendor = vendorInstance
+         }
+         DispatchQueue.main.async {
+            success(selectedVendor)
+         }
+      })
+   }
+   
+   
    
    
    // MARK: Observe Functions

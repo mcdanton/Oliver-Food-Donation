@@ -39,6 +39,7 @@
 		37B2C1451E514BB700F88227 /* NewVendorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */; };
 		37B2C1471E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */; };
 		37B2C1491E51501800F88227 /* DismissKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1481E51501800F88227 /* DismissKeyboardExtension.swift */; };
+		37B2C14F1E51631600F88227 /* VendorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */; };
 		37C85FCD1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */; };
 		37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */; };
 		37C85FD41E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */; };
@@ -96,6 +97,7 @@
 		37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVendorHomeViewController.swift; sourceTree = "<group>"; };
 		37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVendorHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		37B2C1481E51501800F88227 /* DismissKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissKeyboardExtension.swift; sourceTree = "<group>"; };
+		37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorProfileViewController.swift; sourceTree = "<group>"; };
 		37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailViewController.swift; sourceTree = "<group>"; };
 		37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift; sourceTree = "<group>"; };
 		37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailVendorInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */,
 				37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */,
 				37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */,
+				37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				377931341E4411CE00AF8826 /* DateExtension.swift in Sources */,
 				37B2C1451E514BB700F88227 /* NewVendorHomeViewController.swift in Sources */,
 				377931241E413B2800AF8826 /* UserSignupViewController.swift in Sources */,
+				37B2C14F1E51631600F88227 /* VendorProfileViewController.swift in Sources */,
 				3775F3811E4BDC6C00F39C07 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

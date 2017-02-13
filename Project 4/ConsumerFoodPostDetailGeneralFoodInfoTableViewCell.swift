@@ -12,7 +12,11 @@ class ConsumerFoodPostDetailGeneralFoodInfoTableViewCell: UITableViewCell {
    
    
    // MARK: Properties
-   
+   var postImageURL: String? {
+      didSet {
+         foodImage.setImageWithURL(urlString: postImageURL)
+      }
+   }
    
    
    // MARK: Outlets

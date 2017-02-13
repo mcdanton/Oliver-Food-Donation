@@ -24,7 +24,7 @@
 		3345DE3FB948FD4F52BFB9CC47D83DD0 /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = 59FE5E853B24BFC431DC6CE36F9B2682 /* GTMDebugSelectorValidation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		338D57F32361B369F0BD9B196EB4B988 /* GTMNSDictionary+URLArguments.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C65786942FBCEA86AEBB4BBD866B4C /* GTMNSDictionary+URLArguments.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34857AD9EB9F03F4043A278EFE881FFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614D7C3A0D16F17014BFC2E04C031AC2 /* Foundation.framework */; };
-		37B2C1431E51365500F88227 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E32802015A8AC7145024B8EBB5B08B /* FirebaseDatabase.framework */; };
+		37B2C1501E516B8D00F88227 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E32802015A8AC7145024B8EBB5B08B /* FirebaseDatabase.framework */; };
 		3AEBA279E30075619BA3B91594A0283C /* GTMNSDictionary+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A02C6A40C3A9F7766D5479A72F6D7 /* GTMNSDictionary+URLArguments.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		49B02C33D93CD5BB60845F20F7B5F0A5 /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = AA77E07AA6D57ABDDEFCA5D2B556C2EC /* GeoFire.m */; };
 		4C2895BE6FD94CC46C5B4139ABA4B9FE /* GeoFire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A561147F1C52A5750DF689DA9421C6 /* GeoFire-dummy.m */; };
@@ -243,7 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37B2C1431E51365500F88227 /* FirebaseDatabase.framework in Frameworks */,
+				37B2C1501E516B8D00F88227 /* FirebaseDatabase.framework in Frameworks */,
 				1FA375816005BD73DC57C12C9D40E516 /* CoreLocation.framework in Frameworks */,
 				A83EEEDEDD3140EE175D2C85B3689135 /* Foundation.framework in Frameworks */,
 				735B1005CF6967A0B2224C691D8DAB4F /* GoogleToolboxForMac.framework in Frameworks */,

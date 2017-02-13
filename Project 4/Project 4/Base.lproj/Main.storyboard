@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6NY-vw-n4l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fcd-BQ-gWs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -588,10 +588,10 @@
             </objects>
             <point key="canvasLocation" x="2292" y="2633"/>
         </scene>
-        <!--Profile-->
+        <!--VendorProfileViewController-->
         <scene sceneID="2Xe-Zu-E7z">
             <objects>
-                <viewController id="fPN-v2-JBh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VendorProfileViewController" title="VendorProfileViewController" id="fPN-v2-JBh" customClass="VendorProfileViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SAU-GZ-FC2"/>
                         <viewControllerLayoutGuide type="bottom" id="5pV-3O-fG9"/>
@@ -635,7 +635,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-s8-rjY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ADD_LOGO__58323.1458938781.500.750" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-s8-rjY">
                                 <rect key="frame" x="117" y="68" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -643,6 +643,11 @@
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile_icon" id="cZr-f6-45d"/>
+                    <connections>
+                        <outlet property="companyAddress" destination="CQw-9s-0yL" id="frz-Zn-VjB"/>
+                        <outlet property="companyEmail" destination="uF4-7C-4rR" id="XLr-EI-tds"/>
+                        <outlet property="companyName" destination="lcC-Nq-Qf8" id="s1p-rh-xX1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4w0-S7-HXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -925,7 +930,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hand_icon" translatesAutoresizingMaskIntoConstraints="NO" id="sLm-8Y-Ahe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Overflowing Hand(white)" translatesAutoresizingMaskIntoConstraints="NO" id="sLm-8Y-Ahe">
                                 <rect key="frame" x="86" y="80" width="202" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1106,7 +1111,7 @@
                                     <action selector="loginPressed:" destination="UEU-kD-BFW" eventType="touchUpInside" id="517-FV-Ogp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hand_icon" translatesAutoresizingMaskIntoConstraints="NO" id="RNp-aI-Fvh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Overflowing Hand(white)" translatesAutoresizingMaskIntoConstraints="NO" id="RNp-aI-Fvh">
                                 <rect key="frame" x="86" y="110" width="202" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1189,7 +1194,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hand_icon" translatesAutoresizingMaskIntoConstraints="NO" id="PRF-9P-Gdv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Overflowing Hand(white)" translatesAutoresizingMaskIntoConstraints="NO" id="PRF-9P-Gdv">
                                 <rect key="frame" x="142" y="226" width="92" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1205,7 +1210,7 @@
                                     <segue destination="SOJ-SG-TLi" kind="show" identifier="SignInAsVendor" id="1KU-C2-1P4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-rw-c6E">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hearts(white)" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-rw-c6E">
                                 <rect key="frame" x="154" y="433" width="69" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1368,10 +1373,10 @@
             </objects>
             <point key="canvasLocation" x="-138" y="-938"/>
         </scene>
-        <!--Consumer Food Post Detail View Controller-->
+        <!--Submit Request-->
         <scene sceneID="oaF-ix-D6E">
             <objects>
-                <viewController storyboardIdentifier="ConsumerFoodPostDetailViewController" id="r8V-3u-fdI" customClass="ConsumerFoodPostDetailViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsumerFoodPostDetailViewController" title="Submit Request" id="r8V-3u-fdI" customClass="ConsumerFoodPostDetailViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eg8-Sj-w2H"/>
                         <viewControllerLayoutGuide type="bottom" id="luh-4z-nos"/>
@@ -1380,15 +1385,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w2M-of-34M">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w2M-of-34M">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailGeneralFoodInfoTableViewCell" rowHeight="150" id="bwg-y2-6fR" customClass="ConsumerFoodPostDetailGeneralFoodInfoTableViewCell" customModule="Project_4" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailGeneralFoodInfoTableViewCell" rowHeight="164" id="bwg-y2-6fR" customClass="ConsumerFoodPostDetailGeneralFoodInfoTableViewCell" customModule="Project_4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bwg-y2-6fR" id="5Ze-hO-dnp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjm-3b-XZT">
@@ -1448,11 +1453,11 @@
                                             <outlet property="foodTitle" destination="FBp-Du-k3g" id="h2M-R8-SEx"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailVendorInfoTableViewCell" rowHeight="50" id="0aG-oa-OtR" customClass="ConsumerFoodPostDetailVendorInfoTableViewCell" customModule="Project_4" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="178" width="375" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailVendorInfoTableViewCell" rowHeight="60" id="0aG-oa-OtR" customClass="ConsumerFoodPostDetailVendorInfoTableViewCell" customModule="Project_4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="192" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0aG-oa-OtR" id="NQM-VG-l4v">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABC Catering Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edm-5K-zo1">
@@ -1478,10 +1483,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailAdditionalInfoTableViewCell" rowHeight="80" id="eKv-fC-Iag" customClass="ConsumerFoodPostDetailAdditionalInfoTableViewCell" customModule="Project_4" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="252" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eKv-fC-Iag" id="lPO-tW-fBG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnY-b3-6Ea">
@@ -1505,18 +1510,17 @@
                                             <outlet property="additionalDetails" destination="pD1-MJ-ksD" id="aDv-QD-MBG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailMessageToVendorTableViewCell" rowHeight="134" id="uyN-Ch-826" customClass="ConsumerFoodPostDetailMessageToVendorTableViewCell" customModule="Project_4" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="308" width="375" height="134"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailMessageToVendorTableViewCell" rowHeight="124" id="uyN-Ch-826" customClass="ConsumerFoodPostDetailMessageToVendorTableViewCell" customModule="Project_4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="332" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uyN-Ch-826" id="Z6t-zX-v45">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fB5-LH-D7c">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Message Vendor:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fB5-LH-D7c">
                                                     <rect key="frame" x="17" y="4" width="340" height="122"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -1524,11 +1528,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailSubmitButtonTableViewCell" rowHeight="114" id="zsA-13-SLP" customClass="ConsumerFoodPostDetailSubmitButtonTableViewCell" customModule="Project_4" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="442" width="375" height="114"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConsumerFoodPostDetailSubmitButtonTableViewCell" rowHeight="100" id="zsA-13-SLP" customClass="ConsumerFoodPostDetailSubmitButtonTableViewCell" customModule="Project_4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="456" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zsA-13-SLP" id="wxr-BS-8Z8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPn-pk-s9v">
@@ -1569,12 +1573,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONk-mw-tT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-939"/>
+            <point key="canvasLocation" x="641" y="-939"/>
         </scene>
-        <!--Consumer Request Successful View Controller-->
+        <!--Request Confirmed-->
         <scene sceneID="waf-nj-3Q2">
             <objects>
-                <viewController storyboardIdentifier="ConsumerRequestSuccessfulViewController" id="eag-QR-uVL" customClass="ConsumerRequestSuccessfulViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsumerRequestSuccessfulViewController" title="Request Confirmed" id="eag-QR-uVL" customClass="ConsumerRequestSuccessfulViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Ob-DA-JDi"/>
                         <viewControllerLayoutGuide type="bottom" id="mxO-oZ-HW4"/>
@@ -1689,13 +1693,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ADD_LOGO__58323.1458938781.500.750" width="125" height="125"/>
         <image name="Fork" width="104" height="104"/>
+        <image name="Hearts(white)" width="97" height="99"/>
         <image name="Home_icon" width="25" height="25"/>
         <image name="Mail_icon" width="25" height="25"/>
         <image name="Map_icon" width="25" height="25"/>
+        <image name="Overflowing Hand(white)" width="123" height="117"/>
         <image name="Profile_icon" width="25" height="25"/>
-        <image name="hand_icon" width="123" height="117"/>
-        <image name="heart_icon" width="97" height="99"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="U7t-SY-eLw"/>
