@@ -26,9 +26,7 @@ class VendorProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      companyEmail.text = FIRAuth.auth()?.currentUser?.email
-      companyName.text = FIRAuth.auth()?.currentUser?.displayName
-      
+
       
    }
 
