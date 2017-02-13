@@ -13,10 +13,8 @@
 
 
 ##Screenshots
-![Vendor Home Screen](Screenshots/Vendor Home Page.png "Vendor Home Screen")
-![Consumer Food Request](Screenshots/Consumer Request.png "Consumer Food Request")
-![Vendor Request Review](Screenshots/Vendor Requests.png "Vendor Request Review")
-![User Profile](Screenshots/User Profile.png "User Profile")
+![Vendor Home Screen](Screenshots/Vendor Home Page.png "Vendor Home Screen") ![Consumer Food Request](Screenshots/Consumer Request.png "Consumer Food Request")
+![Vendor Request Review](Screenshots/Vendor Requests.png "Vendor Request Review") ![User Profile](Screenshots/User Profile.png "User Profile")
 
 
 ##Description
