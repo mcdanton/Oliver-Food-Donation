@@ -232,7 +232,7 @@
             </objects>
             <point key="canvasLocation" x="674" y="3349"/>
         </scene>
-        <!--Food Vendor-->
+        <!--Post A New Food-->
         <scene sceneID="lmG-hj-so0">
             <objects>
                 <viewController id="82A-bW-hIv" customClass="VendorPostViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
@@ -363,7 +363,7 @@
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Post" id="LHv-Ag-Htc"/>
-                    <navigationItem key="navigationItem" title="Food Vendor" id="6MI-TV-Ewq"/>
+                    <navigationItem key="navigationItem" title="Post A New Food" id="6MI-TV-Ewq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deadline" destination="hsN-Zq-ORQ" id="rES-N0-19n"/>
@@ -379,7 +379,7 @@
             </objects>
             <point key="canvasLocation" x="642" y="2633"/>
         </scene>
-        <!--Vendor Post Successful View Controller-->
+        <!--Post Success!-->
         <scene sceneID="lYA-sG-xQh">
             <objects>
                 <viewController id="tAk-bd-iSi" customClass="VendorPostSuccessfulViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
@@ -401,6 +401,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Post Success!" id="VKi-rM-n6o"/>
                     <connections>
                         <segue destination="K0t-CU-Adm" kind="unwind" identifier="VendorPostSuccessfulVCToVendorHomeVC" unwindAction="VendorPostSuccessfulVCToVendorHomeVC:" id="gLX-15-gbe"/>
                     </connections>
@@ -906,7 +907,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O3p-be-gRX"/>
+                    <navigationItem key="navigationItem" title="Home" id="O3p-be-gRX"/>
                     <connections>
                         <outlet property="collectionViewOutlet" destination="56c-om-oSA" id="reu-Y2-3Ul"/>
                     </connections>
