@@ -42,6 +42,8 @@
 		37B2C14F1E51631600F88227 /* VendorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */; };
 		37B2C1521E517E0E00F88227 /* NewConsumerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1511E517E0E00F88227 /* NewConsumerHomeViewController.swift */; };
 		37B2C1541E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */; };
+		37B2C1561E51F0F100F88227 /* ConsumerRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */; };
+		37B2C1581E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */; };
 		37C85FCD1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */; };
 		37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */; };
 		37C85FD41E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */; };
@@ -102,6 +104,8 @@
 		37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorProfileViewController.swift; sourceTree = "<group>"; };
 		37B2C1511E517E0E00F88227 /* NewConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConsumerHomeViewController.swift; sourceTree = "<group>"; };
 		37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConsumerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerRequestsViewController.swift; sourceTree = "<group>"; };
+		37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailViewController.swift; sourceTree = "<group>"; };
 		37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift; sourceTree = "<group>"; };
 		37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailVendorInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */,
 				37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */,
 				37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */,
+				37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */,
+				37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */,
 			);
 			name = Consumer;
 			path = ..;
@@ -455,6 +461,7 @@
 				3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */,
 				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
+				37B2C1581E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift in Sources */,
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
 				37C85FCD1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift in Sources */,
 				37C85FD81E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift in Sources */,
@@ -471,6 +478,7 @@
 				377931241E413B2800AF8826 /* UserSignupViewController.swift in Sources */,
 				37B2C14F1E51631600F88227 /* VendorProfileViewController.swift in Sources */,
 				3775F3811E4BDC6C00F39C07 /* Enums.swift in Sources */,
+				37B2C1561E51F0F100F88227 /* ConsumerRequestsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,17 +1,17 @@
 //
-//  VendorRequestsViewController.swift
+//  ConsumerRequestsViewController.swift
 //  Project 4
 //
-//  Created by Dan Hefter on 2/10/17.
+//  Created by Dan Hefter on 2/13/17.
 //  Copyright © 2017 GA. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import FirebaseDatabase
 import FirebaseAuth
 
-class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ConsumerRequestsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+   
    
    // MARK: Properties
    
@@ -32,7 +32,7 @@ class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, 
    
    override func viewWillAppear(_ animated: Bool) {
       
-      FirebaseModel.sharedInstance.queryRequests(searchPath: "requests", key: "itemVendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfRequests in
+      FirebaseModel.sharedInstance.queryRequests(searchPath: "requests", key: "requestedBy", valueToSearch: (FIRAuth.auth()?.currentUser?.email)!, success: { [weak self] arrayOfRequests in
          guard let unwrappedSelf = self else { return }
          unwrappedSelf.allRequests = arrayOfRequests
       })
@@ -40,14 +40,9 @@ class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, 
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+   }
 
-   }
-   
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-   }
-   
    
    
    // MARK: Collection View Setup
@@ -61,31 +56,22 @@ class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, 
    }
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VendorRequestsCollectionViewCell", for: indexPath) as! VendorRequestsCollectionViewCell
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConsumerRequestsCollectionViewCell", for: indexPath) as! ConsumerRequestsCollectionViewCell
       if allRequests.isEmpty {
          cell.noOpenRequestsView.alpha = 1.0
       } else {
          cell.noOpenRequestsView.alpha = 0.0
          
-         switch allRequests[indexPath.row].requestStatus {
-         case .pending:
-            cell.actionView.alpha = 1.0
-         default:
-            cell.actionView.alpha = 0.0
-            cell.requestStatus.text = allRequests[indexPath.row].requestStatus.rawValue
-         }
-         cell.currentRequest = allRequests[indexPath.row]
-         cell.requester.text = allRequests[indexPath.row].requester
+
          cell.foodTitle.text = allRequests[indexPath.row].foodRequested
          cell.requestMessage.text = allRequests[indexPath.row].requestMessage
          cell.requestDate.text = allRequests[indexPath.row].requestDate.prettyLocaleFormatted
          cell.pickupStatus.text = allRequests[indexPath.row].pickupStatus.rawValue
+         cell.requestStatus.text = allRequests[indexPath.row].requestStatus.rawValue
+
       }
       return cell
    }
    
    
 }
-
-
-
