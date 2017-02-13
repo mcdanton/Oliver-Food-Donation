@@ -29,6 +29,7 @@ class VendorProfileViewController: UIViewController {
       companyEmail.text = FIRAuth.auth()?.currentUser?.email
       companyName.text = FIRAuth.auth()?.currentUser?.displayName
       
+      
    }
 
     
