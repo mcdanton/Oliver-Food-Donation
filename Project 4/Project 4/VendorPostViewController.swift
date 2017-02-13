@@ -121,6 +121,8 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       super.viewDidLoad()
       imagePicker.delegate = self
       sendMessage()
+      hideKeyboardWhenTappedAround()
+
    }
    
    func dismissViewController() {

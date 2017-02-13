@@ -47,6 +47,8 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      hideKeyboardWhenTappedAround()
+
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(notification: )), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
       
