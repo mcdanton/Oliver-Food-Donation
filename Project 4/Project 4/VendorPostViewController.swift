@@ -155,7 +155,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       request.httpMethod = "POST"
       request.allHTTPHeaderFields = [
          "Content-Type":"application/json",
-         "Authorization":"key=ctuF4e66Hfs:APA91bFjOHHWGjfX44SpjkQo51o0Z_rJoBPziygjvzC8FiQjUFYkkf51moHiLvEf3VTt_-g3tZ9Uprs--LeWnOS7RuJcqVeUmjk7UaGrvY3FQ3Xa3IzuYTqj9T3fq90oQdZ3nsVqQ8ZI"
+         "Authorization":"key=APA91bFjOHHWGjfX44SpjkQo51o0Z_rJoBPziygjvzC8FiQjUFYkkf51moHiLvEf3VTt_-g3tZ9Uprs--LeWnOS7RuJcqVeUmjk7UaGrvY3FQ3Xa3IzuYTqj9T3fq90oQdZ3nsVqQ8ZI"
       ]
       let body: [String: Any] = [
          "to": "/topics/app",
@@ -172,7 +172,6 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
          if let data = data {
             
             let resp = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            print(resp)
             
          }
          }.resume()
