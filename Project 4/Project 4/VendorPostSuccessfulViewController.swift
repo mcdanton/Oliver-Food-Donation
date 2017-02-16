@@ -25,7 +25,7 @@ class VendorPostSuccessfulViewController: UIViewController {
    
    func dismissViewController() {
       
-      DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: { [weak self] in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: { [weak self] in
          self?.performSegue(withIdentifier: "VendorPostSuccessfulVCToVendorHomeVC", sender: self)
       })
    }

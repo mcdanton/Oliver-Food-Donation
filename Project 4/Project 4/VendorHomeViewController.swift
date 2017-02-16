@@ -13,7 +13,7 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    
    // MARK: Properties
    
-   var allPosts = [DataModel.sharedInstance.post] {
+   var allPosts = [Post]() {
       didSet {
          tableViewOutlet.reloadData()
       }
@@ -29,30 +29,24 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    
    
    
-   //MARK: View Did Load
+   //MARK: View Loading
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
-      // Do any additional setup after loading the view.
    }
    
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       
-      FirebaseModel.sharedInstance.observePosts(success: { [weak self] posts in
-         
+      FirebaseModel.sharedInstance.queryVendorPosts(searchPath: "foodPosted", key: "vendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfPosts in
          guard let unwrappedSelf = self else { return }
-         unwrappedSelf.allPosts = posts
+         unwrappedSelf.allPosts = arrayOfPosts
       })
    }
    
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+   @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
    }
-   
    
    // MARK: Table View Protocol Functions
    
@@ -64,41 +58,21 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "VendorHomeTableViewCell", for: indexPath) as! VendorHomeTableViewCell
       
+      cell.layer.shadowColor = UIColor.black.cgColor
+      cell.layer.shadowOffset = CGSize(width: 5, height: 5)
+      cell.layer.shadowOpacity = 1
+      cell.layer.shadowRadius = 5
+      cell.layer.masksToBounds = false
+      cell.layer.cornerRadius = 10
       
-      cell.postTitle.text = allPosts[indexPath.row]?.title
-      cell.postStatus.text = allPosts[indexPath.row]?.status
-      cell.postDate.text = allPosts[indexPath.row]?.date.description
-      
-      // read with var date = NSDate(timeIntervalSince1970: interval)
-      
+      cell.postTitle.text = allPosts[indexPath.row].title
+      cell.postStatus.text = allPosts[indexPath.row].status.rawValue
+      cell.postDate.text = allPosts[indexPath.row].date.prettyLocaleFormatted
+      cell.postImageURL = allPosts[indexPath.row].imageURL
       
       return cell
    }
-   
-   
-   // MARK: Random Functions
-   
-   @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
-   }
-   
-   
-   let secondsToMinute = 60
-   let secondsToHour = 60*60
-   let secondsToDay = 60*60*24
-   
-   
-   func convertToDateFormat(dateToConvert: Date) {
-      
-      let now = Date()
-      let timeInterval = now.timeIntervalSince(dateToConvert)
-      
-      
-      
-      
-      
-      
-   }
-   
+
    
 }
 

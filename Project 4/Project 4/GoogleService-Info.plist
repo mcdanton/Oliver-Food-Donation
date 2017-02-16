@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1082232685605-9sucrh5g9li2lhud5sphorpk6gpn3u49.apps.googleusercontent.com</string>
+	<string>1082232685605-m15m5nkcta35brd89d0gpq66t0g2bveu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1082232685605-9sucrh5g9li2lhud5sphorpk6gpn3u49</string>
+	<string>com.googleusercontent.apps.1082232685605-m15m5nkcta35brd89d0gpq66t0g2bveu</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAcyriE2s-OwtvoaLQbuQeNJPTxQivf-ZY</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.danhefter.Project-4</string>
+	<string>com.danhefter.Project4</string>
 	<key>PROJECT_ID</key>
 	<string>project-4-ba830</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1082232685605:ios:8bcb478ea74292ee</string>
+	<string>1:1082232685605:ios:797b6b2a31f60e5c</string>
 	<key>DATABASE_URL</key>
 	<string>https://project-4-ba830.firebaseio.com</string>
 </dict>

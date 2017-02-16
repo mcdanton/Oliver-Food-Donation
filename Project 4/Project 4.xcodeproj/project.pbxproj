@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */; };
+		3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */; };
+		3775F3601E4A7B1900F39C07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3775F35F1E4A7B1900F39C07 /* GoogleService-Info.plist */; };
+		3775F3811E4BDC6C00F39C07 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F3801E4BDC6C00F39C07 /* Enums.swift */; };
 		377931161E411C1E00AF8826 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931151E411C1E00AF8826 /* DataModel.swift */; };
 		377931181E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */; };
 		3779311A1E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */; };
@@ -14,37 +18,78 @@
 		377931201E41271D00AF8826 /* god-giving-health.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311C1E41271D00AF8826 /* god-giving-health.jpg */; };
 		377931211E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */; };
 		377931221E41271D00AF8826 /* Spirit-of-Giving.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */; };
-		377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931231E413B2800AF8826 /* VendorSignupViewController.swift */; };
-		377931271E4147F000AF8826 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 377931261E4147F000AF8826 /* GoogleService-Info.plist */; };
+		377931241E413B2800AF8826 /* UserSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931231E413B2800AF8826 /* UserSignupViewController.swift */; };
 		377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931281E41490B00AF8826 /* VendorHomeViewController.swift */; };
-		3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */; };
+		3779312B1E4152C200AF8826 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312A1E4152C200AF8826 /* UserLoginViewController.swift */; };
 		3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */; };
 		3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */; };
 		377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */; };
+		377931341E4411CE00AF8826 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931331E4411CE00AF8826 /* DateExtension.swift */; };
+		377931361E44CD8700AF8826 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377931351E44CD8700AF8826 /* CoreLocation.framework */; };
+		377931381E44CE1300AF8826 /* ConsumerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */; };
+		3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377931391E44D80700AF8826 /* LocationManagerModel.swift */; };
+		379A62171E4E51C3006FD48C /* VendorRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */; };
+		379A62191E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */; };
 		37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA181F1E3FEB7500042656 /* AppDelegate.swift */; };
 		37AA18221E3FEB7500042656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA18211E3FEB7500042656 /* ViewController.swift */; };
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
 		37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18261E3FEB7500042656 /* Assets.xcassets */; };
 		37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */; };
+		37B2C1421E51186C00F88227 /* ImageFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1411E51186C00F88227 /* ImageFetch.swift */; };
+		37B2C1451E514BB700F88227 /* NewVendorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */; };
+		37B2C1471E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */; };
+		37B2C1491E51501800F88227 /* DismissKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1481E51501800F88227 /* DismissKeyboardExtension.swift */; };
+		37B2C14F1E51631600F88227 /* VendorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */; };
+		37B2C1521E517E0E00F88227 /* NewConsumerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1511E517E0E00F88227 /* NewConsumerHomeViewController.swift */; };
+		37B2C1541E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */; };
+		37B2C1561E51F0F100F88227 /* ConsumerRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */; };
+		37B2C1581E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */; };
+		37C85FCD1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */; };
+		37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */; };
+		37C85FD41E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */; };
+		37C85FD61E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD51E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift */; };
+		37C85FD81E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD71E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift */; };
+		37C85FDA1E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FD91E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift */; };
+		37C85FDC1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */; };
+		37C85FDE1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FDD1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift */; };
+		37C85FE11E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FE01E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift */; };
+		37C85FE31E4D23FC003DBEEF /* VendorFoodQuantityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FE21E4D23FC003DBEEF /* VendorFoodQuantityTableViewCell.swift */; };
+		37C85FE51E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FE41E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift */; };
+		37C85FE71E4D2463003DBEEF /* VendorFoodLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FE61E4D2463003DBEEF /* VendorFoodLocationTableViewCell.swift */; };
+		37C85FE91E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FE81E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift */; };
+		37C85FEB1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FEA1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift */; };
+		37C85FED1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85FEC1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift */; };
+		37EACEB51E4A2C4F00EBC806 /* ButtonExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */; };
+		37EACEBA1E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */; };
 		37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */; };
-		47A4BA9A84ACBFBCDCB44694 /* libPods-Project 4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */; };
+		A2391E7DA4F26DB4DAF9A1A8 /* Pods_Project_4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3775F3541E4A4DF700F39C07 /* Project 4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project 4.entitlements"; sourceTree = "<group>"; };
+		3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeViewController.swift; sourceTree = "<group>"; };
+		3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeTableViewCell.swift; sourceTree = "<group>"; };
+		3775F35F1E4A7B1900F39C07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3775F3801E4BDC6C00F39C07 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		377931151E411C1E00AF8826 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3f9fd2eeea7e6464627135c7554403d3.jpg; sourceTree = "<group>"; };
-		377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d7c6904b68285dce2c0d033f8ca38f27.jpg; sourceTree = "<group>"; };
-		3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Feed-the-Hungry.jpg"; sourceTree = "<group>"; };
-		3779311C1E41271D00AF8826 /* god-giving-health.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "god-giving-health.jpg"; sourceTree = "<group>"; };
-		3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; sourceTree = "<group>"; };
-		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
-		377931231E413B2800AF8826 /* VendorSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorSignupViewController.swift; sourceTree = "<group>"; };
-		377931261E4147F000AF8826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3f9fd2eeea7e6464627135c7554403d3.jpg; path = "Project 4/3f9fd2eeea7e6464627135c7554403d3.jpg"; sourceTree = "<group>"; };
+		377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = d7c6904b68285dce2c0d033f8ca38f27.jpg; path = "Project 4/d7c6904b68285dce2c0d033f8ca38f27.jpg"; sourceTree = "<group>"; };
+		3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Feed-the-Hungry.jpg"; path = "Project 4/Feed-the-Hungry.jpg"; sourceTree = "<group>"; };
+		3779311C1E41271D00AF8826 /* god-giving-health.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "god-giving-health.jpg"; path = "Project 4/god-giving-health.jpg"; sourceTree = "<group>"; };
+		3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; path = "Project 4/11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg"; sourceTree = "<group>"; };
+		3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Spirit-of-Giving.jpg"; path = "Project 4/Spirit-of-Giving.jpg"; sourceTree = "<group>"; };
+		377931231E413B2800AF8826 /* UserSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSignupViewController.swift; sourceTree = "<group>"; };
 		377931281E41490B00AF8826 /* VendorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeViewController.swift; sourceTree = "<group>"; };
-		3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorLoginViewController.swift; sourceTree = "<group>"; };
+		3779312A1E4152C200AF8826 /* UserLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostViewController.swift; sourceTree = "<group>"; };
 		377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostSuccessfulViewController.swift; sourceTree = "<group>"; };
+		377931331E4411CE00AF8826 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		377931351E44CD8700AF8826 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerMapViewController.swift; sourceTree = "<group>"; };
+		377931391E44D80700AF8826 /* LocationManagerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerModel.swift; sourceTree = "<group>"; };
+		379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorRequestsViewController.swift; sourceTree = "<group>"; };
+		379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AA18211E3FEB7500042656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,8 +97,34 @@
 		37AA18261E3FEB7500042656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AA18291E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37AA182B1E3FEB7500042656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37B2C1411E51186C00F88227 /* ImageFetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetch.swift; sourceTree = "<group>"; };
+		37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVendorHomeViewController.swift; sourceTree = "<group>"; };
+		37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVendorHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		37B2C1481E51501800F88227 /* DismissKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissKeyboardExtension.swift; sourceTree = "<group>"; };
+		37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorProfileViewController.swift; sourceTree = "<group>"; };
+		37B2C1511E517E0E00F88227 /* NewConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConsumerHomeViewController.swift; sourceTree = "<group>"; };
+		37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConsumerHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerRequestsViewController.swift; sourceTree = "<group>"; };
+		37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
+		37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailViewController.swift; sourceTree = "<group>"; };
+		37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailVendorInfoTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FD51E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FD71E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailMessageToVendorTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FD91E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerFoodPostDetailSubmitButtonTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerRequestSuccessfulViewController.swift; sourceTree = "<group>"; };
+		37C85FDD1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorPostNewFoodViewController.swift; sourceTree = "<group>"; };
+		37C85FE01E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFoodTitleTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FE21E4D23FC003DBEEF /* VendorFoodQuantityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFoodQuantityTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FE41E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFoodDurationTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FE61E4D2463003DBEEF /* VendorFoodLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFoodLocationTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FE81E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFoodAdditionalInfoTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FEA1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFoodUploadImageTableViewCell.swift; sourceTree = "<group>"; };
+		37C85FEC1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFoodPostButtonTableViewCell.swift; sourceTree = "<group>"; };
+		37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtensionClass.swift; sourceTree = "<group>"; };
+		37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUserRoleViewController.swift; sourceTree = "<group>"; };
 		37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
-		5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project 4.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,22 +134,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47A4BA9A84ACBFBCDCB44694 /* libPods-Project 4.a in Frameworks */,
+				377931361E44CD8700AF8826 /* CoreLocation.framework in Frameworks */,
+				A2391E7DA4F26DB4DAF9A1A8 /* Pods_Project_4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3775F3581E4A5A9D00F39C07 /* Consumer */ = {
+			isa = PBXGroup;
+			children = (
+				37C85FCE1E4BF3BB003DBEEF /* TableViewItems */,
+				3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */,
+				37B2C1511E517E0E00F88227 /* NewConsumerHomeViewController.swift */,
+				3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */,
+				37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */,
+				37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */,
+				37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */,
+				37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */,
+				37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */,
+			);
+			name = Consumer;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3775F35B1E4A5B1900F39C07 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */,
+				377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */,
+				3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */,
+				3779311C1E41271D00AF8826 /* god-giving-health.jpg */,
+				3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */,
+				3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */,
+			);
+			name = Images;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3775F35E1E4A666300F39C07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				377931151E411C1E00AF8826 /* DataModel.swift */,
+				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
+				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
+				377931331E4411CE00AF8826 /* DateExtension.swift */,
+				37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */,
+				3775F3801E4BDC6C00F39C07 /* Enums.swift */,
+				37B2C1411E51186C00F88227 /* ImageFetch.swift */,
+				37B2C1481E51501800F88227 /* DismissKeyboardExtension.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		377931251E413B2C00AF8826 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				377931231E413B2800AF8826 /* VendorSignupViewController.swift */,
-				3779312A1E4152C200AF8826 /* VendorLoginViewController.swift */,
+				37C85FDF1E4D23AF003DBEEF /* TableViewItems */,
 				377931281E41490B00AF8826 /* VendorHomeViewController.swift */,
 				3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */,
 				3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */,
 				377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */,
+				379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */,
+				37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */,
+				37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */,
+				37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -104,30 +225,67 @@
 		37AA181E1E3FEB7500042656 /* Project 4 */ = {
 			isa = PBXGroup;
 			children = (
+				3775F35E1E4A666300F39C07 /* Models */,
+				3775F3541E4A4DF700F39C07 /* Project 4.entitlements */,
 				377931251E413B2C00AF8826 /* Vendor */,
+				3775F3581E4A5A9D00F39C07 /* Consumer */,
+				37EACEB81E4A3D9D00EBC806 /* Onboarding */,
 				37AA181F1E3FEB7500042656 /* AppDelegate.swift */,
 				37AA18211E3FEB7500042656 /* ViewController.swift */,
 				37AA18231E3FEB7500042656 /* Main.storyboard */,
+				37C85FDD1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift */,
+				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
 				37AA18261E3FEB7500042656 /* Assets.xcassets */,
-				377931171E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg */,
-				377931191E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg */,
-				3779311B1E41271D00AF8826 /* Feed-the-Hungry.jpg */,
-				3779311C1E41271D00AF8826 /* god-giving-health.jpg */,
-				3779311D1E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg */,
-				3779311E1E41271D00AF8826 /* Spirit-of-Giving.jpg */,
+				3775F35B1E4A5B1900F39C07 /* Images */,
 				37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */,
 				37AA182B1E3FEB7500042656 /* Info.plist */,
-				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
-				377931151E411C1E00AF8826 /* DataModel.swift */,
-				377931261E4147F000AF8826 /* GoogleService-Info.plist */,
+				3775F35F1E4A7B1900F39C07 /* GoogleService-Info.plist */,
 			);
 			path = "Project 4";
+			sourceTree = "<group>";
+		};
+		37C85FCE1E4BF3BB003DBEEF /* TableViewItems */ = {
+			isa = PBXGroup;
+			children = (
+				37C85FD11E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift */,
+				37C85FD31E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift */,
+				37C85FD51E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift */,
+				37C85FD71E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift */,
+				37C85FD91E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift */,
+			);
+			name = TableViewItems;
+			sourceTree = "<group>";
+		};
+		37C85FDF1E4D23AF003DBEEF /* TableViewItems */ = {
+			isa = PBXGroup;
+			children = (
+				37C85FE01E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift */,
+				37C85FE21E4D23FC003DBEEF /* VendorFoodQuantityTableViewCell.swift */,
+				37C85FE41E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift */,
+				37C85FE61E4D2463003DBEEF /* VendorFoodLocationTableViewCell.swift */,
+				37C85FE81E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift */,
+				37C85FEA1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift */,
+				37C85FEC1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift */,
+				379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */,
+			);
+			name = TableViewItems;
+			sourceTree = "<group>";
+		};
+		37EACEB81E4A3D9D00EBC806 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				37EACEB91E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift */,
+				377931231E413B2800AF8826 /* UserSignupViewController.swift */,
+				3779312A1E4152C200AF8826 /* UserLoginViewController.swift */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		5D33FA3A1E365CBB2AC2F131 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5069CEFF2291E7DADDC91A97 /* libPods-Project 4.a */,
+				377931351E44CD8700AF8826 /* CoreLocation.framework */,
+				CB9C0D1AC67EAE0CE50F2FCC /* Pods_Project_4.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,8 +334,13 @@
 				TargetAttributes = {
 					37AA181B1E3FEB7500042656 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = DZ528PGQF5;
+						DevelopmentTeam = R92756Z4HH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -206,12 +369,12 @@
 			files = (
 				37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */,
 				377931211E41271D00AF8826 /* 11157180-Giving-food-with-love-concept-slice-of-bread-in-child-hands-isolated-Stock-Photo.jpg in Resources */,
-				377931271E4147F000AF8826 /* GoogleService-Info.plist in Resources */,
 				3779311F1E41271D00AF8826 /* Feed-the-Hungry.jpg in Resources */,
 				377931201E41271D00AF8826 /* god-giving-health.jpg in Resources */,
 				377931181E41263E00AF8826 /* 3f9fd2eeea7e6464627135c7554403d3.jpg in Resources */,
 				3779311A1E41270D00AF8826 /* d7c6904b68285dce2c0d033f8ca38f27.jpg in Resources */,
 				37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */,
+				3775F3601E4A7B1900F39C07 /* GoogleService-Info.plist in Resources */,
 				37AA18251E3FEB7500042656 /* Main.storyboard in Resources */,
 				377931221E41271D00AF8826 /* Spirit-of-Giving.jpg in Resources */,
 			);
@@ -273,15 +436,49 @@
 			buildActionMask = 2147483647;
 			files = (
 				37FB8C731E4119FA004F6D69 /* FirebaseModel.swift in Sources */,
+				37C85FEB1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift in Sources */,
 				377931161E411C1E00AF8826 /* DataModel.swift in Sources */,
+				37C85FE31E4D23FC003DBEEF /* VendorFoodQuantityTableViewCell.swift in Sources */,
+				37C85FDC1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift in Sources */,
+				37C85FE91E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift in Sources */,
 				377931311E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift in Sources */,
+				37EACEBA1E4A3DBD00EBC806 /* ChooseUserRoleViewController.swift in Sources */,
+				37B2C1491E51501800F88227 /* DismissKeyboardExtension.swift in Sources */,
+				37C85FD41E4BF493003DBEEF /* ConsumerFoodPostDetailVendorInfoTableViewCell.swift in Sources */,
+				377931381E44CE1300AF8826 /* ConsumerMapViewController.swift in Sources */,
+				37C85FDA1E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift in Sources */,
+				379A62191E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift in Sources */,
+				3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */,
+				37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */,
+				37C85FE51E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift in Sources */,
+				37C85FD61E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift in Sources */,
+				37B2C1421E51186C00F88227 /* ImageFetch.swift in Sources */,
 				3779312D1E415EC700AF8826 /* VendorHomeTableViewCell.swift in Sources */,
-				3779312B1E4152C200AF8826 /* VendorLoginViewController.swift in Sources */,
+				37B2C1521E517E0E00F88227 /* NewConsumerHomeViewController.swift in Sources */,
+				37B2C1471E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift in Sources */,
+				379A62171E4E51C3006FD48C /* VendorRequestsViewController.swift in Sources */,
+				3779312B1E4152C200AF8826 /* UserLoginViewController.swift in Sources */,
+				3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */,
+				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
+				37B2C1581E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift in Sources */,
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
+				37C85FCD1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift in Sources */,
+				37C85FD81E4BF4F2003DBEEF /* ConsumerFoodPostDetailMessageToVendorTableViewCell.swift in Sources */,
 				37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */,
+				37B2C1541E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift in Sources */,
+				37C85FED1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift in Sources */,
 				3779312F1E43CBD800AF8826 /* VendorPostViewController.swift in Sources */,
-				377931241E413B2800AF8826 /* VendorSignupViewController.swift in Sources */,
+				37C85FE71E4D2463003DBEEF /* VendorFoodLocationTableViewCell.swift in Sources */,
+				37C85FDE1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift in Sources */,
+				37EACEB51E4A2C4F00EBC806 /* ButtonExtensionClass.swift in Sources */,
+				37C85FE11E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift in Sources */,
+				377931341E4411CE00AF8826 /* DateExtension.swift in Sources */,
+				37B2C1451E514BB700F88227 /* NewVendorHomeViewController.swift in Sources */,
+				377931241E413B2800AF8826 /* UserSignupViewController.swift in Sources */,
+				37B2C14F1E51631600F88227 /* VendorProfileViewController.swift in Sources */,
+				3775F3811E4BDC6C00F39C07 /* Enums.swift in Sources */,
+				37B2C1561E51F0F100F88227 /* ConsumerRequestsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,10 +602,11 @@
 			baseConfigurationReference = DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZ528PGQF5;
+				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";
+				DEVELOPMENT_TEAM = R92756Z4HH;
 				INFOPLIST_FILE = "Project 4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danhefter.Project-4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danhefter.Project4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -419,14 +617,138 @@
 			baseConfigurationReference = E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZ528PGQF5;
+				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";
+				DEVELOPMENT_TEAM = R92756Z4HH;
 				INFOPLIST_FILE = "Project 4/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.danhefter.Project-4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danhefter.Project4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
+		};
+		37B2C14A1E515B7C00F88227 /* Staging Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Staging Debug";
+		};
+		37B2C14B1E515B7C00F88227 /* Staging Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";
+				DEVELOPMENT_TEAM = R92756Z4HH;
+				INFOPLIST_FILE = "Project 4/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danhefter.Project4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = "Staging Debug";
+		};
+		37B2C14C1E515C1B00F88227 /* Staging Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Staging Release";
+		};
+		37B2C14D1E515C1B00F88227 /* Staging Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";
+				DEVELOPMENT_TEAM = R92756Z4HH;
+				INFOPLIST_FILE = "Project 4/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.danhefter.Project4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = "Staging Release";
 		};
 /* End XCBuildConfiguration section */
 
@@ -435,7 +757,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37AA182C1E3FEB7500042656 /* Debug */,
+				37B2C14A1E515B7C00F88227 /* Staging Debug */,
 				37AA182D1E3FEB7500042656 /* Release */,
+				37B2C14C1E515C1B00F88227 /* Staging Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -444,7 +768,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37AA182F1E3FEB7500042656 /* Debug */,
+				37B2C14B1E515B7C00F88227 /* Staging Debug */,
 				37AA18301E3FEB7500042656 /* Release */,
+				37B2C14D1E515C1B00F88227 /* Staging Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
