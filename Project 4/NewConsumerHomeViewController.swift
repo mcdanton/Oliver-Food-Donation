@@ -49,9 +49,6 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    @IBAction func signOutPressed(_ sender: Any) {
       FirebaseModel.sharedInstance.logout()
    }
-
-   
-   
    
    
    // MARK: View Loading
@@ -212,6 +209,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
       
       cell.foodPostTitle.text = allPosts[indexPath.row].title
       cell.foodPostStatus.text = allPosts[indexPath.row].status.rawValue
+      cell.foodPostDate.text = allPosts[indexPath.row].date.prettyLocaleFormatted
       cell.postImageURL = allPosts[indexPath.row].imageURL
       
       return cell

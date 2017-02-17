@@ -82,7 +82,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
             print(downloadURL!)
             unwrappedSelf.imageDownloadURL = downloadURL!
             
-            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.datePicker.date, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
                
                FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
 
@@ -105,7 +105,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
             print(downloadURL!)
             unwrappedSelf.imageDownloadURL = downloadURL!
             
-            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.datePicker.date, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
                
                FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
                
@@ -164,7 +164,6 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       
       deadline.inputView = datePicker
       
-      
    }
    
    func donePressed() {
@@ -174,7 +173,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    }
    
    
-   
+   //This one
 }
 
 

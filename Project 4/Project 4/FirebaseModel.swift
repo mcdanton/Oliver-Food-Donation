@@ -146,7 +146,7 @@ class FirebaseModel {
    
    // MARK: Food Postings
    
-   func postFood(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, imageURL: String, complete: @escaping (String) -> ()) {
+   func postFood(title: String, additionalInfo: String, quantity: String, deadline: Date, date: Date, imageURL: String, complete: @escaping (String) -> ()) {
       guard let currentUser = FIRAuth.auth()?.currentUser?.uid else { return }
       
       let foodRef = FIRDatabase.database().reference(withPath: "foodPosted")
@@ -159,7 +159,7 @@ class FirebaseModel {
       postQuantity.setValue(quantity)
       
       let postDeadline = foodChild.child("deadline")
-      postDeadline.setValue(deadline)
+      postDeadline.setValue(deadline.timeIntervalSince1970)
       let postDate = foodChild.child("datePosted")
       postDate.setValue(date.timeIntervalSince1970)
       let postStatus = foodChild.child("status")
