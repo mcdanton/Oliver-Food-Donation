@@ -26,6 +26,11 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    
    @IBOutlet weak var collectionViewOutlet: UICollectionView!
    
+   // MARK: Actions
+   
+   @IBAction func signOutPressed(_ sender: Any) {
+      FirebaseModel.sharedInstance.logout()
+   }
    
    
    

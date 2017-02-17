@@ -178,9 +178,9 @@ class ConsumerHomeViewController: UIViewController, UITableViewDelegate, UITable
    }
    
    
-   // Used to bring Consumer back to home page after successful food request
-   @IBAction func consumerRequestSuccessfulVCToConsumerHomeVC(_ sender: UIStoryboardSegue) {
-   }
+//   // Used to bring Consumer back to home page after successful food request
+//   @IBAction func consumerRequestSuccessfulVCToConsumerHomeVC(_ sender: UIStoryboardSegue) {
+//   }
    
    
    

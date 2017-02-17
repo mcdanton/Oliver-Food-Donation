@@ -106,7 +106,7 @@ class FirebaseModel {
       userRole.setValue("Consumer")
    }
    
-   // MARK: Login
+   // MARK: Login & Logout
    
    func login(email: String, password: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
       FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { [weak viewController] (user, error) in
@@ -121,6 +121,25 @@ class FirebaseModel {
             complete(user != nil)
          }
       })
+   }
+   
+   
+   func logout() {
+      
+      do {
+         try FIRAuth.auth()?.signOut()
+         
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         
+         let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController")
+         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+         
+         appDelegate.window?.rootViewController = initialViewController
+         appDelegate.window?.makeKeyAndVisible()
+      } catch {
+         print(error)
+      }
    }
    
    

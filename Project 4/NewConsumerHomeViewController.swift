@@ -44,6 +44,15 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    @IBOutlet weak var collectionViewOutlet: UICollectionView!
    
    
+   // MARK: Actions
+   
+   @IBAction func signOutPressed(_ sender: Any) {
+      FirebaseModel.sharedInstance.logout()
+   }
+
+   
+   
+   
    
    // MARK: View Loading
    
