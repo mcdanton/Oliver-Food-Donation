@@ -18,6 +18,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    let imagePicker = UIImagePickerController()
    var imageToPost: UIImage?
    var imageDownloadURL = ""
+   let datePicker = UIDatePicker()
    
    
    // MARK: Outlets
@@ -122,6 +123,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       super.viewDidLoad()
       imagePicker.delegate = self
       hideKeyboardWhenTappedAround()
+      createDatePicker()
    }
    
    func dismissViewController() {
@@ -146,4 +148,35 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       self.dismiss(animated: true, completion: nil)
    }
    
+   // MARK: Date Picker
+   
+   func createDatePicker() {
+      
+      datePicker.datePickerMode = .dateAndTime
+      
+      let toolbar = UIToolbar()
+      toolbar.sizeToFit()
+      
+      let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+      toolbar.setItems([doneButton], animated: false)
+      
+      deadline.inputAccessoryView = toolbar
+      
+      deadline.inputView = datePicker
+      
+      
+   }
+   
+   func donePressed() {
+      
+      deadline.text = "\(datePicker.date.prettyLocaleFormattedWithTime)"
+      self.view.endEditing(true)
+   }
+   
+   
+   
 }
+
+
+
+
