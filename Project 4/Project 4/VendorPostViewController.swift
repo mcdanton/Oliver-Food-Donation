@@ -40,7 +40,12 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
          imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
          imagePicker.allowsEditing = true
          self.present(imagePicker, animated: true, completion: nil)
-      }
+      } else {
+            let alertController = UIAlertController(title: "No Photos", message: "Unable to access Photo Library", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+         }
    }
    
    @IBAction func takePhotoSelected(_ sender: Any) {

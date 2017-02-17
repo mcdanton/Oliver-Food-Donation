@@ -671,10 +671,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ADD_LOGO__58323.1458938781.500.750" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-s8-rjY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-s8-rjY">
                                 <rect key="frame" x="125" y="51" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-bU-nap">
+                                <rect key="frame" x="86" y="195" width="202" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <state key="normal" title="Select Image From Phone">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectImagePressed:" destination="fPN-v2-JBh" eventType="touchUpInside" id="LdX-Bd-eOe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -682,6 +693,7 @@
                     <connections>
                         <outlet property="companyAddress" destination="CQw-9s-0yL" id="frz-Zn-VjB"/>
                         <outlet property="companyEmail" destination="uF4-7C-4rR" id="XLr-EI-tds"/>
+                        <outlet property="companyImage" destination="jmf-s8-rjY" id="QfK-GI-3A7"/>
                         <outlet property="companyName" destination="lcC-Nq-Qf8" id="s1p-rh-xX1"/>
                     </connections>
                 </viewController>

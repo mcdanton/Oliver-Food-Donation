@@ -46,7 +46,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-      
+            
       FirebaseModel.sharedInstance.queryVendorPosts(searchPath: "foodPosted", key: "vendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfPosts in
          guard let unwrappedSelf = self else { return }
          unwrappedSelf.allPosts = arrayOfPosts
@@ -81,6 +81,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
       
       return cell
    }
+   
    
    
    
