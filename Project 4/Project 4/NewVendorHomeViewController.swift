@@ -23,8 +23,8 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    
    //MARK: Outlets
    
-   
    @IBOutlet weak var collectionViewOutlet: UICollectionView!
+   
    
    // MARK: Actions
    
@@ -33,36 +33,62 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    }
    
    
-   
-   
    //MARK: View Loading
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      // Do any additional setup after loading the view.
-   }
-   
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-            
+      
       FirebaseModel.sharedInstance.queryVendorPosts(searchPath: "foodPosted", key: "vendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfPosts in
          guard let unwrappedSelf = self else { return }
-         unwrappedSelf.allPosts = arrayOfPosts
+         
+         var workingArray = arrayOfPosts
+         
+         for (index, post) in workingArray.enumerated() {
+            
+            let workingPost = post
+            print("current post is \(post.title)")
+            
+            if post.deadline < Date() {
+               
+               FirebaseModel.sharedInstance.updateFoodPosting(child: post.uID!, completion: {
+                  
+                  print("Working array before removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
+                  print("Working array before removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
+                  workingPost.status = .expired
+                  workingArray.remove(at: index)
+                  workingArray.insert(workingPost, at: index)
+                  print("Working array AFTER removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
+                  print("Working array AFTER removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
+               })
+               
+            } else if post.deadline > Date() {
+               
+               
+               print("Deadline is past Current Date")
+            } else if post.deadline == Date() {
+               print("They're equal")
+            } else {
+               print("Something else")
+            }
+         }
+         
+         unwrappedSelf.allPosts = workingArray
       })
    }
    
+   
+   
    @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
    }
+   
    
    // MARK: Collection View Protocol Functions
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return allPosts.count
-
+      
    }
-
+   
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewVendorHomeCollectionViewCell", for: indexPath) as! NewVendorHomeCollectionViewCell
       
@@ -72,7 +98,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
       cell.layer.shadowRadius = 5
       cell.layer.masksToBounds = false
       cell.layer.cornerRadius = 10
-
+      
       
       cell.postTitle.text = allPosts[indexPath.row].title
       cell.postStatus.text = allPosts[indexPath.row].status.rawValue

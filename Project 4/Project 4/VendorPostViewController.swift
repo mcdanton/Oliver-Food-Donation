@@ -161,19 +161,15 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       toolbar.setItems([doneButton], animated: false)
       
       deadline.inputAccessoryView = toolbar
-      
       deadline.inputView = datePicker
-      
    }
    
    func donePressed() {
-      
       deadline.text = "\(datePicker.date.prettyLocaleFormattedWithTime)"
       self.view.endEditing(true)
    }
    
    
-   //This one
 }
 
 

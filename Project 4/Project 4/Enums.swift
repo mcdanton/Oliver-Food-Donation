@@ -14,6 +14,7 @@ enum PostStatus: String {
    case open = "Open"
    case pending = "Pending"
    case closed = "Closed"
+   case expired = "Expired"
    case awaitingPickup = "Awaiting Pickup"
 }
 

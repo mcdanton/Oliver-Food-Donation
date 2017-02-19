@@ -172,6 +172,20 @@ class FirebaseModel {
       complete(String(describing: foodChild.key))
    }
    
+   func updateFoodPosting(child: String, completion: () -> ()) {
+      
+      let foodPostedRef = FIRDatabase.database().reference(withPath: "foodPosted").child(child)
+      foodPostedRef.updateChildValues(["status" : PostStatus.expired.rawValue], withCompletionBlock: { (error, databaseReference) in
+         
+         if error != nil {
+            print(error)
+         } else {
+            print("worked!")
+         }
+      })
+      completion()
+   }
+   
    
    // MARK: Add Request To Firebase
    
