@@ -24,10 +24,7 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    
    @IBOutlet weak var tableViewOutlet: UITableView!
    
-   
-   
-   
-   
+
    
    //MARK: View Loading
    
