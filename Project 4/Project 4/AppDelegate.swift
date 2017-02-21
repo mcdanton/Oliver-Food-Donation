@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import GoogleMaps
+import GooglePlaces
 
 import Firebase
 import FirebaseInstanceID
@@ -21,6 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
    func application(_ application: UIApplication,
                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+      
+      
+      // Google Maps API Key
+      GMSServices.provideAPIKey("AIzaSyCiatkEOdLY8dmyD22FGz2gxMIPc6Ojntg")
+      
+      // Google Maps API Key
+      GMSPlacesClient.provideAPIKey("AIzaSyCiatkEOdLY8dmyD22FGz2gxMIPc6Ojntg")
+      
       
       // Register for remote notifications. This shows a permission dialog on first run, to
       // show the dialog at a more appropriate time move this registration accordingly.

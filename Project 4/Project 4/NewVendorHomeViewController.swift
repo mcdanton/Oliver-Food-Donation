@@ -52,18 +52,12 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
                
                FirebaseModel.sharedInstance.updateFoodPosting(child: post.uID!, completion: {
                   
-                  print("Working array before removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
-                  print("Working array before removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
                   workingPost.status = .expired
                   workingArray.remove(at: index)
                   workingArray.insert(workingPost, at: index)
-                  print("Working array AFTER removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
-                  print("Working array AFTER removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
                })
                
             } else if post.deadline > Date() {
-               
-               
                print("Deadline is past Current Date")
             } else if post.deadline == Date() {
                print("They're equal")
