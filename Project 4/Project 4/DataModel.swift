@@ -26,6 +26,7 @@ class FoodVendor {
    var name: String
    var location: String
    var role: UserRole = .vendor
+   var logoURL: String?
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
@@ -46,6 +47,9 @@ class FoodVendor {
       
       let vendorRole = snapshot.childSnapshot(forPath: "role")
       role = UserRole(rawValue: vendorRole.value as! String)!
+      
+      let vendorLogoURL = snapshot.childSnapshot(forPath: "logoURL")
+      logoURL = vendorLogoURL.value as? String ?? "No Logo Added"
       
       uID = snapshot.key
       firebaseRef = snapshot.ref
