@@ -48,6 +48,8 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
       super.viewDidLoad()
       hideKeyboardWhenTappedAround()
       imagePicker.delegate = self
+      
+      
    }
    
    
