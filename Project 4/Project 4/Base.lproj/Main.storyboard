@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zUi-DO-IrQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fcd-BQ-gWs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1081,9 +1081,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="2OC-Ny-IlS" kind="relationship" relationship="viewControllers" id="iOA-T0-Sc1"/>
-                        <segue destination="INr-cU-A55" kind="relationship" relationship="viewControllers" id="47P-c5-3ab"/>
                         <segue destination="fS3-G6-aQT" kind="relationship" relationship="viewControllers" id="NdH-iD-XXd"/>
                         <segue destination="Orl-vM-IdZ" kind="relationship" relationship="viewControllers" id="ZCf-Ds-z1r"/>
+                        <segue destination="zUi-DO-IrQ" kind="relationship" relationship="viewControllers" id="KKL-W3-30Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vf-k8-35O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1238,7 +1238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0S-la-Ug3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1079.2" y="-1825.6371814092954"/>
+            <point key="canvasLocation" x="-972" y="-940"/>
         </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="p0J-Zh-LuB">
@@ -1751,7 +1751,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6G-cm-EPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946" y="-940"/>
+            <point key="canvasLocation" x="-634" y="-2236"/>
         </scene>
         <!--Home-->
         <scene sceneID="ISq-rt-bAF">
@@ -2113,12 +2113,14 @@
             </objects>
             <point key="canvasLocation" x="-1759" y="-940"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Map-->
         <scene sceneID="vb7-Nv-YpT">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3f-d5-xcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUi-DO-IrQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="Map_icon" id="LUJ-eZ-NZb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ndx-7E-ykW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ndx-7E-ykW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2127,9 +2129,8 @@
                         <segue destination="amp-hl-hsi" kind="relationship" relationship="rootViewController" id="su8-U7-fuD"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U3f-d5-xcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1839" y="-1826"/>
+            <point key="canvasLocation" x="-972" y="-215"/>
         </scene>
     </scenes>
     <resources>

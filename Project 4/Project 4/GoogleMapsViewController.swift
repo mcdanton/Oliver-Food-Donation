@@ -14,14 +14,24 @@ import INTULocationManager
 class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, GMSAutocompleteViewControllerDelegate {
    
    // MARK: Properties
-
+   
    var locationManager = CLLocationManager()
-
+   
+   // Determining Location Authorization Status
+   var locationAccessNotYetAsked : Bool {
+      return CLLocationManager.authorizationStatus() == .notDetermined
+   }
+   
+   var locationAccessGranted : Bool {
+      return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
+   }
+   
+   
    
    // MARK: Outlets
    
    @IBOutlet weak var googleMapsView: GMSMapView!
-
+   
    
    // MARK: Actions
    
@@ -40,21 +50,71 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      
+      
       locationManager = CLLocationManager()
       locationManager.delegate = self
       locationManager.requestWhenInUseAuthorization()
       locationManager.startUpdatingLocation()
       locationManager.startMonitoringSignificantLocationChanges()
       
-      initGoogleMaps()
+      
+      if self.locationAccessGranted {
+         
+         INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
+            guard let unwrappedSelf = self else { return }
+            
+            
+            switch status {
+            case .success:
+               unwrappedSelf.initGoogleMaps(userCoordinates: location!)
+            case .servicesDenied:
+               guard let unwrappedSelf = self else { return }
+               let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+               let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(action)
+               unwrappedSelf.present(alertController, animated: true, completion: nil)
+            case .servicesDisabled:
+               guard let unwrappedSelf = self else { return }
+               let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+               let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(action)
+               unwrappedSelf.present(alertController, animated: true, completion: nil)
+            case .servicesRestricted:
+               guard let unwrappedSelf = self else { return }
+               let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location. Please visit Settings > Privacy > Location Services to enable Location", preferredStyle: .alert)
+               let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(action)
+               unwrappedSelf.present(alertController, animated: true, completion: nil)
+            case .timedOut:
+               guard let unwrappedSelf = self else { return }
+               let alertController = UIAlertController(title: "Location Request Timed Out", message: "We are having trouble accessing your location. Please try again.", preferredStyle: .alert)
+               let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(action)
+               unwrappedSelf.present(alertController, animated: true, completion: nil)
+            case .servicesNotDetermined:
+               guard let unwrappedSelf = self else { return }
+               let alertController = UIAlertController(title: "Location Access Not Granted", message: "This app requires access to your location", preferredStyle: .alert)
+               let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(action)
+               unwrappedSelf.present(alertController, animated: true, completion: nil)
+            default:
+               break
+            }
+            
+         })
+      }
    }
    
-
+   
    // MARK: Initialize Google Maps
    
-   func initGoogleMaps() {
+   func initGoogleMaps(userCoordinates: CLLocation) {
       
-      let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+      let userLongitude = userCoordinates.coordinate.longitude
+      let userLatitude = userCoordinates.coordinate.latitude
+      
+      let camera = GMSCameraPosition.camera(withLatitude: userLatitude, longitude: userLongitude, zoom: 6.0)
       let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
       mapView.isMyLocationEnabled = true
       self.googleMapsView.camera = camera
@@ -65,7 +125,7 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
       
       // Creates a marker in the center of the map.
       let marker = GMSMarker()
-      marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+      marker.position = CLLocationCoordinate2D(latitude: userLatitude, longitude: userLongitude)
       marker.title = "Sydney"
       marker.snippet = "Australia"
       marker.map = mapView
@@ -117,7 +177,7 @@ class GoogleMapsViewController: UIViewController, CLLocationManagerDelegate, GMS
    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
       print("Error with AutoComplete: \(error)")
    }
-
+   
    
    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
       self.dismiss(animated: true, completion: nil) // dismiss if search is cancelled

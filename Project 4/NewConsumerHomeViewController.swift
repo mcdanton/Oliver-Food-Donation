@@ -18,9 +18,15 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    var locationManager = CLLocationManager()
    var closer: (() -> Void)?
    
+   var allPosts = [Post]() {
+      didSet {
+         
+         allPosts = allPosts.filter() { $0.status == .open }
+         collectionViewOutlet.reloadData()
+      }
+   }
    
    // Determining Location Authorization Status
-   
    var locationAccessNotYetAsked : Bool {
       return CLLocationManager.authorizationStatus() == .notDetermined
    }
@@ -29,13 +35,6 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
       return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
    }
    
-   var allPosts = [Post]() {
-      didSet {
-      
-         allPosts = allPosts.filter() { $0.status == .open }
-         collectionViewOutlet.reloadData()
-      }
-   }
    
    
    // MARK: Outlets
