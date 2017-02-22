@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cue-xd-sHI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zUi-DO-IrQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1200,9 +1200,50 @@
             </objects>
             <point key="canvasLocation" x="-439" y="880"/>
         </scene>
+        <!--ADDRESS-->
+        <scene sceneID="GCt-E8-22g">
+            <objects>
+                <viewController id="amp-hl-hsi" customClass="GoogleMapsViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ldy-ig-LF8"/>
+                        <viewControllerLayoutGuide type="bottom" id="rqv-fz-r8o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VfT-eV-2A1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfr-x3-Ngq" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="0.59215686270000001" blue="0.63921568630000003" alpha="0.23256606543624161" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zfr-x3-Ngq" secondAttribute="trailing" id="4Nh-4m-fiN"/>
+                            <constraint firstItem="rqv-fz-r8o" firstAttribute="top" secondItem="Zfr-x3-Ngq" secondAttribute="bottom" id="AZU-WU-O2x"/>
+                            <constraint firstItem="Zfr-x3-Ngq" firstAttribute="top" secondItem="Ldy-ig-LF8" secondAttribute="bottom" id="RDX-WW-gLv"/>
+                            <constraint firstItem="Zfr-x3-Ngq" firstAttribute="leading" secondItem="VfT-eV-2A1" secondAttribute="leading" id="uP1-Ce-NEV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ADDRESS" id="Ob2-CQ-ekf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="vjF-8B-Z83">
+                            <connections>
+                                <action selector="openSearchAddress:" destination="amp-hl-hsi" id="3sq-wq-RJ3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="googleMapsView" destination="Zfr-x3-Ngq" id="dCs-q6-rmI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S0S-la-Ug3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1079.2" y="-1825.6371814092954"/>
+        </scene>
         <!--Google Maps View Controller-->
         <scene sceneID="p0J-Zh-LuB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NuQ-Ig-JfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="cue-xd-sHI" customClass="GoogleMapsViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k5F-va-qPu"/>
@@ -1254,9 +1295,8 @@
                         <outlet property="nameLabel" destination="QBf-7j-54K" id="fpG-XO-cqR"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NuQ-Ig-JfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946.39999999999998" y="-1823.8380809595203"/>
+            <point key="canvasLocation" x="-7.2000000000000002" y="-1823.8380809595203"/>
         </scene>
         <!--ChooseUserRoleViewController-->
         <scene sceneID="gxN-Yy-HPv">
@@ -1453,7 +1493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpv-nv-qYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50" y="-1824"/>
+            <point key="canvasLocation" x="888.79999999999995" y="-1824.737631184408"/>
         </scene>
         <!--Submit Request-->
         <scene sceneID="oaF-ix-D6E">
@@ -2072,6 +2112,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEZ-2x-Api" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1759" y="-940"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vb7-Nv-YpT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUi-DO-IrQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ndx-7E-ykW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="amp-hl-hsi" kind="relationship" relationship="rootViewController" id="su8-U7-fuD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3f-d5-xcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1839" y="-1826"/>
         </scene>
     </scenes>
     <resources>
