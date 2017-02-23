@@ -68,6 +68,16 @@ class FirebaseModel {
    }
    
    
+   func updateVendor(child: String, logoURL: String, completion: () -> ()) {
+      
+      let vendorRef = FIRDatabase.database().reference(withPath: "Food Vendor").child(child)
+      let vendorLogo = vendorRef.child("logoURL")
+      vendorLogo.setValue(logoURL)
+      
+      completion()
+   }
+   
+   
    // MARK: Consumer Sign Up
    func consumerSignup(name: String, location: String, emailTextField: String, passwordTextField: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
       
@@ -178,7 +188,7 @@ class FirebaseModel {
       foodPostedRef.updateChildValues(["status" : PostStatus.expired.rawValue], withCompletionBlock: { (error, databaseReference) in
          
          if error != nil {
-            print(error)
+            print(error!.localizedDescription)
          } else {
             print("worked!")
          }

@@ -51,7 +51,10 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
             if post.deadline < Date() {
                
                FirebaseModel.sharedInstance.updateFoodPosting(child: post.uID!, completion: {
+<<<<<<< HEAD
                   
+=======
+>>>>>>> d377fd59d7d271211acdba8aa8d6b203aacd49e6
                   workingPost.status = .expired
                   workingArray.remove(at: index)
                   workingArray.insert(workingPost, at: index)

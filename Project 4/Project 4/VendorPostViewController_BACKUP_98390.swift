@@ -42,11 +42,11 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
          imagePicker.allowsEditing = true
          self.present(imagePicker, animated: true, completion: nil)
       } else {
-         let alertController = UIAlertController(title: "No Photos", message: "Unable to access Photo Library", preferredStyle: .alert)
-         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-         alertController.addAction(action)
-         self.present(alertController, animated: true, completion: nil)
-      }
+            let alertController = UIAlertController(title: "No Photos", message: "Unable to access Photo Library", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+         }
    }
    
    @IBAction func takePhotoSelected(_ sender: Any) {
@@ -64,30 +64,30 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    }
    
    
-   
    @IBAction func postButtonPressed(_ sender: Any) {
       
       if (postTitle.text?.isEmpty)! {
-         let alertController = UIAlertController(title: "Please enter a Post Title", message: "What do you want the post title to be?", preferredStyle: .alert)
+         let alertController = UIAlertController(title: "No Post Title", message: "Please enter a title for your post", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
       } else if (quantity.text?.isEmpty)! {
-         let alertController = UIAlertController(title: "Please enter a Food Quantity", message: "How much food is available?", preferredStyle: .alert)
+         let alertController = UIAlertController(title: "No Quantity Given", message: "Please enter how much food is available", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
       } else if (deadline.text?.isEmpty)! {
-         let alertController = UIAlertController(title: "Please enter a Post Deadline", message: "When do you want this post to expire?", preferredStyle: .alert)
+         let alertController = UIAlertController(title: "No Deadline Given", message: "Please enter a deadline for your post", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
       } else if (location.text?.isEmpty)! {
-         let alertController = UIAlertController(title: "Please enter a Post Location", message: "Where is the food located?", preferredStyle: .alert)
+         let alertController = UIAlertController(title: "No Location Given", message: "Please enter where the food is located", preferredStyle: .alert)
          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
          alertController.addAction(defaultAction)
          self.present(alertController, animated: true, completion: nil)
       } else {
+         
          if let postImage = imageToPost {
             
             let imageStorageUID = UUID().uuidString
@@ -97,13 +97,17 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
             let storageRef = FIRStorage.storage().reference()
             let imageRef = storageRef.child(imageStorageUID)
             
+<<<<<<< Updated upstream
+            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.datePicker.date, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+=======
             let _ = imageRef.put(uploadData!, metadata: nil, completion: { [weak self] (metadata, error) in
                guard let unwrappedSelf = self else {return}
                let downloadURL = metadata?.downloadURL()?.absoluteString
                print(downloadURL!)
                unwrappedSelf.imageDownloadURL = downloadURL!
+>>>>>>> Stashed changes
                
-               FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.datePicker.date, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+               FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
                   
                   FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
                   
@@ -111,6 +115,11 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
                })
             })
             
+<<<<<<< Updated upstream
+            FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.datePicker.date, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+               
+               FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
+=======
          } else {
             let postImage = UIImage(named: "Apple")
             let imageStorageUID = UUID().uuidString
@@ -125,17 +134,20 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
                let downloadURL = metadata?.downloadURL()?.absoluteString
                print(downloadURL!)
                unwrappedSelf.imageDownloadURL = downloadURL!
+>>>>>>> Stashed changes
                
-               FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.datePicker.date, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
+               FirebaseModel.sharedInstance.postFood(title: unwrappedSelf.postTitle.text!, additionalInfo: unwrappedSelf.postDescription.text!, quantity: unwrappedSelf.quantity.text!, deadline: unwrappedSelf.deadline.text!, date: Date(), imageURL: downloadURL!, complete: { foodPostingUID in
                   
                   FirebaseModel.sharedInstance.addVendorLocation(foodPostingUID: foodPostingUID)
                   
                   self?.performSegue(withIdentifier: "VendorPostVCToVendorPostSuccessfulVC", sender: self)
+                  
                })
             })
          }
       }
    }
+   
    
    // MARK: View Loading
    

@@ -692,9 +692,14 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile_icon" id="cZr-f6-45d"/>
                     <connections>
                         <outlet property="companyAddress" destination="CQw-9s-0yL" id="frz-Zn-VjB"/>
+                        <outlet property="companyAddressTF" destination="UM4-kA-hA8" id="RMa-pY-J9t"/>
                         <outlet property="companyEmail" destination="uF4-7C-4rR" id="XLr-EI-tds"/>
+                        <outlet property="companyEmailTF" destination="Uc7-aB-UZ6" id="kGE-MP-CTw"/>
                         <outlet property="companyImage" destination="jmf-s8-rjY" id="QfK-GI-3A7"/>
                         <outlet property="companyName" destination="lcC-Nq-Qf8" id="s1p-rh-xX1"/>
+                        <outlet property="companyNameTF" destination="qOb-0C-noU" id="kJV-j0-mjw"/>
+                        <outlet property="companyPhoneNumberTF" destination="g7U-bm-kUn" id="Es6-jK-Zd5"/>
+                        <outlet property="companyWebsiteTF" destination="bML-F7-NFN" id="CKk-N6-aDx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4w0-S7-HXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
