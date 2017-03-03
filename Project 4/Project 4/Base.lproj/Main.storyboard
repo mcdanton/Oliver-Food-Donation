@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1101,7 +1102,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2OC-Ny-IlS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home_icon" id="Vrn-sT-8wU"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7Ea-Lr-7d2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ea-Lr-7d2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1118,7 +1119,7 @@
         <scene sceneID="l0k-ml-mBT">
             <objects>
                 <navigationController storyboardIdentifier="InitialViewController" title="InitialViewController" navigationBarHidden="YES" id="Fcd-BQ-gWs" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AbP-8U-wbC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AbP-8U-wbC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1315,36 +1316,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oliver works to connect vendors with food banks, shelters, and soup kitchens to take unused food and bring it to those in need" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI4-h3-qYP">
-                                <rect key="frame" x="45" y="90" width="284" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Overflowing Hand(white)" translatesAutoresizingMaskIntoConstraints="NO" id="PRF-9P-Gdv">
-                                <rect key="frame" x="142" y="226" width="92" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-g9-Dlk" userLabel="Background View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oliver works to connect vendors with food banks, shelters, and soup kitchens to take unused food and bring it to those in need" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qI4-h3-qYP">
+                                        <rect key="frame" x="41.5" y="50" width="293.5" height="162.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="03o-RK-6n1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Overflowing Hand(white)" translatesAutoresizingMaskIntoConstraints="NO" id="PRF-9P-Gdv">
+                                        <rect key="frame" x="126.5" y="228.5" width="123" height="117.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Spu-Mm-r2a"/>
+                                            <constraint firstAttribute="height" priority="910" constant="117" id="YlN-Gd-9Iu"/>
+                                            <constraint firstAttribute="width" secondItem="PRF-9P-Gdv" secondAttribute="height" multiplier="41:39" id="jcG-cA-Sel"/>
+                                            <constraint firstAttribute="width" priority="910" constant="123" id="xva-Kq-h2r"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3X-jG-hrw">
+                                        <rect key="frame" x="57.5" y="362" width="260" height="70"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.82745098039215681" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="900" constant="260" id="66w-Aq-RTG"/>
+                                            <constraint firstAttribute="height" priority="900" constant="70" id="NZZ-hY-4dG"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Rgd-2z-dfw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <state key="normal" title="I'm looking to donate">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="SOJ-SG-TLi" kind="show" identifier="SignInAsVendor" id="1KU-C2-1P4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qI4-h3-qYP" secondAttribute="trailing" constant="40" id="0Lg-eP-TBE"/>
+                                    <constraint firstItem="L3X-jG-hrw" firstAttribute="centerX" secondItem="vQd-g9-Dlk" secondAttribute="centerX" id="1Xz-Xe-Kfd"/>
+                                    <constraint firstItem="PRF-9P-Gdv" firstAttribute="centerX" secondItem="vQd-g9-Dlk" secondAttribute="centerX" id="20m-36-lWj"/>
+                                    <constraint firstItem="L3X-jG-hrw" firstAttribute="top" secondItem="PRF-9P-Gdv" secondAttribute="bottom" constant="16" id="DyK-Zk-aDy"/>
+                                    <constraint firstItem="PRF-9P-Gdv" firstAttribute="top" secondItem="qI4-h3-qYP" secondAttribute="bottom" constant="16" id="Egl-Mi-K02"/>
+                                    <constraint firstItem="qI4-h3-qYP" firstAttribute="top" secondItem="vQd-g9-Dlk" secondAttribute="top" constant="50" id="NdO-mJ-10Z"/>
+                                    <constraint firstItem="qI4-h3-qYP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vQd-g9-Dlk" secondAttribute="leading" constant="40" id="pkj-Qu-n2e"/>
+                                    <constraint firstItem="qI4-h3-qYP" firstAttribute="centerX" secondItem="vQd-g9-Dlk" secondAttribute="centerX" id="uyz-9q-HZK"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hearts(white)" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-rw-c6E">
+                                <rect key="frame" x="126.5" y="448" width="123" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Gfn-2k-uFx"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3X-jG-hrw">
-                                <rect key="frame" x="57" y="332" width="260" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.82745098039215681" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="I'm looking to donate">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="SOJ-SG-TLi" kind="show" identifier="SignInAsVendor" id="1KU-C2-1P4"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Hearts(white)" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-rw-c6E">
-                                <rect key="frame" x="154" y="433" width="69" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsB-Jk-VZh">
-                                <rect key="frame" x="58" y="524" width="260" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsB-Jk-VZh">
+                                <rect key="frame" x="57.5" y="581" width="260" height="70"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.82745098039999998" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
                                 <state key="normal" title="I'm looking for donations">
@@ -1356,6 +1385,21 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="L3X-jG-hrw" firstAttribute="height" secondItem="dsB-Jk-VZh" secondAttribute="height" id="15d-xn-GAS"/>
+                            <constraint firstItem="Nb7-rw-c6E" firstAttribute="top" secondItem="L3X-jG-hrw" secondAttribute="bottom" constant="16" id="2ZE-ax-47c"/>
+                            <constraint firstItem="dsB-Jk-VZh" firstAttribute="centerX" secondItem="vQd-g9-Dlk" secondAttribute="centerX" id="49l-Zs-YLI"/>
+                            <constraint firstItem="Nb7-rw-c6E" firstAttribute="centerX" secondItem="vQd-g9-Dlk" secondAttribute="centerX" id="GFr-an-4px"/>
+                            <constraint firstItem="PRF-9P-Gdv" firstAttribute="width" secondItem="Nb7-rw-c6E" secondAttribute="width" id="JeR-di-gar"/>
+                            <constraint firstItem="vQd-g9-Dlk" firstAttribute="height" secondItem="DzN-2x-dic" secondAttribute="height" id="Qyu-wf-Whg"/>
+                            <constraint firstItem="PRF-9P-Gdv" firstAttribute="height" secondItem="Nb7-rw-c6E" secondAttribute="height" id="WVa-mu-Vyj"/>
+                            <constraint firstItem="L3X-jG-hrw" firstAttribute="width" secondItem="dsB-Jk-VZh" secondAttribute="width" id="aeF-Cl-wUi"/>
+                            <constraint firstItem="vQd-g9-Dlk" firstAttribute="centerY" secondItem="DzN-2x-dic" secondAttribute="centerY" id="bYq-vu-ACK"/>
+                            <constraint firstItem="vQd-g9-Dlk" firstAttribute="bottom" secondItem="dsB-Jk-VZh" secondAttribute="bottom" constant="16" id="dvi-Qq-evS"/>
+                            <constraint firstItem="vQd-g9-Dlk" firstAttribute="centerX" secondItem="DzN-2x-dic" secondAttribute="centerX" id="e1i-8f-FHd"/>
+                            <constraint firstItem="dsB-Jk-VZh" firstAttribute="top" secondItem="Nb7-rw-c6E" secondAttribute="bottom" constant="16" id="oGB-jb-xap"/>
+                            <constraint firstItem="vQd-g9-Dlk" firstAttribute="width" secondItem="DzN-2x-dic" secondAttribute="width" id="z5Z-H5-iHr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HuK-gp-jrc"/>
                 </viewController>
@@ -1390,7 +1434,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zud-8J-IKp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home_icon" id="QXm-7z-LJz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="21v-xm-rMw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="21v-xm-rMw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2124,7 +2168,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUi-DO-IrQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="Map_icon" id="LUJ-eZ-NZb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ndx-7E-ykW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ndx-7E-ykW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
