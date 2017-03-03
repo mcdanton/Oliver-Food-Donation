@@ -1218,7 +1218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfr-x3-Ngq" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="1" green="0.59215686270000001" blue="0.63921568630000003" alpha="0.23256606543624161" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -1248,7 +1248,6 @@
         <!--Google Maps View Controller-->
         <scene sceneID="p0J-Zh-LuB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NuQ-Ig-JfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="cue-xd-sHI" customClass="GoogleMapsViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k5F-va-qPu"/>
@@ -1300,6 +1299,7 @@
                         <outlet property="nameLabel" destination="QBf-7j-54K" id="fpG-XO-cqR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NuQ-Ig-JfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7.2000000000000002" y="-1823.8380809595203"/>
         </scene>
@@ -1390,7 +1390,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zud-8J-IKp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home_icon" id="QXm-7z-LJz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="21v-xm-rMw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="21v-xm-rMw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2121,11 +2121,10 @@
         <!--Map-->
         <scene sceneID="vb7-Nv-YpT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U3f-d5-xcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zUi-DO-IrQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="Map_icon" id="LUJ-eZ-NZb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ndx-7E-ykW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ndx-7E-ykW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2134,6 +2133,7 @@
                         <segue destination="amp-hl-hsi" kind="relationship" relationship="rootViewController" id="su8-U7-fuD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3f-d5-xcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-972" y="-215"/>
         </scene>
