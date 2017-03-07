@@ -47,13 +47,10 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      self.navigationItem.hidesBackButton = true
       hideKeyboardWhenTappedAround()
       
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(notification: )), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-      
-      
    }
    
    
@@ -122,6 +119,7 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
             generalFoodInfoCell.foodTitle.text! = currentPost.title
             generalFoodInfoCell.foodAmount.text! = currentPost.quantity
             generalFoodInfoCell.postImageURL = currentPost.imageURL
+            generalFoodInfoCell.availableUntil.text! = currentPost.deadline.prettyLocaleFormattedShortWithTime
             
             cell = generalFoodInfoCell
          case .vendorInfo:

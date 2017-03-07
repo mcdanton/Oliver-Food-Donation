@@ -24,10 +24,7 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
    
    @IBOutlet weak var tableViewOutlet: UITableView!
    
-   
-   
-   
-   
+
    
    //MARK: View Loading
    
@@ -45,8 +42,8 @@ class VendorHomeViewController: UIViewController, UITableViewDelegate, UITableVi
       })
    }
    
-   @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
-   }
+//   @IBAction func VendorPostSuccessfulVCToVendorHomeVC(_ sender: UIStoryboardSegue) {
+//   }
    
    // MARK: Table View Protocol Functions
    

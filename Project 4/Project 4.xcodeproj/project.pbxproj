@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371286C11E5CE40F00941BBB /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371286C01E5CE40F00941BBB /* GoogleMapsViewController.swift */; };
 		3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */; };
 		3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */; };
 		3775F3601E4A7B1900F39C07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3775F35F1E4A7B1900F39C07 /* GoogleService-Info.plist */; };
@@ -66,9 +67,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FC460FF8F928587A4369005 /* Pods-Project 4.staging debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.staging debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.staging debug.xcconfig"; sourceTree = "<group>"; };
+		29EEE807692664392B4CE78B /* Pods-Project 4.staging release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.staging release.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.staging release.xcconfig"; sourceTree = "<group>"; };
+		371286C01E5CE40F00941BBB /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		3775F3541E4A4DF700F39C07 /* Project 4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project 4.entitlements"; sourceTree = "<group>"; };
-		3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeViewController.swift; sourceTree = "<group>"; };
-		3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerHomeTableViewCell.swift; sourceTree = "<group>"; };
+		3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerHomeViewController.swift; path = ../ConsumerHomeViewController.swift; sourceTree = "<group>"; };
+		3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerHomeTableViewCell.swift; path = ../ConsumerHomeTableViewCell.swift; sourceTree = "<group>"; };
 		3775F35F1E4A7B1900F39C07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3775F3801E4BDC6C00F39C07 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		377931151E411C1E00AF8826 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -142,16 +146,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371286BD1E57617600941BBB /* WorksInProgress/Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
+				377931281E41490B00AF8826 /* VendorHomeViewController.swift */,
+				3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */,
+				3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */,
+				3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */,
+				37C85FDD1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift */,
+				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
+			);
+			name = WorksInProgress/Deprecated;
+			sourceTree = "<group>";
+		};
+		371286BE1E57620500941BBB /* TableViewItems */ = {
+			isa = PBXGroup;
+			children = (
+				37C85FE01E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift */,
+				37C85FE21E4D23FC003DBEEF /* VendorFoodQuantityTableViewCell.swift */,
+				37C85FE41E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift */,
+				37C85FE61E4D2463003DBEEF /* VendorFoodLocationTableViewCell.swift */,
+				37C85FE81E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift */,
+				37C85FEA1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift */,
+				37C85FEC1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift */,
+				379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */,
+			);
+			name = TableViewItems;
+			sourceTree = "<group>";
+		};
+		371286BF1E5762CA00941BBB /* CollectionViewItems */ = {
+			isa = PBXGroup;
+			children = (
+				37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */,
+			);
+			name = CollectionViewItems;
+			sourceTree = "<group>";
+		};
 		3775F3581E4A5A9D00F39C07 /* Consumer */ = {
 			isa = PBXGroup;
 			children = (
+				371286BF1E5762CA00941BBB /* CollectionViewItems */,
 				37C85FCE1E4BF3BB003DBEEF /* TableViewItems */,
-				3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */,
 				37B2C1511E517E0E00F88227 /* NewConsumerHomeViewController.swift */,
-				3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */,
 				37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */,
 				37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */,
-				37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */,
 				37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */,
 				37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */,
 			);
@@ -178,7 +217,6 @@
 			children = (
 				377931151E411C1E00AF8826 /* DataModel.swift */,
 				37FB8C721E4119FA004F6D69 /* FirebaseModel.swift */,
-				377931391E44D80700AF8826 /* LocationManagerModel.swift */,
 				377931331E4411CE00AF8826 /* DateExtension.swift */,
 				37EACEB41E4A2C4F00EBC806 /* ButtonExtensionClass.swift */,
 				3775F3801E4BDC6C00F39C07 /* Enums.swift */,
@@ -191,14 +229,12 @@
 		377931251E413B2C00AF8826 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				37C85FDF1E4D23AF003DBEEF /* TableViewItems */,
-				377931281E41490B00AF8826 /* VendorHomeViewController.swift */,
-				3779312C1E415EC700AF8826 /* VendorHomeTableViewCell.swift */,
+				371286BE1E57620500941BBB /* TableViewItems */,
+				37C85FDF1E4D23AF003DBEEF /* CollectionViewItems */,
+				37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */,
 				3779312E1E43CBD700AF8826 /* VendorPostViewController.swift */,
 				377931301E43DBE200AF8826 /* VendorPostSuccessfulViewController.swift */,
 				379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */,
-				37B2C1441E514BB700F88227 /* NewVendorHomeViewController.swift */,
-				37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */,
 				37B2C14E1E51631600F88227 /* VendorProfileViewController.swift */,
 			);
 			name = Vendor;
@@ -225,21 +261,21 @@
 		37AA181E1E3FEB7500042656 /* Project 4 */ = {
 			isa = PBXGroup;
 			children = (
-				3775F35E1E4A666300F39C07 /* Models */,
 				3775F3541E4A4DF700F39C07 /* Project 4.entitlements */,
+				3775F35E1E4A666300F39C07 /* Models */,
+				37EACEB81E4A3D9D00EBC806 /* Onboarding */,
 				377931251E413B2C00AF8826 /* Vendor */,
 				3775F3581E4A5A9D00F39C07 /* Consumer */,
-				37EACEB81E4A3D9D00EBC806 /* Onboarding */,
+				37AA18231E3FEB7500042656 /* Main.storyboard */,
+				371286C01E5CE40F00941BBB /* GoogleMapsViewController.swift */,
+				37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */,
 				37AA181F1E3FEB7500042656 /* AppDelegate.swift */,
 				37AA18211E3FEB7500042656 /* ViewController.swift */,
-				37AA18231E3FEB7500042656 /* Main.storyboard */,
-				37C85FDD1E4D22C3003DBEEF /* VendorPostNewFoodViewController.swift */,
-				377931371E44CE1300AF8826 /* ConsumerMapViewController.swift */,
-				37AA18261E3FEB7500042656 /* Assets.xcassets */,
 				3775F35B1E4A5B1900F39C07 /* Images */,
-				37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */,
+				37AA18261E3FEB7500042656 /* Assets.xcassets */,
 				37AA182B1E3FEB7500042656 /* Info.plist */,
 				3775F35F1E4A7B1900F39C07 /* GoogleService-Info.plist */,
+				371286BD1E57617600941BBB /* WorksInProgress/Deprecated */,
 			);
 			path = "Project 4";
 			sourceTree = "<group>";
@@ -256,19 +292,12 @@
 			name = TableViewItems;
 			sourceTree = "<group>";
 		};
-		37C85FDF1E4D23AF003DBEEF /* TableViewItems */ = {
+		37C85FDF1E4D23AF003DBEEF /* CollectionViewItems */ = {
 			isa = PBXGroup;
 			children = (
-				37C85FE01E4D23D3003DBEEF /* VendorFoodTitleTableViewCell.swift */,
-				37C85FE21E4D23FC003DBEEF /* VendorFoodQuantityTableViewCell.swift */,
-				37C85FE41E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift */,
-				37C85FE61E4D2463003DBEEF /* VendorFoodLocationTableViewCell.swift */,
-				37C85FE81E4D2504003DBEEF /* VendorFoodAdditionalInfoTableViewCell.swift */,
-				37C85FEA1E4D2562003DBEEF /* VendorFoodUploadImageTableViewCell.swift */,
-				37C85FEC1E4D25AC003DBEEF /* VendorFoodPostButtonTableViewCell.swift */,
-				379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */,
+				37B2C1461E514CC500F88227 /* NewVendorHomeCollectionViewCell.swift */,
 			);
-			name = TableViewItems;
+			name = CollectionViewItems;
 			sourceTree = "<group>";
 		};
 		37EACEB81E4A3D9D00EBC806 /* Onboarding */ = {
@@ -295,6 +324,8 @@
 			children = (
 				DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */,
 				E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */,
+				1FC460FF8F928587A4369005 /* Pods-Project 4.staging debug.xcconfig */,
+				29EEE807692664392B4CE78B /* Pods-Project 4.staging release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -461,6 +492,7 @@
 				3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */,
 				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,
 				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
+				371286C11E5CE40F00941BBB /* GoogleMapsViewController.swift in Sources */,
 				37B2C1581E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift in Sources */,
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
 				37C85FCD1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift in Sources */,
@@ -679,7 +711,7 @@
 		};
 		37B2C14B1E515B7C00F88227 /* Staging Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF8F46B3608E57B1F972677D /* Pods-Project 4.debug.xcconfig */;
+			baseConfigurationReference = 1FC460FF8F928587A4369005 /* Pods-Project 4.staging debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";
@@ -737,7 +769,7 @@
 		};
 		37B2C14D1E515C1B00F88227 /* Staging Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3C3E6F6571F318CDB682CF5 /* Pods-Project 4.release.xcconfig */;
+			baseConfigurationReference = 29EEE807692664392B4CE78B /* Pods-Project 4.staging release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Project 4/Project 4.entitlements";

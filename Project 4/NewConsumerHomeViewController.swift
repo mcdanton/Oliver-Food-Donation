@@ -16,19 +16,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    // MARK: Properties
    
    var locationManager = CLLocationManager()
-   
    var closer: (() -> Void)?
-   
-   
-   // Determining Location Authorization Status
-   var locationAccessNotYetAsked : Bool {
-      return CLLocationManager.authorizationStatus() == .notDetermined
-   }
-   
-   var locationAccessGranted : Bool {
-      return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
-   }
-   
    
    var allPosts = [Post]() {
       didSet {
@@ -38,11 +26,27 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
       }
    }
    
+   // Determining Location Authorization Status
+   var locationAccessNotYetAsked : Bool {
+      return CLLocationManager.authorizationStatus() == .notDetermined
+   }
+
+   var locationAccessGranted : Bool {
+      return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
+   }
+   
+   
    
    // MARK: Outlets
    
    @IBOutlet weak var collectionViewOutlet: UICollectionView!
    
+   
+   // MARK: Actions
+   
+   @IBAction func signOutPressed(_ sender: Any) {
+      FirebaseModel.sharedInstance.logout()
+   }
    
    
    // MARK: View Loading
@@ -68,10 +72,42 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
                   switch status {
                   case .success:
                      // Consider moving to the main thread - check INTULocation Manager Request Location function block for details
-                     FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] posts in
+                     FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] arrayOfPosts in
                         
                         guard let unwrappedSelf = self else { return }
-                        unwrappedSelf.allPosts = posts
+                        
+                        var workingArray = arrayOfPosts
+                        
+                        for (index, post) in workingArray.enumerated() {
+                           
+                           let workingPost = post
+                           print("current post is \(post.title)")
+                           
+                           if post.deadline < Date() {
+                              
+                              FirebaseModel.sharedInstance.updateFoodPosting(child: post.uID!, completion: {
+                                 
+                                 print("Working array before removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
+                                 print("Working array before removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
+                                 workingPost.status = .expired
+                                 workingArray.remove(at: index)
+                                 workingArray.insert(workingPost, at: index)
+                                 print("Working array AFTER removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
+                                 print("Working array AFTER removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
+                              })
+                              
+                           } else if post.deadline > Date() {
+                              
+                              
+                              print("Deadline is past Current Date")
+                           } else if post.deadline == Date() {
+                              print("They're equal")
+                           } else {
+                              print("Something else")
+                           }
+                        }
+                        
+                        unwrappedSelf.allPosts = workingArray
                         
                      })
                   case .servicesDenied:
@@ -124,10 +160,42 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
                switch status {
                case .success:
                   // Consider moving to the main thread - check INTULocation Manager Request Location function block for details
-                  FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] posts in
+                  FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] arrayOfPosts in
                      
                      guard let unwrappedSelf = self else { return }
-                     unwrappedSelf.allPosts = posts
+                     
+                     var workingArray = arrayOfPosts
+                     
+                     for (index, post) in workingArray.enumerated() {
+                        
+                        let workingPost = post
+                        print("current post is \(post.title)")
+                        
+                        if post.deadline < Date() {
+                           
+                           FirebaseModel.sharedInstance.updateFoodPosting(child: post.uID!, completion: {
+                              
+                              print("Working array before removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
+                              print("Working array before removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
+                              workingPost.status = .expired
+                              workingArray.remove(at: index)
+                              workingArray.insert(workingPost, at: index)
+                              print("Working array AFTER removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
+                              print("Working array AFTER removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
+                           })
+                           
+                        } else if post.deadline > Date() {
+                           
+                           
+                           print("Deadline is past Current Date")
+                        } else if post.deadline == Date() {
+                           print("They're equal")
+                        } else {
+                           print("Something else")
+                        }
+                     }
+
+                     unwrappedSelf.allPosts = workingArray
                      
                   })
                case .servicesDenied:
@@ -203,6 +271,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
       
       cell.foodPostTitle.text = allPosts[indexPath.row].title
       cell.foodPostStatus.text = allPosts[indexPath.row].status.rawValue
+      cell.foodPostDate.text = allPosts[indexPath.row].date.prettyLocaleFormatted
       cell.postImageURL = allPosts[indexPath.row].imageURL
       
       return cell

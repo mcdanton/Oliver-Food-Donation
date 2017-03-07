@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
+   
    // MARK: Properties
    
    var allRequests = [Request]() {
@@ -29,7 +30,6 @@ class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, 
    
    // MARK: View Loading
    
-   
    override func viewWillAppear(_ animated: Bool) {
       
       FirebaseModel.sharedInstance.queryRequests(searchPath: "requests", key: "itemVendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfRequests in
@@ -40,14 +40,7 @@ class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, 
    
    override func viewDidLoad() {
       super.viewDidLoad()
-
    }
-   
-   override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-   }
-   
    
    
    // MARK: Collection View Setup
@@ -59,6 +52,7 @@ class VendorRequestsViewController: UIViewController, UICollectionViewDelegate, 
          return allRequests.count
       }
    }
+   
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VendorRequestsCollectionViewCell", for: indexPath) as! VendorRequestsCollectionViewCell

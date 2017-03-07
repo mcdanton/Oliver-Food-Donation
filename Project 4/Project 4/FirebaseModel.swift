@@ -68,6 +68,16 @@ class FirebaseModel {
    }
    
    
+   func updateVendor(child: String, logoURL: String, completion: () -> ()) {
+      
+      let vendorRef = FIRDatabase.database().reference(withPath: "Food Vendor").child(child)
+      let vendorLogo = vendorRef.child("logoURL")
+      vendorLogo.setValue(logoURL)
+      
+      completion()
+   }
+   
+   
    // MARK: Consumer Sign Up
    func consumerSignup(name: String, location: String, emailTextField: String, passwordTextField: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
       
@@ -106,7 +116,7 @@ class FirebaseModel {
       userRole.setValue("Consumer")
    }
    
-   // MARK: Login
+   // MARK: Login & Logout
    
    func login(email: String, password: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
       FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { [weak viewController] (user, error) in
@@ -124,10 +134,29 @@ class FirebaseModel {
    }
    
    
+   func logout() {
+      
+      do {
+         try FIRAuth.auth()?.signOut()
+         
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         
+         let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController")
+         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+         
+         appDelegate.window?.rootViewController = initialViewController
+         appDelegate.window?.makeKeyAndVisible()
+      } catch {
+         print(error)
+      }
+   }
+   
+   
    
    // MARK: Food Postings
    
-   func postFood(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, imageURL: String, complete: @escaping (String) -> ()) {
+   func postFood(title: String, additionalInfo: String, quantity: String, deadline: Date, date: Date, imageURL: String, complete: @escaping (String) -> ()) {
       guard let currentUser = FIRAuth.auth()?.currentUser?.uid else { return }
       
       let foodRef = FIRDatabase.database().reference(withPath: "foodPosted")
@@ -140,7 +169,7 @@ class FirebaseModel {
       postQuantity.setValue(quantity)
       
       let postDeadline = foodChild.child("deadline")
-      postDeadline.setValue(deadline)
+      postDeadline.setValue(deadline.timeIntervalSince1970)
       let postDate = foodChild.child("datePosted")
       postDate.setValue(date.timeIntervalSince1970)
       let postStatus = foodChild.child("status")
@@ -151,6 +180,20 @@ class FirebaseModel {
       urlOfImage.setValue(imageURL)
       
       complete(String(describing: foodChild.key))
+   }
+   
+   func updateFoodPosting(child: String, completion: () -> ()) {
+      
+      let foodPostedRef = FIRDatabase.database().reference(withPath: "foodPosted").child(child)
+      foodPostedRef.updateChildValues(["status" : PostStatus.expired.rawValue], withCompletionBlock: { (error, databaseReference) in
+         
+         if error != nil {
+            print(error!.localizedDescription)
+         } else {
+            print("worked!")
+         }
+      })
+      completion()
    }
    
    

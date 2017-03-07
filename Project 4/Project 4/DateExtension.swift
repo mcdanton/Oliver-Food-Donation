@@ -14,5 +14,13 @@ extension Date {
       return DateFormatter.localizedString(from: self, dateStyle: .medium, timeStyle: .none)
    }
    
+   var prettyLocaleFormattedWithTime : String {
+      return DateFormatter.localizedString(from: self, dateStyle: .long, timeStyle: .short)
+   }
+   
+   var prettyLocaleFormattedShortWithTime : String {
+      return DateFormatter.localizedString(from: self, dateStyle: .short, timeStyle: .short)
+   }
+   
 }
 

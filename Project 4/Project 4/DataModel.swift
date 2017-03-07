@@ -26,6 +26,7 @@ class FoodVendor {
    var name: String
    var location: String
    var role: UserRole = .vendor
+   var logoURL: String?
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
@@ -46,6 +47,9 @@ class FoodVendor {
       
       let vendorRole = snapshot.childSnapshot(forPath: "role")
       role = UserRole(rawValue: vendorRole.value as! String)!
+      
+      let vendorLogoURL = snapshot.childSnapshot(forPath: "logoURL")
+      logoURL = vendorLogoURL.value as? String ?? "No Logo Added"
       
       uID = snapshot.key
       firebaseRef = snapshot.ref
@@ -90,7 +94,7 @@ class Post {
    var title: String
    var additionalInfo: String
    var quantity: String
-   var deadline: String
+   var deadline: Date
    var date: Date
    var status: PostStatus = .open
    var vendor: String
@@ -98,7 +102,7 @@ class Post {
    var uID: String?
    var firebaseRef: FIRDatabaseReference?
    
-   init(title: String, additionalInfo: String, quantity: String, deadline: String, date: Date, status: PostStatus, vendor: String, imageURL: String) {
+   init(title: String, additionalInfo: String, quantity: String, deadline: Date, date: Date, status: PostStatus, vendor: String, imageURL: String) {
       
       self.title = title
       self.additionalInfo = additionalInfo
@@ -122,7 +126,7 @@ class Post {
       quantity = postQuantity.value as! String
       
       let postDeadline = snapshot.childSnapshot(forPath: "deadline")
-      deadline = postDeadline.value as! String
+      deadline = Date(timeIntervalSince1970: postDeadline.value as! Double)
       
       let postDate = snapshot.childSnapshot(forPath: "datePosted")
       date = Date(timeIntervalSince1970: postDate.value as! Double)
