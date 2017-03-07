@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
    
    // MARK: Properties
@@ -99,6 +99,14 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
       cell.postImageURL = allPosts[indexPath.row].imageURL
       
       return cell
+   }
+   
+   
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+      return CGSize(width: collectionView.bounds.size.width - 32, height: 148)
+
+      
    }
    
    
