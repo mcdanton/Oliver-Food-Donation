@@ -10,7 +10,7 @@ import UIKit
 import INTULocationManager
 import CoreLocation
 
-class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate {
+class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate, UICollectionViewDelegateFlowLayout {
    
    
    // MARK: Properties
@@ -254,7 +254,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    
    
    
-   // MARK: Table View Protocol Functions
+   // MARK: Collection View Protocol Functions
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return allPosts.count
    }
@@ -294,6 +294,14 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
             self.present(alertController, animated: true, completion: nil)
          }
       }
+   
+   
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+      return CGSize(width: collectionView.bounds.size.width - 32, height: 148)
+      
+      
+   }
    
    
    // MARK: Location Functions
