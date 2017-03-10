@@ -441,15 +441,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks! Your Food's Been Posted!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-oZ-b5u">
-                                <rect key="frame" x="20" y="154" width="339" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks! Your Food's Been Posted!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-oZ-b5u">
+                                <rect key="frame" x="20" y="154" width="339" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kxk-oZ-b5u" firstAttribute="leading" secondItem="Puh-e8-Maf" secondAttribute="leadingMargin" constant="4" id="0Dw-ki-NeA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kxk-oZ-b5u" secondAttribute="trailing" id="Bng-R4-s0x"/>
+                            <constraint firstItem="kxk-oZ-b5u" firstAttribute="top" secondItem="bHL-iL-8FD" secondAttribute="bottom" constant="90" id="bQ6-Wh-bjK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post Success!" id="VKi-rM-n6o"/>
                     <connections>
@@ -1510,7 +1514,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oliver works to connect vendors with food banks, shelters, and soup kitchens to take unused food and bring it to those in need" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qI4-h3-qYP">
-                                        <rect key="frame" x="41.5" y="50" width="293.5" height="161.5"/>
+                                        <rect key="frame" x="41" y="50" width="293.5" height="161.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="03o-RK-6n1"/>
                                         </constraints>
