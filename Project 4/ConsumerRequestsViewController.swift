@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ConsumerRequestsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ConsumerRequestsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
    
    // MARK: Properties
@@ -72,6 +72,14 @@ class ConsumerRequestsViewController: UIViewController, UICollectionViewDelegate
       }
       return cell
    }
+   
+   
+   // This ensures the cell never extends past its SuperView on smaller screens
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+      return CGSize(width: collectionView.bounds.size.width - 32, height: 148)
+   }
+   
    
    
 }
