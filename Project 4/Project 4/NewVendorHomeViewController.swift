@@ -79,7 +79,6 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return allPosts.count
-      
    }
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

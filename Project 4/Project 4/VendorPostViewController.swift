@@ -11,7 +11,7 @@ import CoreLocation
 import Firebase
 import FirebaseStorage
 
-class VendorPostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class VendorPostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
    
    // MARK: Properties
    
@@ -141,6 +141,10 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      postTitle.delegate = self
+      quantity.delegate = self
+      postDescription.delegate = self
+      location.delegate = self
       imagePicker.delegate = self
       hideKeyboardWhenTappedAround()
       createDatePicker()
@@ -189,6 +193,35 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       self.view.endEditing(true)
    }
    
+   
+   // MARK: Text Field Delegate
+   
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+      
+      switch textField {
+      case postTitle:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 23 // Bool
+      case quantity:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      case postDescription:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      case location:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      default:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 15 // Bool
+      }
+   }
+
    
 }
 
