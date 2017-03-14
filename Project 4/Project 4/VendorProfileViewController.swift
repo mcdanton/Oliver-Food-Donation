@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class VendorProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class VendorProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
    
    // MARK: Properties
    
@@ -57,6 +57,13 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      companyNameTF.delegate = self
+      companyEmailTF.delegate = self
+      companyAddressTF.delegate = self
+      companyPhoneNumberTF.delegate = self
+      companyWebsiteTF.delegate = self
+      
       hideKeyboardWhenTappedAround()
       imagePicker.delegate = self
       
@@ -110,6 +117,43 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
          self.present(alertController, animated: true, completion: nil)
       }
    }
+   
+   
+   
+   // MARK: Text Field Delegate
+   
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+      
+      switch textField {
+      case companyNameTF:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      case companyEmailTF:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      case companyAddressTF:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      case companyPhoneNumberTF:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      case companyWebsiteTF:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 20 // Bool
+      default:
+         guard let text = textField.text else { return true }
+         let newLength = text.characters.count + string.characters.count - range.length
+         return newLength <= 15 // Bool
+      }
+   }
+   
+   
+
    
    
    
