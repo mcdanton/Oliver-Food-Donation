@@ -148,7 +148,7 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
       default:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
-         return newLength <= 15 // Bool
+         return newLength <= 20 // Bool
       }
    }
    

@@ -77,7 +77,7 @@ class ConsumerRequestsViewController: UIViewController, UICollectionViewDelegate
    // This ensures the cell never extends past its SuperView on smaller screens
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       
-      return CGSize(width: collectionView.bounds.size.width - 32, height: 148)
+      return CGSize(width: collectionView.bounds.size.width - 32, height: 263)
    }
    
    
