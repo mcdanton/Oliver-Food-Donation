@@ -23,6 +23,12 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
          
          allPosts = allPosts.filter() { $0.status == .open }
          collectionViewOutlet.reloadData()
+         
+         if allPosts.count == 0 {
+            noFoodPostedView.alpha = 1
+         } else {
+            noFoodPostedView.alpha = 0
+         }
       }
    }
    
@@ -40,6 +46,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    // MARK: Outlets
    
    @IBOutlet weak var collectionViewOutlet: UICollectionView!
+   @IBOutlet weak var noFoodPostedView: UIView!
    
    
    // MARK: Actions
@@ -51,6 +58,8 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    
    // MARK: View Loading
    
+   
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
@@ -60,6 +69,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    
    // First checks to see if location auth was ever requested and requests it if not. If it was previously requested, will check the status of the location auth and in the case of authorized location will show all food posted in User's area while in the cases of unauthorized location will direct the user to change this in their settings.
    override func viewDidAppear(_ animated: Bool) {
+      super.viewDidAppear(true)
       
       locationManager.delegate = self
       
@@ -81,24 +91,16 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
                         for (index, post) in workingArray.enumerated() {
                            
                            let workingPost = post
-                           print("current post is \(post.title)")
                            
                            if post.deadline < Date() {
                               
                               FirebaseModel.sharedInstance.updateFoodPosting(child: post.uID!, completion: {
-                                 
-                                 print("Working array before removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
-                                 print("Working array before removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
                                  workingPost.status = .expired
                                  workingArray.remove(at: index)
                                  workingArray.insert(workingPost, at: index)
-                                 print("Working array AFTER removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
-                                 print("Working array AFTER removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
                               })
                               
                            } else if post.deadline > Date() {
-                              
-                              
                               print("Deadline is past Current Date")
                            } else if post.deadline == Date() {
                               print("They're equal")
@@ -106,9 +108,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
                               print("Something else")
                            }
                         }
-                        
                         unwrappedSelf.allPosts = workingArray
-                        
                      })
                   case .servicesDenied:
                      guard let unwrappedSelf = self else { return }
@@ -239,18 +239,13 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
             alertController.addAction(action)
             self.present(alertController, animated: true, completion: nil)
          }
-         
       }
-      
-      
    }
    
    
    // Used to bring Consumer back to home page after successful food request
    @IBAction func consumerRequestSuccessfulVCToConsumerHomeVC(_ sender: UIStoryboardSegue) {
    }
-   
-   
    
    
    

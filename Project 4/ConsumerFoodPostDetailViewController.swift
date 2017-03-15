@@ -34,7 +34,6 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    
    
    // MARK: Properties
-   
    var currentPost: Post?
    
    
@@ -87,7 +86,6 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
          if let currentPost = currentPost {
             let consumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
             consumerRequestSuccessfulVC.currentPost = currentPost
-            
          }
       }
    }
@@ -135,11 +133,12 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
             
          case .messageToVendor:
             let messageToVendorCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailMessageToVendorTableViewCell", for: indexPath) as! ConsumerFoodPostDetailMessageToVendorTableViewCell
-            
-            
+
             cell = messageToVendorCell
+            
          case .submitButton:
             let submitButtonCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailSubmitButtonTableViewCell", for: indexPath) as! ConsumerFoodPostDetailSubmitButtonTableViewCell
+            
             
             cell = submitButtonCell
          }

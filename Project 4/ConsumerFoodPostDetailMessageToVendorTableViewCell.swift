@@ -8,29 +8,37 @@
 
 import UIKit
 
-class ConsumerFoodPostDetailMessageToVendorTableViewCell: UITableViewCell {
-   
-   
-   // MARK: Properties
-   
-   
+class ConsumerFoodPostDetailMessageToVendorTableViewCell: UITableViewCell, UITextViewDelegate {
+
    
    // MARK: Outlets
-   
-   
-   
-   
+   @IBOutlet weak var messageToVendorTV: UITextView!
+
    
 
+   // MARK: View Loading Functions
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+      
+      messageToVendorTV.delegate = self
+   }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+   
+   
+   
+   // MARK: Text View Editing Functions
+   func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+      let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+      let numberOfChars = newText.characters.count // for Swift use count(newText)
+      return numberOfChars < 80;
+   }
+   
+   
+
 
 }

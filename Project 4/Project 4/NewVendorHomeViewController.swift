@@ -17,6 +17,12 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    var allPosts = [Post]() {
       didSet {
          collectionViewOutlet.reloadData()
+         
+         if allPosts.count == 0 {
+            noFoodPostsSubmittedView.alpha = 1
+         } else {
+            noFoodPostsSubmittedView.alpha = 0
+         }
       }
    }
    
@@ -24,6 +30,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    //MARK: Outlets
    
    @IBOutlet weak var collectionViewOutlet: UICollectionView!
+   @IBOutlet weak var noFoodPostsSubmittedView: UIView!
    
    
    // MARK: Actions

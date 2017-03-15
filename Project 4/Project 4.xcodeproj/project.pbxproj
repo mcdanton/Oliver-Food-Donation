@@ -179,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				37B2C1531E517EFC00F88227 /* NewConsumerHomeCollectionViewCell.swift */,
+				37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */,
 			);
 			name = CollectionViewItems;
 			sourceTree = "<group>";
@@ -192,7 +193,6 @@
 				37C85FCC1E4BF2E4003DBEEF /* ConsumerFoodPostDetailViewController.swift */,
 				37C85FDB1E4D173C003DBEEF /* ConsumerRequestSuccessfulViewController.swift */,
 				37B2C1551E51F0F100F88227 /* ConsumerRequestsViewController.swift */,
-				37B2C1571E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift */,
 			);
 			name = Consumer;
 			path = ..;
