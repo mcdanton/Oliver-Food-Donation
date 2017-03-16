@@ -35,7 +35,8 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    
    // MARK: Properties
    var currentPost: Post?
-   
+   var messageToVendor: String?
+   var cellRef: ConsumerFoodPostDetailMessageToVendorTableViewCell? = nil
    
    
    // MARK: Outlets
@@ -83,9 +84,14 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "ConsumerFoodPostDetailVCToConsumerRequestSuccessfulVC" {
+         
          if let currentPost = currentPost {
             let consumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
             consumerRequestSuccessfulVC.currentPost = currentPost
+         }
+         if let messageCell = cellRef {
+            let consumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
+            consumerRequestSuccessfulVC.messageToVendor = messageCell.messageToVendor
          }
       }
    }
@@ -134,6 +140,7 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
          case .messageToVendor:
             let messageToVendorCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailMessageToVendorTableViewCell", for: indexPath) as! ConsumerFoodPostDetailMessageToVendorTableViewCell
 
+            cellRef = messageToVendorCell
             cell = messageToVendorCell
             
          case .submitButton:

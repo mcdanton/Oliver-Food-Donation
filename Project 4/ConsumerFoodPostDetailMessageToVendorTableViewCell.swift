@@ -8,8 +8,12 @@
 
 import UIKit
 
+
 class ConsumerFoodPostDetailMessageToVendorTableViewCell: UITableViewCell, UITextViewDelegate {
 
+   // MARK: Properties
+   var messageToVendor: String?
+   
    
    // MARK: Outlets
    @IBOutlet weak var messageToVendorTV: UITextView!
@@ -37,6 +41,14 @@ class ConsumerFoodPostDetailMessageToVendorTableViewCell: UITableViewCell, UITex
       let numberOfChars = newText.characters.count // for Swift use count(newText)
       return numberOfChars < 80;
    }
+   
+   
+   
+   func textViewDidChange(_ textView: UITextView) {
+      messageToVendor = textView.text
+      print("we're changing")
+   }
+   
    
    
 
