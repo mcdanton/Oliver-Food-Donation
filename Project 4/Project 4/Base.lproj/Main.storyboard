@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EMX-Il-XUV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A2323a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fcd-BQ-gWs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -498,13 +498,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABC Food Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bxA-iv-ClY">
-                                                            <rect key="frame" x="16" y="21" width="303" height="34"/>
+                                                            <rect key="frame" x="16" y="21" width="303" height="33"/>
                                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
                                                             <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="SpM-pt-6i5">
-                                                            <rect key="frame" x="8" y="63" width="319" height="112"/>
+                                                            <rect key="frame" x="8" y="62" width="319" height="112"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGb-2q-gtB">
                                                                     <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
@@ -545,28 +545,28 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxB-3B-dhj">
-                                                            <rect key="frame" x="21" y="214" width="48" height="17"/>
+                                                            <rect key="frame" x="21" y="213" width="48" height="17"/>
                                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                                             <color key="textColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uDV-TJ-p5z">
-                                                            <rect key="frame" x="69" y="214" width="40" height="17"/>
+                                                            <rect key="frame" x="69" y="213" width="40" height="17"/>
                                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Pick Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYi-CM-AaH">
-                                                            <rect key="frame" x="207" y="214" width="104" height="17"/>
+                                                            <rect key="frame" x="207" y="213" width="104" height="17"/>
                                                             <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="14"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UmH-co-mcK">
-                                                            <rect key="frame" x="0.0" y="214" width="335" height="49"/>
+                                                            <rect key="frame" x="0.0" y="213" width="335" height="50"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYD-xZ-bnv">
-                                                                    <rect key="frame" x="20" y="6" width="132" height="39"/>
+                                                                    <rect key="frame" x="20" y="5" width="132" height="40"/>
                                                                     <color key="backgroundColor" red="0.4823529411764706" green="0.84313725490196079" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="gYD-xZ-bnv" secondAttribute="height" multiplier="10:3" id="RIt-vS-1yQ"/>
@@ -580,7 +580,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gj-O3-6Z2">
-                                                                    <rect key="frame" x="184" y="6" width="131" height="39"/>
+                                                                    <rect key="frame" x="184" y="5" width="131" height="40"/>
                                                                     <color key="backgroundColor" red="1" green="0.59215686274509804" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
                                                                     <state key="normal" title="Reject">
@@ -829,12 +829,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile_icon" id="cZr-f6-45d"/>
                     <connections>
-                        <outlet property="companyAddress" destination="CQw-9s-0yL" id="frz-Zn-VjB"/>
                         <outlet property="companyAddressTF" destination="UM4-kA-hA8" id="RMa-pY-J9t"/>
-                        <outlet property="companyEmail" destination="uF4-7C-4rR" id="XLr-EI-tds"/>
                         <outlet property="companyEmailTF" destination="Uc7-aB-UZ6" id="kGE-MP-CTw"/>
                         <outlet property="companyImage" destination="jmf-s8-rjY" id="QfK-GI-3A7"/>
-                        <outlet property="companyName" destination="lcC-Nq-Qf8" id="s1p-rh-xX1"/>
                         <outlet property="companyNameTF" destination="qOb-0C-noU" id="kJV-j0-mjw"/>
                         <outlet property="companyPhoneNumberTF" destination="g7U-bm-kUn" id="Es6-jK-Zd5"/>
                         <outlet property="companyWebsiteTF" destination="bML-F7-NFN" id="CKk-N6-aDx"/>
@@ -1620,7 +1617,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oliver works to connect vendors with food banks, shelters, and soup kitchens to take unused food and bring it to those in need" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qI4-h3-qYP">
-                                        <rect key="frame" x="41" y="50" width="294" height="164"/>
+                                        <rect key="frame" x="42" y="50" width="293" height="163"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="03o-RK-6n1"/>
                                         </constraints>
@@ -1629,7 +1626,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="Overflowing Hand(white)" translatesAutoresizingMaskIntoConstraints="NO" id="PRF-9P-Gdv">
-                                        <rect key="frame" x="127" y="230" width="123" height="117"/>
+                                        <rect key="frame" x="126" y="229" width="123" height="117"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Spu-Mm-r2a"/>
                                             <constraint firstAttribute="height" priority="910" constant="117" id="YlN-Gd-9Iu"/>
@@ -1638,7 +1635,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3X-jG-hrw">
-                                        <rect key="frame" x="58" y="363" width="260" height="70"/>
+                                        <rect key="frame" x="58" y="362" width="260" height="70"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.82745098039215681" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="900" constant="260" id="66w-Aq-RTG"/>
@@ -1667,7 +1664,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hearts(white)" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-rw-c6E">
-                                <rect key="frame" x="127" y="449" width="123" height="116"/>
+                                <rect key="frame" x="126" y="448" width="123" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Gfn-2k-uFx"/>
                                 </constraints>
@@ -2470,10 +2467,10 @@
             </objects>
             <point key="canvasLocation" x="2210" y="-940"/>
         </scene>
-        <!--Profile-->
+        <!--ConsumerProfileViewController-->
         <scene sceneID="gUC-7o-nFv">
             <objects>
-                <viewController id="Orl-vM-IdZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConsumerProfileViewController" title="ConsumerProfileViewController" id="Orl-vM-IdZ" customClass="ConsumerProfileViewController" customModule="Project_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Ut-5E-yYe"/>
                         <viewControllerLayoutGuide type="bottom" id="jWt-f5-Ytv"/>
@@ -2501,6 +2498,9 @@
                                                 <state key="normal" title="Select Image From Phone">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="selectImagePressed:" destination="Orl-vM-IdZ" eventType="touchUpInside" id="Mzb-aL-vT8"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lGE-JH-LPB">
                                                 <rect key="frame" x="24" y="242" width="327" height="309"/>
@@ -2599,6 +2599,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile_icon" id="P7F-Ph-7s2"/>
+                    <connections>
+                        <outlet property="consumerAddressTF" destination="7oe-yd-7xG" id="hOO-Jo-2Am"/>
+                        <outlet property="consumerEmailTF" destination="oZb-Kl-olL" id="Tek-L1-4N6"/>
+                        <outlet property="consumerImageView" destination="awi-HG-0iG" id="afP-lw-QMA"/>
+                        <outlet property="consumerNameTF" destination="CsN-of-Uak" id="o0Q-vm-eAx"/>
+                        <outlet property="consumerPhoneNumberTF" destination="xVE-sS-3Mw" id="twG-ps-CZP"/>
+                        <outlet property="consumerWebsiteTF" destination="Plf-fF-kZN" id="y6s-lJ-JS8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEZ-2x-Api" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

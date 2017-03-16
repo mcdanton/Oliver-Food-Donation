@@ -116,6 +116,17 @@ class FirebaseModel {
       userRole.setValue("Consumer")
    }
    
+   
+   func updateConsumer(child: String, logoURL: String, completion: () -> ()) {
+      
+      let consumerRef = FIRDatabase.database().reference(withPath: "Consumer").child(child)
+      let consumerLogo = consumerRef.child("logoURL")
+      consumerLogo.setValue(logoURL)
+      
+      completion()
+   }
+   
+   
    // MARK: Login & Logout
    
    func login(email: String, password: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
@@ -312,6 +323,9 @@ class FirebaseModel {
    }
    
    
+   
+   // MARK: Observe Functions
+
    func observeVendor(vendorToObserve: String, success: @escaping (FoodVendor?) -> ()) {
       var selectedVendor: FoodVendor?
       
@@ -331,9 +345,25 @@ class FirebaseModel {
    }
    
    
+   func observeConsumer(consumerToObserve: String, success: @escaping (Consumer?) -> ()) {
+      var selectedConsumer: Consumer?
+      
+      let databaseRef = FIRDatabase.database().reference()
+      databaseRef.observeSingleEvent(of: .value, with: { snapshot in
+         
+         let allConsumersSnapshot = snapshot.childSnapshot(forPath: "Consumer")
+         if allConsumersSnapshot.childSnapshot(forPath: consumerToObserve).exists() {
+            
+            let consumerInstance = Consumer(snapshot: allConsumersSnapshot.childSnapshot(forPath: consumerToObserve))
+            selectedConsumer = consumerInstance
+         }
+         DispatchQueue.main.async {
+            success(selectedConsumer)
+         }
+      })
+   }
    
    
-   // MARK: Observe Functions
    
    func observePosts(success: @escaping ([Post]) -> ()) {
       var arrayOfPosts = [Post]()
