@@ -144,6 +144,13 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
          case .vendorInfo:
             let vendorInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailVendorInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailVendorInfoTableViewCell
             
+            FirebaseModel.sharedInstance.observeVendor(vendorToObserve: currentPost.vendor, success: { vendor in
+               if let vendor = vendor {
+                  vendorInfoCell.vendorName.text = vendor.name
+                  vendorInfoCell.vendorAddress.text = vendor.location
+               }
+            })
+            
             cell = vendorInfoCell
          case .additionalInfo:
             let additionalInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailAdditionalInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailAdditionalInfoTableViewCell
