@@ -17,6 +17,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    
    var locationManager = CLLocationManager()
    var closer: (() -> Void)?
+   var currentLocation: CLLocation?
    
    var allPosts = [Post]() {
       didSet {
@@ -78,10 +79,14 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
             if self.locationAccessGranted {
                
                INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
-                  
+                  guard let unwrappedSelf = self else { return }
+
                   switch status {
                   case .success:
                      // Consider moving to the main thread - check INTULocation Manager Request Location function block for details
+                     
+                     unwrappedSelf.currentLocation = location
+
                      FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] arrayOfPosts in
                         
                         guard let unwrappedSelf = self else { return }
@@ -156,10 +161,14 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
          if locationAccessGranted {
             
             INTULocationManager.sharedInstance().requestLocation(withDesiredAccuracy: .neighborhood, timeout: 10, block: { [weak self] (location:CLLocation?, accuracy:INTULocationAccuracy, status:INTULocationStatus) in
-               
+               guard let unwrappedSelf = self else { return }
+
                switch status {
                case .success:
                   // Consider moving to the main thread - check INTULocation Manager Request Location function block for details
+                  
+                  unwrappedSelf.currentLocation = location
+
                   FirebaseModel.sharedInstance.queryLocations(locationToQuery: location, complete: { [weak self] arrayOfPosts in
                      
                      guard let unwrappedSelf = self else { return }
@@ -175,17 +184,12 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
                            
                            FirebaseModel.sharedInstance.updateFoodPosting(child: post.uID!, completion: {
                               
-                              print("Working array before removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
-                              print("Working array before removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
                               workingPost.status = .expired
                               workingArray.remove(at: index)
                               workingArray.insert(workingPost, at: index)
-                              print("Working array AFTER removal: \(workingArray[0].title), \(workingArray[1].title), \(workingArray[2].title)")
-                              print("Working array AFTER removal: \(workingArray[0].status.rawValue), \(workingArray[1].status.rawValue), \(workingArray[2].status.rawValue)")
                            })
                            
                         } else if post.deadline > Date() {
-                           
                            
                            print("Deadline is past Current Date")
                         } else if post.deadline == Date() {
@@ -194,9 +198,7 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
                            print("Something else")
                         }
                      }
-
                      unwrappedSelf.allPosts = workingArray
-                     
                   })
                case .servicesDenied:
                   guard let unwrappedSelf = self else { return }
@@ -229,7 +231,6 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
                   alertController.addAction(action)
                   unwrappedSelf.present(alertController, animated: true, completion: nil)
                default:
-                  
                   break
                }
             })
@@ -272,15 +273,24 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
       return cell
    }
    
-
    
+
+   // MARK: Prepare For Segue
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "NewConsumerHomeVCToConsumerFoodPostDetailVC" {
          let cell = sender as! NewConsumerHomeCollectionViewCell
          if let indexPathItem = collectionViewOutlet.indexPath(for: cell)?.row {
          let consumerFoodPostDetailVC = segue.destination as! ConsumerFoodPostDetailViewController
-         consumerFoodPostDetailVC.currentPost = allPosts[indexPathItem]
+            consumerFoodPostDetailVC.currentPost = allPosts[indexPathItem]
+            if let locationFound = currentLocation {
+               consumerFoodPostDetailVC.currentLocation = locationFound
+            } else {
+               let alertController = UIAlertController(title: "Location Not Found", message: "There was a problem accessing your current location. Please ensure Location Access is granted in Settings.", preferredStyle: .alert)
+               let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               alertController.addAction(action)
+               self.present(alertController, animated: true, completion: nil)
+            }
          }
       } else {
             let alertController = UIAlertController(title: "No Current Post", message: "There's no current food item showing up!", preferredStyle: .alert)
@@ -289,6 +299,10 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
             self.present(alertController, animated: true, completion: nil)
          }
       }
+   
+   
+   
+   
    
    
    // This ensures the cell never extends past its SuperView on smaller screens
@@ -305,7 +319,6 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
       closer = complete
       locationManager.requestWhenInUseAuthorization()
    }
-   
    
    
    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

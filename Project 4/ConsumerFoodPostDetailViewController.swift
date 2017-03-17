@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import CoreLocation
 
 class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -35,6 +36,7 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    
    // MARK: Properties
    var currentPost: Post?
+   var currentLocation: CLLocation?
    var messageToVendor: String?
    var cellRef: ConsumerFoodPostDetailMessageToVendorTableViewCell? = nil
    
@@ -119,6 +121,19 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
          switch MainRows(rawValue: indexPath.row)! {
          case .generalFoodInfo:
             let generalFoodInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailGeneralFoodInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailGeneralFoodInfoTableViewCell
+            
+            FirebaseModel.sharedInstance.queryVendorLocation(postLocationToQuery: currentPost.uID!, complete: { [weak self] location in
+               guard let unwrappedSelf = self else { return }
+               if let currentLocationWasPassed = unwrappedSelf.currentLocation {
+                  let distanceInMiles = (location.distance(from: currentLocationWasPassed)) / 1609.344
+                  generalFoodInfoCell.foodDistance.text! = String(format: "%.1f Miles Away", distanceInMiles)
+               } else {
+                  let alertController = UIAlertController(title: "Location Not Found", message: "There was a problem accessing your current location. Please ensure Location Access is granted in Settings.", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(action)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               }
+            })
             
             generalFoodInfoCell.foodTitle.text! = currentPost.title
             generalFoodInfoCell.foodAmount.text! = currentPost.quantity
