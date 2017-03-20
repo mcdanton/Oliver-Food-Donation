@@ -16,6 +16,7 @@ class ConsumerRequestSuccessfulViewController: UIViewController {
    // MARK: Properties
    
    var currentPost: Post?
+   var messageToVendor: String?
    
    
    
@@ -32,7 +33,7 @@ class ConsumerRequestSuccessfulViewController: UIViewController {
             
             if error == nil {
                
-               FirebaseModel.sharedInstance.addRequestToFirebase(vendorUID: currentPost.uID!, requester: (FIRAuth.auth()?.currentUser?.email)!, itemRequested: currentPost.title, requestDate: Date(), requestMessage: "Message To Vendor", itemVendor: currentPost.vendor)
+               FirebaseModel.sharedInstance.addRequestToFirebase(vendorUID: currentPost.uID!, requester: (FIRAuth.auth()?.currentUser?.email)!, itemRequested: currentPost.title, requestDate: Date(), requestMessage: self?.messageToVendor != nil ? (self?.messageToVendor)! : "I'd like to pick up this food please!", itemVendor: currentPost.vendor)
             } else {
                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                

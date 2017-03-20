@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,26 +23,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oliver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvp-0i-312">
-                                <rect key="frame" x="114" y="302" width="127" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="42"/>
-                                <color key="textColor" red="0.73333333333333328" green="0.9137254901960784" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hand_icon" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-ep-Yvy">
-                                <rect key="frame" x="68" y="145" width="240" height="220"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coming together to reduce food waste" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCk-0y-CkZ">
-                                <rect key="frame" x="49" y="418" width="278" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBp-sV-zon" userLabel="Background View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ey-bp-i65">
+                                        <rect key="frame" x="88" y="140" width="200" height="205"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Overflowing Hand(white)" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-ep-Yvy">
+                                                <rect key="frame" x="0.0" y="8" width="200" height="190"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="900" constant="190" id="Des-ng-bu3"/>
+                                                    <constraint firstAttribute="width" priority="900" constant="200" id="LlE-yZ-h54"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="lQ8-gm-odT"/>
+                                                    <constraint firstAttribute="width" secondItem="a5b-ep-Yvy" secondAttribute="height" multiplier="20:19" id="oVs-LL-mhH"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Oliver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bvp-0i-312">
+                                                <rect key="frame" x="30" y="148" width="120" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48.5" id="9H6-rf-XNn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="42"/>
+                                                <color key="textColor" red="0.73333333333333328" green="0.9137254901960784" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Bvp-0i-312" firstAttribute="width" secondItem="a5b-ep-Yvy" secondAttribute="width" multiplier="0.6" id="3Tq-Qw-OZ6"/>
+                                            <constraint firstItem="a5b-ep-Yvy" firstAttribute="centerX" secondItem="1Ey-bp-i65" secondAttribute="centerX" id="4sf-OI-Oay"/>
+                                            <constraint firstItem="Bvp-0i-312" firstAttribute="top" secondItem="a5b-ep-Yvy" secondAttribute="bottom" constant="-50" id="BI9-hX-DPq"/>
+                                            <constraint firstItem="a5b-ep-Yvy" firstAttribute="top" secondItem="1Ey-bp-i65" secondAttribute="top" constant="8" id="M8Y-Ta-jKr"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="Bvp-0i-312" secondAttribute="width" id="dHE-wr-RTi"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="a5b-ep-Yvy" secondAttribute="width" id="dba-J4-Ejj"/>
+                                            <constraint firstItem="Bvp-0i-312" firstAttribute="centerX" secondItem="1Ey-bp-i65" secondAttribute="centerX" constant="-10" id="eI8-lW-U5J"/>
+                                            <constraint firstAttribute="width" secondItem="a5b-ep-Yvy" secondAttribute="width" id="fGR-Zt-f8M"/>
+                                            <constraint firstAttribute="bottom" secondItem="Bvp-0i-312" secondAttribute="bottom" constant="8" id="wVr-VP-H0j"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Coming together to reduce food waste" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cCk-0y-CkZ">
+                                        <rect key="frame" x="60" y="415" width="256.5" height="62.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="sBZ-iB-4Mp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="cCk-0y-CkZ" secondAttribute="width" id="3Xl-1L-eBg"/>
+                                    <constraint firstItem="cCk-0y-CkZ" firstAttribute="centerX" secondItem="iBp-sV-zon" secondAttribute="centerX" id="61p-V3-SNH"/>
+                                    <constraint firstItem="cCk-0y-CkZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iBp-sV-zon" secondAttribute="leading" constant="48" id="MIj-lW-s84"/>
+                                    <constraint firstItem="cCk-0y-CkZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1Ey-bp-i65" secondAttribute="bottom" priority="950" constant="70" id="Pcr-dF-Ruh"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cCk-0y-CkZ" secondAttribute="trailing" constant="49" id="Zqw-rI-nhx"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cCk-0y-CkZ" secondAttribute="bottom" constant="100" id="bfs-M8-MYF"/>
+                                    <constraint firstItem="1Ey-bp-i65" firstAttribute="centerX" secondItem="iBp-sV-zon" secondAttribute="centerX" id="gHC-E7-9Vu"/>
+                                    <constraint firstItem="1Ey-bp-i65" firstAttribute="top" secondItem="iBp-sV-zon" secondAttribute="top" constant="140" id="gSq-A7-qJ5"/>
+                                    <constraint firstAttribute="bottom" secondItem="cCk-0y-CkZ" secondAttribute="bottom" priority="200" constant="208.5" id="nJr-Vs-VPS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.30588235289999999" green="0.58823529409999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iBp-sV-zon" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="BbI-4f-oHU"/>
+                            <constraint firstItem="iBp-sV-zon" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TC1-yL-yiz"/>
+                            <constraint firstItem="iBp-sV-zon" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bJe-HM-F3J"/>
+                            <constraint firstItem="iBp-sV-zon" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="cMt-YR-Yyi"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,6 +100,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hand_icon" width="123" height="117"/>
+        <image name="Overflowing Hand(white)" width="123" height="117"/>
     </resources>
 </document>

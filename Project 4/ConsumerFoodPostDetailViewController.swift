@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import CoreLocation
 
 class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -34,9 +35,10 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    
    
    // MARK: Properties
-   
    var currentPost: Post?
-   
+   var currentLocation: CLLocation?
+   var messageToVendor: String?
+   var cellRef: ConsumerFoodPostDetailMessageToVendorTableViewCell? = nil
    
    
    // MARK: Outlets
@@ -84,10 +86,14 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "ConsumerFoodPostDetailVCToConsumerRequestSuccessfulVC" {
+         
          if let currentPost = currentPost {
             let consumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
             consumerRequestSuccessfulVC.currentPost = currentPost
-            
+         }
+         if let messageCell = cellRef {
+            let consumerRequestSuccessfulVC = segue.destination as! ConsumerRequestSuccessfulViewController
+            consumerRequestSuccessfulVC.messageToVendor = messageCell.messageToVendor
          }
       }
    }
@@ -116,6 +122,19 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
          case .generalFoodInfo:
             let generalFoodInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailGeneralFoodInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailGeneralFoodInfoTableViewCell
             
+            FirebaseModel.sharedInstance.queryVendorLocation(postLocationToQuery: currentPost.uID!, complete: { [weak self] location in
+               guard let unwrappedSelf = self else { return }
+               if let currentLocationWasPassed = unwrappedSelf.currentLocation {
+                  let distanceInMiles = (location.distance(from: currentLocationWasPassed)) / 1609.344
+                  generalFoodInfoCell.foodDistance.text! = String(format: "%.1f Miles Away", distanceInMiles)
+               } else {
+                  let alertController = UIAlertController(title: "Location Not Found", message: "There was a problem accessing your current location. Please ensure Location Access is granted in Settings.", preferredStyle: .alert)
+                  let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertController.addAction(action)
+                  unwrappedSelf.present(alertController, animated: true, completion: nil)
+               }
+            })
+            
             generalFoodInfoCell.foodTitle.text! = currentPost.title
             generalFoodInfoCell.foodAmount.text! = currentPost.quantity
             generalFoodInfoCell.postImageURL = currentPost.imageURL
@@ -124,6 +143,13 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
             cell = generalFoodInfoCell
          case .vendorInfo:
             let vendorInfoCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailVendorInfoTableViewCell", for: indexPath) as! ConsumerFoodPostDetailVendorInfoTableViewCell
+            
+            FirebaseModel.sharedInstance.observeVendor(vendorToObserve: currentPost.vendor, success: { vendor in
+               if let vendor = vendor {
+                  vendorInfoCell.vendorName.text = vendor.name
+                  vendorInfoCell.vendorAddress.text = vendor.location
+               }
+            })
             
             cell = vendorInfoCell
          case .additionalInfo:
@@ -135,11 +161,13 @@ class ConsumerFoodPostDetailViewController: UIViewController, UITableViewDelegat
             
          case .messageToVendor:
             let messageToVendorCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailMessageToVendorTableViewCell", for: indexPath) as! ConsumerFoodPostDetailMessageToVendorTableViewCell
-            
-            
+
+            cellRef = messageToVendorCell
             cell = messageToVendorCell
+            
          case .submitButton:
             let submitButtonCell = tableView.dequeueReusableCell(withIdentifier: "ConsumerFoodPostDetailSubmitButtonTableViewCell", for: indexPath) as! ConsumerFoodPostDetailSubmitButtonTableViewCell
+            
             
             cell = submitButtonCell
          }

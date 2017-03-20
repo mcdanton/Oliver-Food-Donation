@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
    
    // MARK: Properties
@@ -17,6 +17,12 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    var allPosts = [Post]() {
       didSet {
          collectionViewOutlet.reloadData()
+         
+         if allPosts.count == 0 {
+            noFoodPostsSubmittedView.alpha = 1
+         } else {
+            noFoodPostsSubmittedView.alpha = 0
+         }
       }
    }
    
@@ -24,6 +30,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    //MARK: Outlets
    
    @IBOutlet weak var collectionViewOutlet: UICollectionView!
+   @IBOutlet weak var noFoodPostsSubmittedView: UIView!
    
    
    // MARK: Actions
@@ -37,7 +44,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-      
+                  
       FirebaseModel.sharedInstance.queryVendorPosts(searchPath: "foodPosted", key: "vendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfPosts in
          guard let unwrappedSelf = self else { return }
          
@@ -79,7 +86,6 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return allPosts.count
-      
    }
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,6 +108,14 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    }
    
    
+   // This ensures the cell never extends past its SuperView on smaller screens
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+      return CGSize(width: collectionView.bounds.size.width - 32, height: 148)
+   }
+   
+   
+  
    
    
 }

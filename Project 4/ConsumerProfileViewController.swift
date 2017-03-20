@@ -1,8 +1,8 @@
 //
-//  VendorProfileViewController.swift
+//  ConsumerProfileViewController.swift
 //  Project 4
 //
-//  Created by Dan Hefter on 2/12/17.
+//  Created by Dan Hefter on 3/16/17.
 //  Copyright © 2017 GA. All rights reserved.
 //
 
@@ -10,29 +10,31 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class VendorProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+class ConsumerProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+   
    
    // MARK: Properties
    
    let imagePicker = UIImagePickerController()
    var postImageURL: String? {
       didSet {
-         companyImage.setImageWithURL(urlString: postImageURL)
+         consumerImageView.setImageWithURL(urlString: postImageURL)
       }
    }
    
    
    // MARK: Outlets
    
-
-   @IBOutlet weak var companyImage: UIImageView!
-   @IBOutlet weak var companyNameTF: UITextField!
-   @IBOutlet weak var companyEmailTF: UITextField!
-   @IBOutlet weak var companyAddressTF: UITextField!
-   @IBOutlet weak var companyPhoneNumberTF: UITextField!
-   @IBOutlet weak var companyWebsiteTF: UITextField!
+   @IBOutlet weak var consumerImageView: UIImageView!
+   @IBOutlet weak var consumerNameTF: UITextField!
+   @IBOutlet weak var consumerEmailTF: UITextField!
+   @IBOutlet weak var consumerAddressTF: UITextField!
+   @IBOutlet weak var consumerPhoneNumberTF: UITextField!
+   @IBOutlet weak var consumerWebsiteTF: UITextField!
    
-   // MARL: Actions
+   
+   
+   // MARK: Actions
    
    @IBAction func selectImagePressed(_ sender: Any) {
       if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
@@ -49,34 +51,36 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
    }
    
    
-   // MARK: View Loading
+   
+   // MARK: View Loading Functions
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      companyNameTF.delegate = self
-      companyEmailTF.delegate = self
-      companyAddressTF.delegate = self
-      companyPhoneNumberTF.delegate = self
-      companyWebsiteTF.delegate = self
+      consumerNameTF.delegate = self
+      consumerEmailTF.delegate = self
+      consumerAddressTF.delegate = self
+      consumerPhoneNumberTF.delegate = self
+      consumerWebsiteTF.delegate = self
       imagePicker.delegate = self
       
       hideKeyboardWhenTappedAround()
       
-      FirebaseModel.sharedInstance.observeVendor(vendorToObserve: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] vendor in
+      FirebaseModel.sharedInstance.observeConsumer(consumerToObserve: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] consumer in
          guard let unwrappedSelf = self else { return }
-         if let vendor = vendor {
+         if let consumer = consumer {
             
-            unwrappedSelf.companyNameTF.text = vendor.name
-            unwrappedSelf.companyEmailTF.text = FIRAuth.auth()?.currentUser?.email
-            unwrappedSelf.companyAddressTF.text = vendor.location
+            unwrappedSelf.consumerNameTF.text = consumer.name
+            unwrappedSelf.consumerEmailTF.text = FIRAuth.auth()?.currentUser?.email
+            unwrappedSelf.consumerAddressTF.text = consumer.location
             
-            if let vendorLogo = vendor.logoURL {
-               unwrappedSelf.postImageURL = vendorLogo
+            if let consumerLogo = consumer.logoURL {
+               unwrappedSelf.postImageURL = consumerLogo
             }
          }
       })
    }
+   
    
    
    // MARK: Saving Image To Camera
@@ -85,7 +89,7 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
       
       if (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil {
          if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            companyImage.image = image
+            consumerImageView.image = image
             
             let imageStorageUID = UUID().uuidString
             
@@ -98,14 +102,14 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
                
                let downloadURL = metadata?.downloadURL()?.absoluteString
                
-               FirebaseModel.sharedInstance.updateVendor(child: (FIRAuth.auth()?.currentUser?.uid)!, logoURL: downloadURL!, completion: { [weak self] success in
-                  guard let unwrappedSelf = self else {return}
+               FirebaseModel.sharedInstance.updateConsumer(child: (FIRAuth.auth()?.currentUser?.uid)!, logoURL: downloadURL!, completion: { [weak self] success in
+                  guard let unwrappedSelf = self else { return }
                   
                   unwrappedSelf.dismiss(animated: true, completion: nil)
-               })
+                  })
             })
          }
-      
+         
       } else {
          let alertController = UIAlertController(title: "No Image", message: "There was a problem with the selected image", preferredStyle: .alert)
          let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -114,30 +118,29 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
       }
    }
    
-   
-   
+
    // MARK: Text Field Delegate
    
    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
       
       switch textField {
-      case companyNameTF:
+      case consumerNameTF:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
-      case companyEmailTF:
+      case consumerEmailTF:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
-      case companyAddressTF:
+      case consumerAddressTF:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
-      case companyPhoneNumberTF:
+      case consumerPhoneNumberTF:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
-      case companyWebsiteTF:
+      case consumerWebsiteTF:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
@@ -148,8 +151,9 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
       }
    }
    
-   
 
+   
+   
    
    
    

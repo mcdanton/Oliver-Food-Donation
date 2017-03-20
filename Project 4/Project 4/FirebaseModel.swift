@@ -116,6 +116,17 @@ class FirebaseModel {
       userRole.setValue("Consumer")
    }
    
+   
+   func updateConsumer(child: String, logoURL: String, completion: () -> ()) {
+      
+      let consumerRef = FIRDatabase.database().reference(withPath: "Consumer").child(child)
+      let consumerLogo = consumerRef.child("logoURL")
+      consumerLogo.setValue(logoURL)
+      
+      completion()
+   }
+   
+   
    // MARK: Login & Logout
    
    func login(email: String, password: String, viewController: UIViewController, complete: @escaping (Bool) -> ()) {
@@ -270,6 +281,7 @@ class FirebaseModel {
    
    // MARK: Queries
    
+   // Retrieves an array of keys for all locations within a given radius of the searched location. The location keys are then passed into the MatchFoodToArea function to get the relevant Food Posts associated with each location. This is what is returned in the completion handler. This function is used to get all food posted within a given radius of a Food Bank.
    func queryLocations(locationToQuery: CLLocation?, complete: @escaping ([Post]) -> ()) {
       var arrayOfLocationKeys = [String]()
       
@@ -280,14 +292,37 @@ class FirebaseModel {
          guard let unwrappedLocationKey = locationKey else { return }
          arrayOfLocationKeys.append(unwrappedLocationKey)
       })
-      
       query?.observeReady({ [weak self] in
          guard let unwrappedSelf = self else { return }
          unwrappedSelf.matchFoodToArea(keysToSearch: arrayOfLocationKeys, complete: complete)
       })
-      
-      
    }
+   
+   
+   
+   func queryVendorLocation(postLocationToQuery: String, complete: @escaping (CLLocation) -> ()) {
+      var foodLocation: CLLocation?
+      
+      let databaseRef = FIRDatabase.database().reference(withPath: "locations")
+      databaseRef.child(postLocationToQuery).observeSingleEvent(of: .value, with: { snapshot in
+         
+         let locationKey = snapshot.value as! NSDictionary
+         let location = locationKey["l"] as! [Double]
+         let latitude = location[0] 
+         let longitude = location[1] 
+         
+         foodLocation = CLLocation(latitude: latitude, longitude: longitude)
+         
+         if let foodLocationExists = foodLocation {
+            complete(foodLocationExists)
+         }
+      }) { (error) in
+         print(error.localizedDescription)
+      }
+   }
+   
+   
+   
    
    
    func queryVendorPosts(searchPath: String, key:String, valueToSearch:String, success: @escaping ([Post]) -> ()) {
@@ -312,6 +347,9 @@ class FirebaseModel {
    }
    
    
+   
+   // MARK: Observe Functions
+   
    func observeVendor(vendorToObserve: String, success: @escaping (FoodVendor?) -> ()) {
       var selectedVendor: FoodVendor?
       
@@ -331,9 +369,25 @@ class FirebaseModel {
    }
    
    
+   func observeConsumer(consumerToObserve: String, success: @escaping (Consumer?) -> ()) {
+      var selectedConsumer: Consumer?
+      
+      let databaseRef = FIRDatabase.database().reference()
+      databaseRef.observeSingleEvent(of: .value, with: { snapshot in
+         
+         let allConsumersSnapshot = snapshot.childSnapshot(forPath: "Consumer")
+         if allConsumersSnapshot.childSnapshot(forPath: consumerToObserve).exists() {
+            
+            let consumerInstance = Consumer(snapshot: allConsumersSnapshot.childSnapshot(forPath: consumerToObserve))
+            selectedConsumer = consumerInstance
+         }
+         DispatchQueue.main.async {
+            success(selectedConsumer)
+         }
+      })
+   }
    
    
-   // MARK: Observe Functions
    
    func observePosts(success: @escaping ([Post]) -> ()) {
       var arrayOfPosts = [Post]()
