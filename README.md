@@ -10,7 +10,6 @@ Oliver connects Food Vendors with leftover food to local food banks, offering a 
 
 
 
-
 ##Key Features
 There were many components that went into the building of Oliver. I've listed a few of the key components that make things run smoothly under the hood:
 
