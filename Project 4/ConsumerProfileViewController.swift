@@ -15,6 +15,7 @@ class ConsumerProfileViewController: UIViewController, UINavigationControllerDel
    
    // MARK: Properties
    
+   var activeField: UITextField?
    let imagePicker = UIImagePickerController()
    var postImageURL: String? {
       didSet {
@@ -31,7 +32,7 @@ class ConsumerProfileViewController: UIViewController, UINavigationControllerDel
    @IBOutlet weak var consumerAddressTF: UITextField!
    @IBOutlet weak var consumerPhoneNumberTF: UITextField!
    @IBOutlet weak var consumerWebsiteTF: UITextField!
-   
+   @IBOutlet weak var scrollView: UIScrollView!
    
    
    // MARK: Actions
@@ -64,6 +65,7 @@ class ConsumerProfileViewController: UIViewController, UINavigationControllerDel
       consumerWebsiteTF.delegate = self
       imagePicker.delegate = self
       
+      registerForKeyboardNotifications()
       hideKeyboardWhenTappedAround()
       
       FirebaseModel.sharedInstance.observeConsumer(consumerToObserve: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] consumer in
@@ -152,7 +154,58 @@ class ConsumerProfileViewController: UIViewController, UINavigationControllerDel
    }
    
 
+   // MARK: Adjust View For Keyboard
    
+   func registerForKeyboardNotifications(){
+      //Adding notifies on keyboard appearing
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+   }
+   
+   func deregisterFromKeyboardNotifications(){
+      //Removing notifies on keyboard appearing
+      NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+      NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+   }
+   
+   func keyboardWasShown(notification: NSNotification){
+      //Need to calculate keyboard exact size due to Apple suggestions
+      self.scrollView.isScrollEnabled = true
+      var info = notification.userInfo!
+      let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+      let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+      
+      self.scrollView.contentInset = contentInsets
+      self.scrollView.scrollIndicatorInsets = contentInsets
+      
+      var aRect : CGRect = self.view.frame
+      aRect.size.height -= keyboardSize!.height
+      if let activeField = self.activeField {
+         if (!aRect.contains(activeField.frame.origin)){
+            self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+         }
+      }
+   }
+   
+   func keyboardWillBeHidden(notification: NSNotification){
+      //Once keyboard disappears, restore original positions
+      var info = notification.userInfo!
+      let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+      let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+      self.scrollView.contentInset = contentInsets
+      self.scrollView.scrollIndicatorInsets = contentInsets
+      self.view.endEditing(true)
+      self.scrollView.isScrollEnabled = false
+   }
+   
+   func textFieldDidBeginEditing(_ textField: UITextField){
+      activeField = textField
+   }
+   
+   func textFieldDidEndEditing(_ textField: UITextField){
+      activeField = nil
+   }
+
    
    
    
