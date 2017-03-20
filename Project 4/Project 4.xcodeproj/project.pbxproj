@@ -33,7 +33,6 @@
 		379A62171E4E51C3006FD48C /* VendorRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A62161E4E51C3006FD48C /* VendorRequestsViewController.swift */; };
 		379A62191E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */; };
 		37AA18201E3FEB7500042656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA181F1E3FEB7500042656 /* AppDelegate.swift */; };
-		37AA18221E3FEB7500042656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA18211E3FEB7500042656 /* ViewController.swift */; };
 		37AA18251E3FEB7500042656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18231E3FEB7500042656 /* Main.storyboard */; };
 		37AA18271E3FEB7500042656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18261E3FEB7500042656 /* Assets.xcassets */; };
 		37AA182A1E3FEB7500042656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */; };
@@ -98,7 +97,6 @@
 		379A62181E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		37AA181C1E3FEB7500042656 /* Project 4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37AA181F1E3FEB7500042656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37AA18211E3FEB7500042656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		37AA18241E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37AA18261E3FEB7500042656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37AA18291E3FEB7500042656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -273,7 +271,6 @@
 				371286C01E5CE40F00941BBB /* GoogleMapsViewController.swift */,
 				37AA18281E3FEB7500042656 /* LaunchScreen.storyboard */,
 				37AA181F1E3FEB7500042656 /* AppDelegate.swift */,
-				37AA18211E3FEB7500042656 /* ViewController.swift */,
 				3775F35B1E4A5B1900F39C07 /* Images */,
 				37AA18261E3FEB7500042656 /* Assets.xcassets */,
 				37AA182B1E3FEB7500042656 /* Info.plist */,
@@ -494,7 +491,6 @@
 				3779312B1E4152C200AF8826 /* UserLoginViewController.swift in Sources */,
 				3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */,
 				3779313A1E44D80700AF8826 /* LocationManagerModel.swift in Sources */,
-				37AA18221E3FEB7500042656 /* ViewController.swift in Sources */,
 				371286C11E5CE40F00941BBB /* GoogleMapsViewController.swift in Sources */,
 				37B2C1581E51F18B00F88227 /* ConsumerRequestsCollectionViewCell.swift in Sources */,
 				377931291E41490B00AF8826 /* VendorHomeViewController.swift in Sources */,
