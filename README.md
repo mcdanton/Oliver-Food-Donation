@@ -5,9 +5,8 @@ Oliver connects Food Vendors with leftover food to local food banks, offering a 
 
 
 ##Screenshots
-![Vendor Home Screen](Screenshots/Vendor Home Page.png "Vendor Home Screen") ![Vendor Request Review](Screenshots/Vendor Requests.png "Vendor Request Review") 
-![Consumer Food Request](Screenshots/Consumer Request.png "Consumer Food Request") ![User Profile](Screenshots/User Profile.png "User Profile")
-
+![Vendor Home Page](Screenshots/Vendor Home Page.png "Vendor Home Page") ![Vendor Request Page](Screenshots/Vendor Requests.png "Vendor Requests Page")
+![Food Bank Request Page](Screenshots/Consumer Request.png "Food Bank Requests Page") ![User Profile Page](Screenshots/User Profile.png "User Profile Page")
 
 
 ##Key Features
