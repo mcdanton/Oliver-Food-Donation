@@ -5,7 +5,8 @@ Oliver connects Food Vendors with leftover food to local food banks, offering a 
 
 
 ## Screenshots
-![Vendor Home Page](Screenshots/Vendor_Home_Page.png "Vendor Home Page")
+![Vendor Home Page](Screenshots/Vendor_Home_Page.png "Vendor Home Page") ![Food Request](Screenshots/Vendor_Requests.png "Food Requests")
+
 
 ## Key Features
 There were many components that went into the building of Oliver. I've listed a few of the key components that make things run smoothly under the hood:
