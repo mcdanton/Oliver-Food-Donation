@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1433,6 +1432,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="dontHaveAccountPressed:" destination="UEU-kD-BFW" eventType="touchUpInside" id="tag-eY-O6Y"/>
+                                                    <segue destination="p47-kL-Fm4" kind="unwind" identifier="NoUserAccountPressed" unwindAction="noUserAccountPressed:" id="3LJ-21-vwf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1483,6 +1483,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCw-Oe-OdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="p47-kL-Fm4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-439.19999999999999" y="879.31034482758628"/>
         </scene>
@@ -2682,8 +2683,8 @@
         <image name="Profile_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qss-e6-ooq"/>
+        <segue reference="D0E-tf-sgV"/>
         <segue reference="pVt-K5-M95"/>
-        <segue reference="Ecs-ch-J5T"/>
+        <segue reference="SPN-Kj-D6z"/>
     </inferredMetricsTieBreakers>
 </document>

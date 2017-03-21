@@ -24,6 +24,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
    //MARK: Actions
    
    @IBAction func dontHaveAccountPressed(_ sender: Any) {
+      performSegue(withIdentifier: "NoUserAccountPressed", sender: self)
    }
    
    @IBAction func loginPressed(_ sender: Any) {
@@ -135,5 +136,6 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
       activeField = nil
    }
 
+   
    
 }

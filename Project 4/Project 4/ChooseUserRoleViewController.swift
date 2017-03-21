@@ -32,6 +32,12 @@ class ChooseUserRoleViewController: UIViewController {
          signUpPage.userRole = "Consumer"
       }
    }
+   
+   
+   // MARK: Unwind Segue
+   
+   @IBAction func noUserAccountPressed(_ sender: UIStoryboardSegue) {
+   }
 
    
 
