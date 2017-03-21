@@ -1,16 +1,13 @@
 # Oliver
 
-##Description
+## Description
 Oliver connects Food Vendors with leftover food to local food banks, offering a conveninent way for Food Vendors to donate their excess food. Vendors simply post the items they'd like to donate along with their location and a latest pickup time. Food Banks in a 10-mile radius can explore food posted in their area and request and item directly through the app. It offers an easy way for Food Vendors to git rid of leftover food while providing Food Banks with a much needed supply of extra food. Together, we can make hunger a thing of the past.
 
 
-##Screenshots
-![Vendor Home Page](Screenshots/Vendor Home Page.png "Vendor Home Page") ![Vendor Request Page](/Users/Dan 1/Desktop/GA-iOS-Bootcamp/Project-4/Screenshots/Vendor Home Page.png "Vendor Requests Page")
-![Food Bank Request Page](Screenshots/Consumer Request.png "Food Bank Requests Page") ![User Profile Page](Screenshots/User Profile.png "User Profile Page")
+## Screenshots
+![Vendor Home Page](/Users/Dan 1/Desktop/GA-iOS-Bootcamp/Project-4/Screenshots/Vendor_Home_Page.png "Vendor Home Page")
 
-
-
-##Key Features
+## Key Features
 There were many components that went into the building of Oliver. I've listed a few of the key components that make things run smoothly under the hood:
 
 * Location Querying
@@ -31,7 +28,7 @@ Cocoapods include:
 	5. GeoFire
 
 
-##Still To Come
+## Still To Come
 Oliver remains a work in progress and there are many more features and fixes still to come. Here are just a few:
 
 * Many more notifications
