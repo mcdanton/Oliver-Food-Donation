@@ -55,6 +55,7 @@ class ConsumerRequestsViewController: UIViewController, UICollectionViewDelegate
       }
    }
    
+   
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConsumerRequestsCollectionViewCell", for: indexPath) as! ConsumerRequestsCollectionViewCell
       if allRequests.isEmpty {
