@@ -46,7 +46,6 @@ class ConsumerFoodPostDetailMessageToVendorTableViewCell: UITableViewCell, UITex
    
    func textViewDidChange(_ textView: UITextView) {
       messageToVendor = textView.text
-      print("we're changing")
    }
    
    
