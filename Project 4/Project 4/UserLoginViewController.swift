@@ -51,9 +51,16 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
             if let assignedUserRole = unwrappedSelf.userRole {
                if assignedUserRole == "Vendor" {
                   
+                  UserDefaults.standard.set("Vendor", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
+                  
                   unwrappedSelf.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: unwrappedSelf)
                   
                } else if assignedUserRole == "Consumer" {
+                  
+                  UserDefaults.standard.set("Consumer", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
+                  
                   unwrappedSelf.performSegue(withIdentifier: "ShowConsumerHomeTabBarController", sender: unwrappedSelf)
                   
                } else {

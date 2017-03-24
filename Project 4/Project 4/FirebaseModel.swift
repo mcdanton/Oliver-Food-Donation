@@ -308,8 +308,8 @@ class FirebaseModel {
          
          let locationKey = snapshot.value as! NSDictionary
          let location = locationKey["l"] as! [Double]
-         let latitude = location[0] 
-         let longitude = location[1] 
+         let latitude = location[0]
+         let longitude = location[1]
          
          foodLocation = CLLocation(latitude: latitude, longitude: longitude)
          
@@ -387,6 +387,34 @@ class FirebaseModel {
       })
    }
    
+   
+   func observeUsers(userToObserve: String, consumerFound: @escaping (Consumer?) -> (), vendorFound: @escaping (FoodVendor?) -> ()) {
+      var selectedConsumer: Consumer?
+      var selectedVendor: FoodVendor?
+      
+      let databaseRef = FIRDatabase.database().reference()
+      databaseRef.observeSingleEvent(of: .value, with: { snapshot in
+         
+         let allConsumersSnapshot = snapshot.childSnapshot(forPath: "Consumer")
+         if allConsumersSnapshot.childSnapshot(forPath: userToObserve).exists() {
+            
+            let consumerInstance = Consumer(snapshot: allConsumersSnapshot.childSnapshot(forPath: userToObserve))
+            selectedConsumer = consumerInstance
+         } else {
+            let allVendorsSnapshot = snapshot.childSnapshot(forPath: "Food Vendor")
+            
+            if allVendorsSnapshot.childSnapshot(forPath: userToObserve).exists() {
+               
+               let vendorInstance = FoodVendor(snapshot: allVendorsSnapshot.childSnapshot(forPath: userToObserve))
+               selectedVendor = vendorInstance
+            }
+         }
+         DispatchQueue.main.async {
+            consumerFound(selectedConsumer)
+            vendorFound(selectedVendor)
+         }
+      })
+   }
    
    
    func observePosts(success: @escaping ([Post]) -> ()) {
