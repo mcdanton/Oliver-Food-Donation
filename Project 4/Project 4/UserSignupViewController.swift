@@ -100,11 +100,17 @@ class UserSignupViewController: UIViewController, UITextFieldDelegate {
             if assignedUserRole == "Vendor" {
                FirebaseModel.sharedInstance.foodVendorSignup(name: userNameTF.text!, location: userAddressTF.text!, emailTextField: userEmailTF.text!, passwordTextField: userPasswordTF.text!, viewController: self, complete: { success in
                   
+                  UserDefaults.standard.set("Vendor", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
+                  
                   self.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: self)
                })
                
             } else if assignedUserRole == "Consumer" {
                FirebaseModel.sharedInstance.consumerSignup(name: userNameTF.text!, location: userAddressTF.text!, emailTextField: userEmailTF.text!, passwordTextField: userPasswordTF.text!, viewController: self, complete: { success in
+                  
+                  UserDefaults.standard.set("Consumer", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
                   
                   self.performSegue(withIdentifier: "ShowConsumerHomeTabBarController", sender: self)
                })

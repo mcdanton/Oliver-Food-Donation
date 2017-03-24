@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		371286C11E5CE40F00941BBB /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371286C01E5CE40F00941BBB /* GoogleMapsViewController.swift */; };
 		375208B31E7AF22A0090F5F4 /* ConsumerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375208B21E7AF22A0090F5F4 /* ConsumerProfileViewController.swift */; };
+		375C37A21E8591C100BF4E33 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375C37A11E8591C100BF4E33 /* UserDefaultsExtension.swift */; };
 		3775F35A1E4A5AEC00F39C07 /* ConsumerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */; };
 		3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */; };
 		3775F3601E4A7B1900F39C07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3775F35F1E4A7B1900F39C07 /* GoogleService-Info.plist */; };
@@ -71,6 +72,7 @@
 		29EEE807692664392B4CE78B /* Pods-Project 4.staging release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project 4.staging release.xcconfig"; path = "Pods/Target Support Files/Pods-Project 4/Pods-Project 4.staging release.xcconfig"; sourceTree = "<group>"; };
 		371286C01E5CE40F00941BBB /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		375208B21E7AF22A0090F5F4 /* ConsumerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumerProfileViewController.swift; sourceTree = "<group>"; };
+		375C37A11E8591C100BF4E33 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		3775F3541E4A4DF700F39C07 /* Project 4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project 4.entitlements"; sourceTree = "<group>"; };
 		3775F3591E4A5AEC00F39C07 /* ConsumerHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerHomeViewController.swift; path = ../ConsumerHomeViewController.swift; sourceTree = "<group>"; };
 		3775F35C1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsumerHomeTableViewCell.swift; path = ../ConsumerHomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				3775F3801E4BDC6C00F39C07 /* Enums.swift */,
 				37B2C1411E51186C00F88227 /* ImageFetch.swift */,
 				37B2C1481E51501800F88227 /* DismissKeyboardExtension.swift */,
+				375C37A11E8591C100BF4E33 /* UserDefaultsExtension.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				37C85FDA1E4BF517003DBEEF /* ConsumerFoodPostDetailSubmitButtonTableViewCell.swift in Sources */,
 				379A62191E4E51DD006FD48C /* VendorRequestsCollectionViewCell.swift in Sources */,
 				3775F35D1E4A5B6600F39C07 /* ConsumerHomeTableViewCell.swift in Sources */,
+				375C37A21E8591C100BF4E33 /* UserDefaultsExtension.swift in Sources */,
 				37C85FD21E4BF45E003DBEEF /* ConsumerFoodPostDetailGeneralFoodInfoTableViewCell.swift in Sources */,
 				37C85FE51E4D241B003DBEEF /* VendorFoodDurationTableViewCell.swift in Sources */,
 				37C85FD61E4BF4C7003DBEEF /* ConsumerFoodPostDetailAdditionalInfoTableViewCell.swift in Sources */,

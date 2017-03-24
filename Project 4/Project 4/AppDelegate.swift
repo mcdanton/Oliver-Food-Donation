@@ -56,20 +56,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // [END register_for_notifications]
       FIRApp.configure()
       
-      if let alreadySignedIn = FIRAuth.auth()?.currentUser {
+      if (FIRAuth.auth()?.currentUser) != nil {
          
-         let userRole = UserDefaults.standard.value(forKey: "userRole") as! String
-         
-         if userRole == "Vendor" {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "VendorTabBarController")
-            self.window!.rootViewController = initialViewController
+         if let userRole = UserDefaults.standard.value(forKey: "userRole") as? String {
             
-         } else if userRole == "Consumer" {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "ConsumerTabBarController")
-            self.window!.rootViewController = initialViewController
-            
+            if userRole == "Vendor" {
+               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let initialViewController = storyboard.instantiateViewController(withIdentifier: "VendorTabBarController")
+               self.window!.rootViewController = initialViewController
+               
+            } else if userRole == "Consumer" {
+               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let initialViewController = storyboard.instantiateViewController(withIdentifier: "ConsumerTabBarController")
+               self.window!.rootViewController = initialViewController
+               
+            }
          }
       } else {
          
