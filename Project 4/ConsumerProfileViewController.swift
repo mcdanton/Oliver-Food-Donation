@@ -30,8 +30,6 @@ class ConsumerProfileViewController: UIViewController, UINavigationControllerDel
    @IBOutlet weak var consumerNameTF: UITextField!
    @IBOutlet weak var consumerEmailTF: UITextField!
    @IBOutlet weak var consumerAddressTF: UITextField!
-   @IBOutlet weak var consumerPhoneNumberTF: UITextField!
-   @IBOutlet weak var consumerWebsiteTF: UITextField!
    @IBOutlet weak var scrollView: UIScrollView!
    
    
@@ -61,8 +59,6 @@ class ConsumerProfileViewController: UIViewController, UINavigationControllerDel
       consumerNameTF.delegate = self
       consumerEmailTF.delegate = self
       consumerAddressTF.delegate = self
-      consumerPhoneNumberTF.delegate = self
-      consumerWebsiteTF.delegate = self
       imagePicker.delegate = self
       
       registerForKeyboardNotifications()
@@ -135,14 +131,6 @@ class ConsumerProfileViewController: UIViewController, UINavigationControllerDel
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
       case consumerAddressTF:
-         guard let text = textField.text else { return true }
-         let newLength = text.characters.count + string.characters.count - range.length
-         return newLength <= 20 // Bool
-      case consumerPhoneNumberTF:
-         guard let text = textField.text else { return true }
-         let newLength = text.characters.count + string.characters.count - range.length
-         return newLength <= 20 // Bool
-      case consumerWebsiteTF:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool

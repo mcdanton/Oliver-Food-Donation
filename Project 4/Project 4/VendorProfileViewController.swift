@@ -30,8 +30,6 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
    @IBOutlet weak var companyNameTF: UITextField!
    @IBOutlet weak var companyEmailTF: UITextField!
    @IBOutlet weak var companyAddressTF: UITextField!
-   @IBOutlet weak var companyPhoneNumberTF: UITextField!
-   @IBOutlet weak var companyWebsiteTF: UITextField!
    @IBOutlet weak var scrollView: UIScrollView!
    
    
@@ -60,8 +58,6 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
       companyNameTF.delegate = self
       companyEmailTF.delegate = self
       companyAddressTF.delegate = self
-      companyPhoneNumberTF.delegate = self
-      companyWebsiteTF.delegate = self
       imagePicker.delegate = self
       
       registerForKeyboardNotifications()
@@ -134,14 +130,6 @@ class VendorProfileViewController: UIViewController, UINavigationControllerDeleg
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
       case companyAddressTF:
-         guard let text = textField.text else { return true }
-         let newLength = text.characters.count + string.characters.count - range.length
-         return newLength <= 20 // Bool
-      case companyPhoneNumberTF:
-         guard let text = textField.text else { return true }
-         let newLength = text.characters.count + string.characters.count - range.length
-         return newLength <= 20 // Bool
-      case companyWebsiteTF:
          guard let text = textField.text else { return true }
          let newLength = text.characters.count + string.characters.count - range.length
          return newLength <= 20 // Bool
