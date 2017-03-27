@@ -36,3 +36,4 @@ Oliver remains a work in progress and there are many more features and fixes sti
 * Users ability to set location rather than using their current location
 * Greater usage of Google Maps SDK
 * And Much More!
+
