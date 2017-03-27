@@ -33,7 +33,7 @@ Cocoapods include:
 Oliver remains a work in progress and there are many more features and fixes still to come. Here are just a few:
 
 * Many more notifications
-* Vendors posts expiring based on given duration
 * Users ability to set location rather than using their current location
-* Interaction with Google Maps SDK
-* Text input screens adjusting display to keyboard usage
+* Greater usage of Google Maps SDK
+* And Much More!
+

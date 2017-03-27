@@ -36,6 +36,8 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    // MARK: Actions
    
    @IBAction func signOutPressed(_ sender: Any) {
+      UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+      UserDefaults.standard.synchronize()
       FirebaseModel.sharedInstance.logout()
    }
    
@@ -44,7 +46,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    
    override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
-                  
+      
       FirebaseModel.sharedInstance.queryVendorPosts(searchPath: "foodPosted", key: "vendor", valueToSearch: (FIRAuth.auth()?.currentUser?.uid)!, success: { [weak self] arrayOfPosts in
          guard let unwrappedSelf = self else { return }
          
@@ -115,7 +117,7 @@ class NewVendorHomeViewController: UIViewController, UICollectionViewDataSource,
    }
    
    
-  
+   
    
    
 }

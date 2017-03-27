@@ -53,6 +53,8 @@ class NewConsumerHomeViewController: UIViewController, UICollectionViewDataSourc
    // MARK: Actions
    
    @IBAction func signOutPressed(_ sender: Any) {
+      UserDefaults.standard.removeObject(forKey: "userRole")
+      UserDefaults.standard.synchronize()
       FirebaseModel.sharedInstance.logout()
    }
    

@@ -8,12 +8,14 @@
 
 import UIKit
 
-class UserSignupViewController: UIViewController {
+class UserSignupViewController: UIViewController, UITextFieldDelegate {
    
    
    // MARK: Properties
    
    var userRole: String?
+   var activeField: UITextField?
+
    
    // MARK: Outlets
    
@@ -23,7 +25,7 @@ class UserSignupViewController: UIViewController {
    @IBOutlet weak var userPasswordTF: UITextField!
    @IBOutlet weak var userConfirmPasswordTF: UITextField!
    @IBOutlet weak var registerButtonOutlet: UIButton!
-   
+   @IBOutlet weak var scrollView: UIScrollView!
    
    // MARK: Actions
    
@@ -40,7 +42,15 @@ class UserSignupViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      registerForKeyboardNotifications()
       hideKeyboardWhenTappedAround()
+      
+      userNameTF.delegate = self
+      userEmailTF.delegate = self
+      userAddressTF.delegate = self
+      userPasswordTF.delegate = self
+      userConfirmPasswordTF.delegate = self
    }
    
 
@@ -90,11 +100,17 @@ class UserSignupViewController: UIViewController {
             if assignedUserRole == "Vendor" {
                FirebaseModel.sharedInstance.foodVendorSignup(name: userNameTF.text!, location: userAddressTF.text!, emailTextField: userEmailTF.text!, passwordTextField: userPasswordTF.text!, viewController: self, complete: { success in
                   
+                  UserDefaults.standard.set("Vendor", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
+                  
                   self.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: self)
                })
                
             } else if assignedUserRole == "Consumer" {
                FirebaseModel.sharedInstance.consumerSignup(name: userNameTF.text!, location: userAddressTF.text!, emailTextField: userEmailTF.text!, passwordTextField: userPasswordTF.text!, viewController: self, complete: { success in
+                  
+                  UserDefaults.standard.set("Consumer", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
                   
                   self.performSegue(withIdentifier: "ShowConsumerHomeTabBarController", sender: self)
                })
@@ -121,5 +137,57 @@ class UserSignupViewController: UIViewController {
    }
    
    
+   // MARK: Adjusting Screen For Keyboard
    
+   func registerForKeyboardNotifications(){
+      //Adding notifies on keyboard appearing
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+   }
+   
+   func deregisterFromKeyboardNotifications(){
+      //Removing notifies on keyboard appearing
+      NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+      NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+   }
+   
+   func keyboardWasShown(notification: NSNotification){
+      //Need to calculate keyboard exact size due to Apple suggestions
+      self.scrollView.isScrollEnabled = true
+      var info = notification.userInfo!
+      let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+      let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+      
+      self.scrollView.contentInset = contentInsets
+      self.scrollView.scrollIndicatorInsets = contentInsets
+      
+      var aRect : CGRect = self.view.frame
+      aRect.size.height -= keyboardSize!.height
+      if let activeField = self.activeField {
+         if (!aRect.contains(activeField.frame.origin)){
+            self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+         }
+      }
+   }
+   
+   func keyboardWillBeHidden(notification: NSNotification){
+      //Once keyboard disappears, restore original positions
+      var info = notification.userInfo!
+      let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+      let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+      self.scrollView.contentInset = contentInsets
+      self.scrollView.scrollIndicatorInsets = contentInsets
+      self.view.endEditing(true)
+      self.scrollView.isScrollEnabled = false
+   }
+   
+   func textFieldDidBeginEditing(_ textField: UITextField){
+      activeField = textField
+   }
+   
+   func textFieldDidEndEditing(_ textField: UITextField){
+      activeField = nil
+   }
+
+
 }

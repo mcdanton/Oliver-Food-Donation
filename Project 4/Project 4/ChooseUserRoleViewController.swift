@@ -7,20 +7,22 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ChooseUserRoleViewController: UIViewController {
    
    
    
-   
+   // MARK: View Loading
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
    
    
+   // MARK: Prepare For Segue
    // Passes along role of user (Vendor or Consumer) to sign in page
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,6 +33,12 @@ class ChooseUserRoleViewController: UIViewController {
          let signUpPage = segue.destination as! UserSignupViewController
          signUpPage.userRole = "Consumer"
       }
+   }
+   
+   
+   // MARK: Unwind Segue
+   
+   @IBAction func noUserAccountPressed(_ sender: UIStoryboardSegue) {
    }
 
    

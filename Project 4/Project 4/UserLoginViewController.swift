@@ -8,21 +8,23 @@
 
 import UIKit
 
-class UserLoginViewController: UIViewController {
+class UserLoginViewController: UIViewController, UITextFieldDelegate {
    
    // MARK: Properties
    
    var userRole: String?
-   
+   var activeField: UITextField?
+
    //MARK: Outlets
    
    @IBOutlet weak var userEmailTF: UITextField!
    @IBOutlet weak var userPasswordTF: UITextField!
-   
+   @IBOutlet weak var scrollView: UIScrollView!
    
    //MARK: Actions
    
    @IBAction func dontHaveAccountPressed(_ sender: Any) {
+      performSegue(withIdentifier: "NoUserAccountPressed", sender: self)
    }
    
    @IBAction func loginPressed(_ sender: Any) {
@@ -49,9 +51,16 @@ class UserLoginViewController: UIViewController {
             if let assignedUserRole = unwrappedSelf.userRole {
                if assignedUserRole == "Vendor" {
                   
+                  UserDefaults.standard.set("Vendor", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
+                  
                   unwrappedSelf.performSegue(withIdentifier: "ShowVendorHomeTabBarController", sender: unwrappedSelf)
                   
                } else if assignedUserRole == "Consumer" {
+                  
+                  UserDefaults.standard.set("Consumer", forKey: "userRole")
+                  UserDefaults.standard.synchronize()
+                  
                   unwrappedSelf.performSegue(withIdentifier: "ShowConsumerHomeTabBarController", sender: unwrappedSelf)
                   
                } else {
@@ -72,9 +81,68 @@ class UserLoginViewController: UIViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      userEmailTF.delegate = self
+      userPasswordTF.delegate = self
+      
+      registerForKeyboardNotifications()
       hideKeyboardWhenTappedAround()
 
    }
+   
+   
+   // MARK: Adjust View For Keyboard
+   
+   func registerForKeyboardNotifications(){
+      //Adding notifies on keyboard appearing
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+   }
+   
+   func deregisterFromKeyboardNotifications(){
+      //Removing notifies on keyboard appearing
+      NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+      NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+   }
+   
+   func keyboardWasShown(notification: NSNotification){
+      //Need to calculate keyboard exact size due to Apple suggestions
+      self.scrollView.isScrollEnabled = true
+      var info = notification.userInfo!
+      let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+      let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+      
+      self.scrollView.contentInset = contentInsets
+      self.scrollView.scrollIndicatorInsets = contentInsets
+      
+      var aRect : CGRect = self.view.frame
+      aRect.size.height -= keyboardSize!.height
+      if let activeField = self.activeField {
+         if (!aRect.contains(activeField.frame.origin)){
+            self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+         }
+      }
+   }
+   
+   func keyboardWillBeHidden(notification: NSNotification){
+      //Once keyboard disappears, restore original positions
+      var info = notification.userInfo!
+      let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+      let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+      self.scrollView.contentInset = contentInsets
+      self.scrollView.scrollIndicatorInsets = contentInsets
+      self.view.endEditing(true)
+      self.scrollView.isScrollEnabled = false
+   }
+   
+   func textFieldDidBeginEditing(_ textField: UITextField){
+      activeField = textField
+   }
+   
+   func textFieldDidEndEditing(_ textField: UITextField){
+      activeField = nil
+   }
+
    
    
 }

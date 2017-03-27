@@ -56,6 +56,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // [END register_for_notifications]
       FIRApp.configure()
       
+      if (FIRAuth.auth()?.currentUser) != nil {
+         
+         if let userRole = UserDefaults.standard.value(forKey: "userRole") as? String {
+            
+            if userRole == "Vendor" {
+               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let initialViewController = storyboard.instantiateViewController(withIdentifier: "VendorTabBarController")
+               self.window!.rootViewController = initialViewController
+               
+            } else if userRole == "Consumer" {
+               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let initialViewController = storyboard.instantiateViewController(withIdentifier: "ConsumerTabBarController")
+               self.window!.rootViewController = initialViewController
+               
+            }
+         }
+      } else {
+         
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         let initialViewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController")
+         self.window!.rootViewController = initialViewController
+      }
+      
       // Add observer for InstanceID token refresh callback.
       NotificationCenter.default.addObserver(self,
                                              selector: #selector(self.tokenRefreshNotification),
