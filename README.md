@@ -1,35 +1,24 @@
-# Project-4
+# Oliver
 
-![Alt Image Text](Prep_Work/Problem_Statement.png)
-
-
-![Alt Image Text](Prep_Work/Research_Highlights.png)
-
-![Alt Image Text](Prep_Work/Research_Plan_One_Pager.png)
-
-![Alt Image Text](Prep_Work/User_Stories.png)
-
-![Alt Image Text](Prep_Work/Wireframes.png)
+## Description
+Oliver connects Food Vendors with leftover food to local food banks, offering a conveninent way for Food Vendors to donate their excess food. Vendors simply post the items they'd like to donate along with their location and a latest pickup time. Food Banks in a 10-mile radius can explore food posted in their area and request and item directly through the app. It offers an easy way for Food Vendors to git rid of leftover food while providing Food Banks with a much needed supply of extra food. Together, we can make hunger a thing of the past.
 
 
-##Screenshots
-![Vendor Home Screen](Screenshots/Vendor Home Page.png "Vendor Home Screen") ![Consumer Food Request](Screenshots/Consumer Request.png "Consumer Food Request")
-![Vendor Request Review](Screenshots/Vendor Requests.png "Vendor Request Review") ![User Profile](Screenshots/User Profile.png "User Profile")
+## Screenshots
+![Vendor Home Page](Screenshots/Vendor_Home_Page.png "Vendor Home Page") ![Food Request](Screenshots/Vendor_Requests.png "Food Requests")
 
 
-##Description
-After an event, caterers or similar food vendors, often have a lot of food leftover. Unfortunately, without a simple alternative, these vendors usually end up throwing most of the extra food away. At the same time, millions of Americans go hungry each day from a lack of food. Oliver's goal is to help fight hunger by connecting food vendors with leftover food to local food banks. This offers the food vendor a conveninent and low effort way to give away their excess food and food banks a much needed supply of extra food. Together, we can make hunger a thing of the past.
+## Key Features
+There were many components that went into the building of Oliver. I've listed a few of the key components that make things run smoothly under the hood:
 
-##Key Technology Used
-There were many components that went into the building of Oliver. Below are a few of the key components that make things run under the hood:
+* Location Querying
+	- It was important that Food Banks only see food posted within their immediate area. To accomplish this, I used a combination of Apple's CLLocation with Intuit's Location Management SDK and ran queries through Firebase's GeoFire. This allowed me to not only locate users easily, but also query my backend based on user locations.
+* In-App Messaging
+	- To provide an easy form of communication between a Vendor and Food Bank, I allowed Food Banks to request and message Vendors directly through the app. An item's availability changes throughout this process moving from "Open" to "Pending" to "Awaiting Pickup" in the event of an accepted request or back to "Open" if a request is rejected.
+* Self refreshing data
+	- In order to ensure food wasn't displayed past it's pickup time, I set my Collection Views to observe the database and check a food's deadline against the current date/time. Expired posts are automatically updated and not shown to Food Banks. 
 
-* Firebase Database
-* Core Location
-* Tab Bar Controllers
-* User Authentication
-* MapKit
-* iPhone Native Camera Access
-
+	
 Cocoapods include:
 
 	1. Intuit Location Manager
@@ -39,26 +28,11 @@ Cocoapods include:
 	5. Firebase Authentication
 	5. GeoFire
 
-##Design Process
-The app's design is primarily split between the 2 types of users: Caterers and Food Banks. However, because both users interact with very similar things, the experience for each mirrors the other. Originally, I built the app in a very minimalistic fashion where each user would have a list of food postings - Caterers would see their own posts and Food Banks would see the posts of Caterers in their area. As the app grew in functionality my design evolved to meet it. 
 
-One factor in the evolution of the design was testing. The more I would test the app the more I realized that things needed to be added. First a requests page was needed so Food Banks could easily request and reserve food posted by a Caterer. Then I had the idea to show a map of local Caterers/Food Banks in the area - this led me to shift my design pattern from just a Navigation Controller to a Tab based app. And rather than have a hamburger menu showing the user's profile, I decided to just add a tab for this as well. Halfway through the project I teamed up with a graduate of GA's UX course to sharpen the design flow and aesthetics and we continue to work together to make the best experience possible.
-
-##Hurdles
-
-* Only show Food Banks posts that were "Open" or not yet requested by others
-* For first time users, setting up a completion that was called only after they authorized location
-* Setting up a location query so only posts within a given range would be displayed
-
-
-##Still To Come
+## Still To Come
+Oliver remains a work in progress and there are many more features and fixes still to come. Here are just a few:
 
 * Many more notifications
-* Vendors posts expiring based on given duration
 * Users ability to set location rather than using their current location
-* Interaction with Google Maps
-* Text input screens adjusting display to keyboard usage
-
-##Mock App Store Review
-From Dan Hefter:
-" I love the idea behind this app! It's great to see something that helps connect those with extra food to those who could use it most. It seems like the basics are in place but I think there's a lot more that this app can do. Would love to see it really grow!"
+* Greater usage of Google Maps SDK
+* And Much More!
