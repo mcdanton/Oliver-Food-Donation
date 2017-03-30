@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Firebase
 import FirebaseStorage
+import GooglePlaces
 
 class VendorPostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
    
@@ -196,6 +197,17 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    
    // MARK: Text Field Delegate
    
+   // Launch Google Places AutoPicker when location text field is selected
+   
+   func textFieldDidBeginEditing(_ textField: UITextField) {
+      if textField == location {
+         launchGoogleAutocomplete()
+      }
+   }
+   
+   
+   // Limits character input on text fields
+   
    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
       
       switch textField {
@@ -221,10 +233,51 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
          return newLength <= 15 // Bool
       }
    }
-
+   
+   
+   
+   // Present the Google Autocomplete view controller when the button is pressed.
+   
+   func launchGoogleAutocomplete() {
+      let autocompleteController = GMSAutocompleteViewController()
+      autocompleteController.delegate = self
+      present(autocompleteController, animated: true, completion: nil)
+   }
    
 }
 
 
+// Google Places Extension
+
+extension VendorPostViewController: GMSAutocompleteViewControllerDelegate {
+   
+   // Handle the user's selection.
+   func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+      print("Place name: \(place.name)")
+      print("Place address: \(place.formattedAddress)")
+      print("Place attributions: \(place.attributions)")
+      location.text = place.formattedAddress
+      dismiss(animated: true, completion: nil)
+   }
+   
+   func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+      // TODO: handle the error.
+      print("Error: ", error.localizedDescription)
+   }
+   
+   // User canceled the operation.
+   func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+      dismiss(animated: true, completion: nil)
+   }
+   
+   // Turn the network activity indicator on and off again.
+   func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+   }
+   
+   func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = false
+   }
+}
 
 
