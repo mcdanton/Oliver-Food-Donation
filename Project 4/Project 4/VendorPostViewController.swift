@@ -21,7 +21,6 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    var imageDownloadURL = ""
    let datePicker = UIDatePicker()
    
-   
    // MARK: Outlets
    
    @IBOutlet weak var postTitle: UITextField!
@@ -138,6 +137,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       }
    }
    
+   
    // MARK: View Loading
    
    override func viewDidLoad() {
@@ -145,6 +145,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       postTitle.delegate = self
       quantity.delegate = self
       postDescription.delegate = self
+      deadline.delegate = self
       location.delegate = self
       imagePicker.delegate = self
       hideKeyboardWhenTappedAround()
@@ -154,6 +155,7 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
    func dismissViewController() {
       self.performSegue(withIdentifier: "unwindFromAddNewItemVCToVendorHomeVC", sender: self)
    }
+   
    
    // MARK: Saving Image To Camera
    
@@ -173,12 +175,13 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       self.dismiss(animated: true, completion: nil)
    }
    
+   
    // MARK: Date Picker
    
    func createDatePicker() {
       
       datePicker.datePickerMode = .dateAndTime
-      
+
       let toolbar = UIToolbar()
       toolbar.sizeToFit()
       
@@ -194,17 +197,27 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
       self.view.endEditing(true)
    }
    
+   // Adds currently selected dated to the deadline text field when the user clicks on the screen, off the date picker
+   func handleTap(recognizer: UITapGestureRecognizer) {
+      donePressed()
+   }
+   
+   
    
    // MARK: Text Field Delegate
    
-   // Launch Google Places AutoPicker when location text field is selected
+   // Enables tap gesture to save date when deadline text field is selected and brings up Google Places AutoPicker modal when location text field is selected
    
    func textFieldDidBeginEditing(_ textField: UITextField) {
+      
+      if textField.inputView == datePicker {
+         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+         view.addGestureRecognizer(tap)
+      }
       if textField == location {
          launchGoogleAutocomplete()
       }
    }
-   
    
    // Limits character input on text fields
    
