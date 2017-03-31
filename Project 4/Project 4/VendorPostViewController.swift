@@ -218,6 +218,22 @@ class VendorPostViewController: UIViewController, UINavigationControllerDelegate
          launchGoogleAutocomplete()
       }
    }
+
+   
+   // Hitting "Next" button on keyboard jumps to next text field
+   
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      // Try to find next responder
+      if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+         nextField.becomeFirstResponder()
+      } else {
+         // Not found, so remove keyboard.
+         textField.resignFirstResponder()
+      }
+      // Do not add a line break
+      return false
+   }
+
    
    // Limits character input on text fields
    
