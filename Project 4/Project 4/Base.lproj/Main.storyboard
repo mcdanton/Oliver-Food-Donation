@@ -2608,7 +2608,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kib-fo-8aq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="Map_icon" id="Doq-Gu-sfv"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UwZ-mp-yWy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UwZ-mp-yWy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
